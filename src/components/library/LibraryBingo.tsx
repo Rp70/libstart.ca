@@ -5,13 +5,14 @@ import { Progress } from '@/components/ui/progress'
 import { Check, DownloadSimple, Trophy } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { useTranslation } from '@/hooks/use-translation'
+import { useAudience } from '@/contexts/AudienceContext'
 
 type BingoSquare = {
   id: string
   text: string
 }
 
-const bingoSquares: BingoSquare[] = [
+const newcomerBingoSquares: BingoSquare[] = [
   { id: 'resume', text: 'Printed a resume for free' },
   { id: 'first-language', text: 'Found a book in my first language' },
   { id: 'asked-librarian', text: 'Asked a librarian a question' },
@@ -21,7 +22,7 @@ const bingoSquares: BingoSquare[] = [
   { id: 'dvd', text: 'Borrowed a movie' },
   { id: 'ebook', text: 'Downloaded an ebook' },
   { id: 'program', text: 'Attended a free program' },
-  { id: 'playground', text: 'Borrowed a FVRL Playground item' },
+  { id: 'playground', text: 'Borrowed a library item' },
   { id: 'language-app', text: 'Used Mango Languages' },
   { id: 'printing', text: 'Used printing services' },
   { id: 'meeting', text: 'Met someone new at the library' },
@@ -39,8 +40,38 @@ const bingoSquares: BingoSquare[] = [
   { id: 'recommend', text: 'Recommended the library to a friend' }
 ]
 
+const canadianBingoSquares: BingoSquare[] = [
+  { id: 'makerspace', text: 'Tried the makerspace tools' },
+  { id: 'kanopy', text: 'Streamed a film on Kanopy' },
+  { id: 'pressreader', text: 'Read a foreign newspaper on PressReader' },
+  { id: 'laser-cutter', text: 'Used the laser cutter' },
+  { id: 'ancestry', text: 'Researched family history' },
+  { id: 'business-plan', text: 'Got help with business planning' },
+  { id: 'recording', text: 'Booked the recording studio' },
+  { id: 'tool-borrow', text: 'Borrowed power tools' },
+  { id: 'museum-pass', text: 'Got a free museum pass' },
+  { id: 'hoopla', text: 'Borrowed digital content on Hoopla' },
+  { id: 'seed-library', text: 'Got seeds from the seed library' },
+  { id: 'workshop', text: 'Attended a maker workshop' },
+  { id: 'instrument', text: 'Borrowed a musical instrument' },
+  { id: 'adobe', text: 'Used Adobe Creative Cloud' },
+  { id: 'linkedin-cert', text: 'Completed a LinkedIn course' },
+  { id: 'job-database', text: 'Searched job databases' },
+  { id: 'meeting-room', text: 'Hosted a client meeting' },
+  { id: 'creativebug', text: 'Took a craft class online' },
+  { id: 'sewing', text: 'Used sewing machines' },
+  { id: 'podcast', text: 'Recorded a podcast episode' },
+  { id: 'prototype', text: '3D printed a prototype' },
+  { id: 'language', text: 'Learned a new language' },
+  { id: 'career-help', text: 'Got resume feedback' },
+  { id: 'rare-book', text: 'Requested an interlibrary loan' },
+  { id: 'teach', text: 'Taught someone about a service' }
+]
+
 export function LibraryBingo() {
-  const [completedSquares, setCompletedSquares] = useKV<string[]>('bingo-completed', [])
+  const { audience } = useAudience()
+  const bingoSquares = audience === 'canadian' ? canadianBingoSquares : newcomerBingoSquares
+  const [completedSquares, setCompletedSquares] = useKV<string[]>(`bingo-completed-${audience}`, [])
 
   const toggleSquare = (id: string) => {
     setCompletedSquares((current) => {
@@ -73,7 +104,8 @@ export function LibraryBingo() {
     ctx.fillStyle = 'white'
     ctx.font = 'bold 32px Arial'
     ctx.textAlign = 'center'
-    ctx.fillText('Newcomer Library Bingo', 400, 50)
+    const title = audience === 'canadian' ? 'Library Explorer Bingo' : 'Newcomer Library Bingo'
+    ctx.fillText(title, 400, 50)
 
     const gridSize = 5
     const cellSize = 140
@@ -137,12 +169,17 @@ export function LibraryBingo() {
   const hasWon = (completedSquares || []).length >= 25
   const { t } = useTranslation()
 
+  const bingoTitle = audience === 'canadian' ? 'Library Explorer Bingo' : t('bingo.title')
+  const bingoSubtitle = audience === 'canadian' 
+    ? 'Challenge yourself to discover advanced library features' 
+    : t('bingo.subtitle')
+
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold mb-3">{t('bingo.title')}</h2>
+        <h2 className="text-3xl font-bold mb-3">{bingoTitle}</h2>
         <p className="text-muted-foreground text-lg">
-          {t('bingo.subtitle')}
+          {bingoSubtitle}
         </p>
       </div>
 
@@ -178,10 +215,14 @@ export function LibraryBingo() {
             <div className="text-center space-y-3">
               <h3 className="text-2xl font-bold">🎉 Congratulations! 🎉</h3>
               <p className="text-lg">
-                You've completed all 25 activities! You're a library expert now.
+                {audience === 'canadian' 
+                  ? 'You\'ve explored all 25 advanced features! You\'re a library power user now.'
+                  : 'You\'ve completed all 25 activities! You\'re a library expert now.'}
               </p>
               <p className="text-sm text-muted-foreground">
-                Share your achievement with other newcomers and help them discover the library!
+                {audience === 'canadian'
+                  ? 'Share your knowledge and help others discover what libraries offer!'
+                  : 'Share your achievement with other newcomers and help them discover the library!'}
               </p>
             </div>
           </Card>

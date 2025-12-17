@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import { AudienceProvider } from '@/contexts/AudienceContext'
 import { useTranslation } from '@/hooks/use-translation'
 import { LanguageSelector } from '@/components/library/LanguageSelector'
+import { AudienceSelector } from '@/components/library/AudienceSelector'
 import { CultureGuide } from '@/components/library/CultureGuide'
 import { VisualTours } from '@/components/library/VisualTours'
 import { HiddenMenu } from '@/components/library/HiddenMenu'
@@ -32,7 +34,7 @@ function AppContent() {
     <div className="min-h-screen bg-background">
       <header className="bg-primary text-primary-foreground py-6 px-6 md:px-8 shadow-lg">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-start justify-between gap-4">
+          <div className="flex items-start justify-between gap-4 mb-4">
             <div className="flex-1">
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
                 {t('app.title')}
@@ -42,6 +44,9 @@ function AppContent() {
               </p>
             </div>
             <LanguageSelector />
+          </div>
+          <div className="flex justify-center">
+            <AudienceSelector />
           </div>
         </div>
       </header>
@@ -169,7 +174,9 @@ function AppContent() {
 function App() {
   return (
     <LanguageProvider>
-      <AppContent />
+      <AudienceProvider>
+        <AppContent />
+      </AudienceProvider>
     </LanguageProvider>
   )
 }
