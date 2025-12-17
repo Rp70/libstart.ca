@@ -54,6 +54,13 @@ A welcoming digital companion for newcomers to Canada that demystifies library c
 - Progression: Search/scroll term list → Select term → Read simple explanation with example
 - Success criteria: Terms are explained using everyday language; includes visual examples where helpful
 
+**Library Directory & Statistics**
+- Functionality: Searchable directory of all libraries across Canada with interactive map and list views, comprehensive filtering, and statistical overview
+- Purpose: Helps newcomers find libraries near them and understand the library landscape across provinces
+- Trigger: User navigates to "Directory" section from main navigation
+- Progression: View statistics dashboard → Apply filters (province, type, search) → Toggle between map/list view → Select library → View details and get directions
+- Success criteria: All libraries display with accurate contact info and addresses; filters work correctly; map shows geographic distribution; statistics update based on filters; Google Maps integration works for directions
+
 **Volunteer Champion Profiles**
 - Functionality: Profile creation system allowing library volunteers to generate shareable QR codes and tracking links
 - Purpose: Enables volunteers to promote library services and track their outreach impact

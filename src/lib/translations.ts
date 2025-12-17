@@ -15,6 +15,7 @@ export const translations = {
       bingo: 'Bingo',
       neighborhood: 'Local Tips',
       glossary: 'Glossary',
+      directory: 'Directory',
       volunteer: 'Volunteer',
     },
     cultureGuide: {
@@ -109,6 +110,28 @@ export const translations = {
       views: 'views',
       messagePlaceholder: 'Share why you love the library...',
     },
+    directory: {
+      title: 'Library Directory & Statistics',
+      totalLibraries: 'Libraries in Canada',
+      provincesServed: 'Provinces & Territories',
+      byType: 'By Type',
+      searchPlaceholder: 'Search by name, city, or region...',
+      selectProvince: 'Select Province',
+      selectType: 'Select Type',
+      allProvinces: 'All Provinces',
+      allTypes: 'All Types',
+      typePublic: 'Public Library',
+      typePrivate: 'Academic Library',
+      typeLittle: 'Little Free Library',
+      showingResults: 'Showing {count} libraries',
+      listView: 'List',
+      mapView: 'Map',
+      directions: 'Directions',
+      visit: 'Website',
+      noResults: 'No libraries found',
+      tryDifferentFilters: 'Try adjusting your filters',
+      legend: 'Legend',
+    },
   },
   pa: {
     app: {
@@ -124,6 +147,7 @@ export const translations = {
       bingo: 'ਬਿੰਗੋ',
       neighborhood: 'ਸਥਾਨਕ ਸੁਝਾਅ',
       glossary: 'ਸ਼ਬਦਾਵਲੀ',
+      directory: 'ਡਾਇਰੈਕਟਰੀ',
       volunteer: 'ਵਲੰਟੀਅਰ',
     },
     cultureGuide: {
@@ -218,6 +242,28 @@ export const translations = {
       views: 'ਵਿਊਜ਼',
       messagePlaceholder: 'ਸਾਂਝਾ ਕਰੋ ਕਿ ਤੁਹਾਨੂੰ ਲਾਇਬ੍ਰੇਰੀ ਕਿਉਂ ਪਸੰਦ ਹੈ...',
     },
+    directory: {
+      title: 'ਲਾਇਬ੍ਰੇਰੀ ਡਾਇਰੈਕਟਰੀ ਅਤੇ ਅੰਕੜੇ',
+      totalLibraries: 'ਕੈਨੇਡਾ ਵਿੱਚ ਲਾਇਬ੍ਰੇਰੀਆਂ',
+      provincesServed: 'ਪ੍ਰਾਂਤ ਅਤੇ ਖੇਤਰ',
+      byType: 'ਕਿਸਮ ਅਨੁਸਾਰ',
+      searchPlaceholder: 'ਨਾਮ, ਸ਼ਹਿਰ, ਜਾਂ ਖੇਤਰ ਦੁਆਰਾ ਖੋਜੋ...',
+      selectProvince: 'ਪ੍ਰਾਂਤ ਚੁਣੋ',
+      selectType: 'ਕਿਸਮ ਚੁਣੋ',
+      allProvinces: 'ਸਾਰੇ ਪ੍ਰਾਂਤ',
+      allTypes: 'ਸਾਰੀਆਂ ਕਿਸਮਾਂ',
+      typePublic: 'ਜਨਤਕ ਲਾਇਬ੍ਰੇਰੀ',
+      typePrivate: 'ਅਕਾਦਮਿਕ ਲਾਇਬ੍ਰੇਰੀ',
+      typeLittle: 'ਛੋਟੀ ਮੁਫ਼ਤ ਲਾਇਬ੍ਰੇਰੀ',
+      showingResults: '{count} ਲਾਇਬ੍ਰੇਰੀਆਂ ਦਿਖਾ ਰਹੇ ਹਨ',
+      listView: 'ਸੂਚੀ',
+      mapView: 'ਨਕਸ਼ਾ',
+      directions: 'ਦਿਸ਼ਾਵਾਂ',
+      visit: 'ਵੈੱਬਸਾਈਟ',
+      noResults: 'ਕੋਈ ਲਾਇਬ੍ਰੇਰੀ ਨਹੀਂ ਮਿਲੀ',
+      tryDifferentFilters: 'ਆਪਣੇ ਫਿਲਟਰਾਂ ਨੂੰ ਵਿਵਸਥਿਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ',
+      legend: 'ਕਥਾ',
+    },
   },
   zh: {
     app: {
@@ -233,6 +279,7 @@ export const translations = {
       bingo: '宾果',
       neighborhood: '本地提示',
       glossary: '词汇表',
+      directory: '目录',
       volunteer: '志愿者',
     },
     cultureGuide: {
@@ -327,6 +374,28 @@ export const translations = {
       views: '浏览次数',
       messagePlaceholder: '分享您为什么喜欢图书馆...',
     },
+    directory: {
+      title: '图书馆目录和统计',
+      totalLibraries: '加拿大的图书馆',
+      provincesServed: '省份和地区',
+      byType: '按类型',
+      searchPlaceholder: '按名称、城市或地区搜索...',
+      selectProvince: '选择省份',
+      selectType: '选择类型',
+      allProvinces: '所有省份',
+      allTypes: '所有类型',
+      typePublic: '公共图书馆',
+      typePrivate: '学术图书馆',
+      typeLittle: '小型免费图书馆',
+      showingResults: '显示 {count} 个图书馆',
+      listView: '列表',
+      mapView: '地图',
+      directions: '方向',
+      visit: '网站',
+      noResults: '未找到图书馆',
+      tryDifferentFilters: '尝试调整您的过滤器',
+      legend: '图例',
+    },
   },
   ar: {
     app: {
@@ -342,6 +411,7 @@ export const translations = {
       bingo: 'بينغو',
       neighborhood: 'نصائح محلية',
       glossary: 'المسرد',
+      directory: 'الدليل',
       volunteer: 'متطوع',
     },
     cultureGuide: {
@@ -436,6 +506,28 @@ export const translations = {
       views: 'المشاهدات',
       messagePlaceholder: 'شارك لماذا تحب المكتبة...',
     },
+    directory: {
+      title: 'دليل المكتبات والإحصائيات',
+      totalLibraries: 'المكتبات في كندا',
+      provincesServed: 'المقاطعات والأقاليم',
+      byType: 'حسب النوع',
+      searchPlaceholder: 'البحث بالاسم أو المدينة أو المنطقة...',
+      selectProvince: 'اختر المقاطعة',
+      selectType: 'اختر النوع',
+      allProvinces: 'جميع المقاطعات',
+      allTypes: 'جميع الأنواع',
+      typePublic: 'مكتبة عامة',
+      typePrivate: 'مكتبة أكاديمية',
+      typeLittle: 'مكتبة صغيرة مجانية',
+      showingResults: 'عرض {count} مكتبة',
+      listView: 'قائمة',
+      mapView: 'خريطة',
+      directions: 'الاتجاهات',
+      visit: 'موقع الويب',
+      noResults: 'لم يتم العثور على مكتبات',
+      tryDifferentFilters: 'حاول ضبط الفلاتر الخاصة بك',
+      legend: 'وسيلة الإيضاح',
+    },
   },
   es: {
     app: {
@@ -451,6 +543,7 @@ export const translations = {
       bingo: 'Bingo',
       neighborhood: 'Consejos Locales',
       glossary: 'Glosario',
+      directory: 'Directorio',
       volunteer: 'Voluntario',
     },
     cultureGuide: {
@@ -545,6 +638,28 @@ export const translations = {
       views: 'vistas',
       messagePlaceholder: 'Comparte por qué amas la biblioteca...',
     },
+    directory: {
+      title: 'Directorio y Estadísticas de Bibliotecas',
+      totalLibraries: 'Bibliotecas en Canadá',
+      provincesServed: 'Provincias y Territorios',
+      byType: 'Por Tipo',
+      searchPlaceholder: 'Buscar por nombre, ciudad o región...',
+      selectProvince: 'Seleccionar Provincia',
+      selectType: 'Seleccionar Tipo',
+      allProvinces: 'Todas las Provincias',
+      allTypes: 'Todos los Tipos',
+      typePublic: 'Biblioteca Pública',
+      typePrivate: 'Biblioteca Académica',
+      typeLittle: 'Pequeña Biblioteca Gratuita',
+      showingResults: 'Mostrando {count} bibliotecas',
+      listView: 'Lista',
+      mapView: 'Mapa',
+      directions: 'Direcciones',
+      visit: 'Sitio Web',
+      noResults: 'No se encontraron bibliotecas',
+      tryDifferentFilters: 'Intenta ajustar tus filtros',
+      legend: 'Leyenda',
+    },
   },
 } as const
 
@@ -553,7 +668,7 @@ export type NestedTranslationKey<T> = T extends object
   ? { [K in keyof T]: `${K & string}${T[K] extends object ? `.${NestedTranslationKey<T[K]> & string}` : ''}` }[keyof T]
   : never
 
-export function getTranslation(lang: Language, key: string): string {
+export function getTranslation(lang: Language, key: string, params?: Record<string, any>): string {
   const keys = key.split('.')
   let value: any = translations[lang]
   
@@ -561,5 +676,13 @@ export function getTranslation(lang: Language, key: string): string {
     value = value?.[k]
   }
   
-  return value || key
+  let result = value || key
+  
+  if (params) {
+    Object.entries(params).forEach(([paramKey, paramValue]) => {
+      result = result.replace(`{${paramKey}}`, String(paramValue))
+    })
+  }
+  
+  return result
 }
