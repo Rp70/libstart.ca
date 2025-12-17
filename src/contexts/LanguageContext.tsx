@@ -1,6 +1,6 @@
-import { createContext, useContext, ReactNode, useEffect } from 'react'
+import { createContext, useContext, ReactNode, useEffect, useState } from 'react'
 import { useKV } from '@github/spark/hooks'
-import { Language, defaultLanguage, languages } from '@/lib/i18n'
+import { Language, defaultLanguage, languages, detectBrowserLanguage } from '@/lib/i18n'
 
 interface LanguageContextType {
   language: Language
@@ -11,7 +11,19 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useKV<Language>('app-language', defaultLanguage)
+  const [hasDetected, setHasDetected] = useKV<boolean>('language-auto-detected', false)
+  const [language, setLanguageKV] = useKV<Language>('app-language', defaultLanguage)
+  const [isReady, setIsReady] = useState(false)
+  
+  useEffect(() => {
+    if (!hasDetected) {
+      const detectedLang = detectBrowserLanguage()
+      setLanguageKV(detectedLang)
+      setHasDetected(true)
+    }
+    setIsReady(true)
+  }, [hasDetected, setLanguageKV, setHasDetected])
+
   const currentLang = language || defaultLanguage
   const dir = languages[currentLang].dir
 
@@ -19,6 +31,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = currentLang
     document.documentElement.dir = dir
   }, [currentLang, dir])
+
+  const setLanguage = (lang: Language) => {
+    setLanguageKV(lang)
+  }
+
+  if (!isReady) {
+    return null
+  }
 
   return (
     <LanguageContext.Provider value={{ language: currentLang, setLanguage, dir }}>

@@ -62,11 +62,11 @@ A welcoming digital companion for newcomers to Canada that demystifies library c
 - Success criteria: Profile generation is simple (3 inputs max); QR codes are downloadable; tracking shows view counts without personal data
 
 **Multilingual Support**
-- Functionality: Complete interface translation system supporting English, Punjabi, Mandarin, Arabic, and Spanish
-- Purpose: Makes the library guide accessible to top newcomer language communities in Canada
-- Trigger: User selects language from dropdown in header
-- Progression: Click language selector → Select language from list → Interface updates to chosen language → Language preference persists between sessions
-- Success criteria: All UI text translates properly; RTL support works for Arabic; fonts display correctly for all scripts; language preference saves to user's device
+- Functionality: Complete interface translation system supporting English, Punjabi, Mandarin, Arabic, and Spanish with automatic browser language detection
+- Purpose: Makes the library guide accessible to top newcomer language communities in Canada, automatically presenting content in their preferred language
+- Trigger: App loads for the first time (automatic detection) OR user manually selects language from dropdown in header
+- Progression: First visit → Detect browser language → Set app language automatically → User can override via language selector → Language preference persists between sessions
+- Success criteria: All UI text translates properly; RTL support works for Arabic; fonts display correctly for all scripts; language preference saves to user's device; browser language is detected on first visit and set automatically
 
 ## Edge Case Handling
 - **Empty Bingo State**: Show encouraging message with suggestions for first activities to try
@@ -74,7 +74,8 @@ A welcoming digital companion for newcomers to Canada that demystifies library c
 - **Broken QR Code Link**: Redirect to main app homepage with welcome message
 - **Long Volunteer Names**: Truncate gracefully in profile cards with full name in tooltip
 - **Missing Tour Images**: Use colorful placeholder graphics that maintain visual rhythm
-- **Unsupported Language**: Default to English if browser language not in supported list
+- **Unsupported Browser Language**: Default to English if detected browser language not in supported list
+- **Multiple Browser Languages**: Check navigator.languages array in order of preference to find best match
 - **RTL Layout Issues**: Properly reverse flex directions and text alignment for Arabic
 - **Font Loading Failures**: Fallback to system fonts that support multilingual characters
 
