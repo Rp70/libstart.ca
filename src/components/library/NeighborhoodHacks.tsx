@@ -1,6 +1,7 @@
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Coffee, Bus, MapTrifold } from '@phosphor-icons/react'
+import { useTranslation } from '@/hooks/use-translation'
 
 type LocalTip = {
   category: string
@@ -85,12 +86,14 @@ const localTips: LocalTip[] = [
 ]
 
 export function NeighborhoodHacks() {
+  const { t } = useTranslation()
+
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold mb-3">Neighborhood Hacks</h2>
+        <h2 className="text-3xl font-bold mb-3">{t('neighborhood.title')}</h2>
         <p className="text-muted-foreground text-lg">
-          Hyper-local tips for getting to and around your library
+          {t('neighborhood.subtitle')}
         </p>
       </div>
 

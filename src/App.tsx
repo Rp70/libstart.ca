@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import { useTranslation } from '@/hooks/use-translation'
+import { LanguageSelector } from '@/components/library/LanguageSelector'
 import { CultureGuide } from '@/components/library/CultureGuide'
 import { VisualTours } from '@/components/library/VisualTours'
 import { HiddenMenu } from '@/components/library/HiddenMenu'
@@ -17,19 +20,25 @@ import {
   UserCircle 
 } from '@phosphor-icons/react'
 
-function App() {
+function AppContent() {
   const [activeTab, setActiveTab] = useState('culture')
+  const { t } = useTranslation()
 
   return (
     <div className="min-h-screen bg-background">
       <header className="bg-primary text-primary-foreground py-6 px-6 md:px-8 shadow-lg">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
-            Your Library Companion
-          </h1>
-          <p className="text-primary-foreground/90 text-base md:text-lg">
-            A friendly guide for newcomers to Canadian libraries
-          </p>
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+                {t('app.title')}
+              </h1>
+              <p className="text-primary-foreground/90 text-base md:text-lg">
+                {t('app.subtitle')}
+              </p>
+            </div>
+            <LanguageSelector />
+          </div>
         </div>
       </header>
 
@@ -41,49 +50,49 @@ function App() {
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               <BookOpen size={20} />
-              <span className="text-xs md:text-sm">Culture</span>
+              <span className="text-xs md:text-sm">{t('navigation.culture')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="tours"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               <Camera size={20} />
-              <span className="text-xs md:text-sm">Tours</span>
+              <span className="text-xs md:text-sm">{t('navigation.tours')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="menu"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               <Lightbulb size={20} />
-              <span className="text-xs md:text-sm">Hidden Menu</span>
+              <span className="text-xs md:text-sm">{t('navigation.menu')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="bingo"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
             >
               <CheckSquare size={20} />
-              <span className="text-xs md:text-sm">Bingo</span>
+              <span className="text-xs md:text-sm">{t('navigation.bingo')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="neighborhood"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               <MapPin size={20} />
-              <span className="text-xs md:text-sm">Local Tips</span>
+              <span className="text-xs md:text-sm">{t('navigation.neighborhood')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="glossary"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               <ChatCircleDots size={20} />
-              <span className="text-xs md:text-sm">Glossary</span>
+              <span className="text-xs md:text-sm">{t('navigation.glossary')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="volunteer"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
             >
               <UserCircle size={20} />
-              <span className="text-xs md:text-sm">Volunteer</span>
+              <span className="text-xs md:text-sm">{t('navigation.volunteer')}</span>
             </TabsTrigger>
           </TabsList>
 
@@ -120,14 +129,22 @@ function App() {
       <footer className="bg-muted mt-16 py-8 px-6 md:px-8">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
           <p className="text-sm">
-            Created with care for newcomers to Canada 🇨🇦
+            {t('app.footer')}
           </p>
           <p className="text-xs mt-2">
-            This is an unofficial guide. For official information, visit your local Fraser Valley Regional Library branch.
+            {t('app.footerDisclaimer')}
           </p>
         </div>
       </footer>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   )
 }
 

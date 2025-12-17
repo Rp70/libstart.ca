@@ -1,6 +1,7 @@
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Package, GraduationCap, Sparkle } from '@phosphor-icons/react'
+import { useTranslation } from '@/hooks/use-translation'
 
 type MenuItem = {
   item: string
@@ -123,12 +124,14 @@ const menuLists: MenuList[] = [
 ]
 
 export function HiddenMenu() {
+  const { t } = useTranslation()
+
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold mb-3">The Hidden Menu</h2>
+        <h2 className="text-3xl font-bold mb-3">{t('hiddenMenu.title')}</h2>
         <p className="text-muted-foreground text-lg">
-          Top 5 lists of services you probably didn't know existed
+          {t('hiddenMenu.subtitle')}
         </p>
       </div>
 

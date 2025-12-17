@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Briefcase, Users, Clock } from '@phosphor-icons/react'
+import { useTranslation } from '@/hooks/use-translation'
 
 type Tour = {
   id: string
@@ -105,13 +106,14 @@ const tours: Tour[] = [
 export function VisualTours() {
   const [selectedTour, setSelectedTour] = useState<string | null>(null)
   const activeTour = tours.find(t => t.id === selectedTour)
+  const { t } = useTranslation()
 
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold mb-3">A Day in the Life</h2>
+        <h2 className="text-3xl font-bold mb-3">{t('tours.title')}</h2>
         <p className="text-muted-foreground text-lg">
-          See how real people use the library every day
+          {t('tours.subtitle')}
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 # Planning Guide
 
-A welcoming digital companion for newcomers to Canada that demystifies library culture and services through relatable stories, visual guides, and gamified experiences.
+A welcoming digital companion for newcomers to Canada that demystifies library culture and services through relatable stories, visual guides, and gamified experiences, now available in multiple languages to serve diverse communities.
 
 **Experience Qualities**: 
 1. **Friendly** - Uses warm, approachable language that makes newcomers feel welcomed rather than lectured, with clear explanations that respect their experiences
@@ -8,7 +8,7 @@ A welcoming digital companion for newcomers to Canada that demystifies library c
 3. **Empowering** - Transforms cultural confusion into confidence by addressing real fears (privacy, noise, unspoken rules) and connecting users to practical community resources
 
 **Complexity Level**: Light Application (multiple features with basic state)
-  - This app has multiple distinct sections (culture guide, visual tours, curated lists, bingo, glossary, volunteer profiles) with interactive elements and state management for the bingo game, volunteer profiles, and tracking, but doesn't require complex routing or heavy data processing.
+  - This app has multiple distinct sections (culture guide, visual tours, curated lists, bingo, glossary, volunteer profiles) with interactive elements and state management for the bingo game, volunteer profiles, tracking, and multilingual support, but doesn't require complex routing or heavy data processing.
 
 ## Essential Features
 
@@ -61,12 +61,22 @@ A welcoming digital companion for newcomers to Canada that demystifies library c
 - Progression: Upload photo → Enter name and message → Generate profile → Get QR code and shareable link → View visit tracking stats
 - Success criteria: Profile generation is simple (3 inputs max); QR codes are downloadable; tracking shows view counts without personal data
 
+**Multilingual Support**
+- Functionality: Complete interface translation system supporting English, Punjabi, Mandarin, Arabic, and Spanish
+- Purpose: Makes the library guide accessible to top newcomer language communities in Canada
+- Trigger: User selects language from dropdown in header
+- Progression: Click language selector → Select language from list → Interface updates to chosen language → Language preference persists between sessions
+- Success criteria: All UI text translates properly; RTL support works for Arabic; fonts display correctly for all scripts; language preference saves to user's device
+
 ## Edge Case Handling
 - **Empty Bingo State**: Show encouraging message with suggestions for first activities to try
 - **No Volunteer Photo**: Display friendly placeholder avatar with initials or library icon
 - **Broken QR Code Link**: Redirect to main app homepage with welcome message
 - **Long Volunteer Names**: Truncate gracefully in profile cards with full name in tooltip
 - **Missing Tour Images**: Use colorful placeholder graphics that maintain visual rhythm
+- **Unsupported Language**: Default to English if browser language not in supported list
+- **RTL Layout Issues**: Properly reverse flex directions and text alignment for Arabic
+- **Font Loading Failures**: Fallback to system fonts that support multilingual characters
 
 ## Design Direction
 The design should evoke warmth, accessibility, and cultural bridge-building. It should feel like a friendly guide written by someone who understands the newcomer experience—not institutional or bureaucratic. Visual elements should celebrate multiculturalism while maintaining clarity and simplicity.

@@ -11,6 +11,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { QRCodeSVG } from 'qrcode.react'
 import { UserCircle, QrCode, ShareNetwork, DownloadSimple, Copy, Eye, Trash } from '@phosphor-icons/react'
 import { toast } from 'sonner'
+import { useTranslation } from '@/hooks/use-translation'
 
 type VolunteerProfile = {
   id: string
@@ -159,12 +160,14 @@ export function VolunteerProfile() {
       .slice(0, 2)
   }
 
+  const { t } = useTranslation()
+
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold mb-3">Library Champion Profiles</h2>
+        <h2 className="text-3xl font-bold mb-3">{t('volunteer.title')}</h2>
         <p className="text-muted-foreground text-lg">
-          Create your volunteer profile and share the library guide with newcomers
+          {t('volunteer.subtitle')}
         </p>
       </div>
 

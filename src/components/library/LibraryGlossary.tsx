@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { MagnifyingGlass } from '@phosphor-icons/react'
+import { useTranslation } from '@/hooks/use-translation'
 
 type GlossaryTerm = {
   term: string
@@ -100,6 +101,7 @@ const glossaryTerms: GlossaryTerm[] = [
 
 export function LibraryGlossary() {
   const [searchTerm, setSearchTerm] = useState('')
+  const { t } = useTranslation()
 
   const filteredTerms = glossaryTerms.filter(term =>
     term.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -110,9 +112,9 @@ export function LibraryGlossary() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold mb-3">Library Glossary</h2>
+        <h2 className="text-3xl font-bold mb-3">{t('glossary.title')}</h2>
         <p className="text-muted-foreground text-lg">
-          Library terms translated into plain language
+          {t('glossary.subtitle')}
         </p>
       </div>
 
@@ -124,7 +126,7 @@ export function LibraryGlossary() {
           />
           <Input
             type="text"
-            placeholder="Search for a term..."
+            placeholder={t('glossary.search')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
@@ -135,7 +137,7 @@ export function LibraryGlossary() {
       {filteredTerms.length === 0 ? (
         <Card className="p-8 text-center">
           <p className="text-muted-foreground">
-            No terms found matching "{searchTerm}"
+            {t('glossary.noResults')}
           </p>
         </Card>
       ) : (

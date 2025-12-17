@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { Check, DownloadSimple, Trophy } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
+import { useTranslation } from '@/hooks/use-translation'
 
 type BingoSquare = {
   id: string
@@ -134,13 +135,14 @@ export function LibraryBingo() {
 
   const progress = ((completedSquares || []).length / 25) * 100
   const hasWon = (completedSquares || []).length >= 25
+  const { t } = useTranslation()
 
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold mb-3">Newcomer Library Bingo</h2>
+        <h2 className="text-3xl font-bold mb-3">{t('bingo.title')}</h2>
         <p className="text-muted-foreground text-lg">
-          Try these activities and mark off your progress!
+          {t('bingo.subtitle')}
         </p>
       </div>
 
@@ -148,9 +150,9 @@ export function LibraryBingo() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold">Your Progress</h3>
+              <h3 className="text-lg font-semibold">{t('bingo.progress')}</h3>
               <p className="text-sm text-muted-foreground">
-                {(completedSquares || []).length} of 25 activities completed
+                {(completedSquares || []).length} of 25 {t('bingo.completed')}
               </p>
             </div>
             {hasWon && (
