@@ -187,92 +187,106 @@ export function LibraryDirectory() {
         {view === 'list' ? (
           <div className="space-y-4">
             {filteredLibraries.map((lib) => (
-              <Card key={lib.id} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex flex-col md:flex-row md:items-start gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-start gap-3 mb-3">
-                      <div className="mt-1 text-primary">
-                        {getTypeIcon(lib.type)}
-                      </div>
+              <Card key={lib.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="flex flex-col md:flex-row">
+                  {lib.photoUrl && (
+                    <div className="w-full md:w-48 h-48 md:h-auto flex-shrink-0 bg-muted">
+                      <img 
+                        src={lib.photoUrl} 
+                        alt={lib.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 p-6">
+                    <div className="flex flex-col md:flex-row md:items-start gap-4">
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold mb-1">{lib.name}</h3>
-                        <div className="flex flex-wrap gap-2 mb-2">
-                          <Badge variant="secondary">
-                            {provinceNames[lib.province]}
-                          </Badge>
-                          <Badge variant="outline">
-                            {getTypeLabel(lib.type)}
-                          </Badge>
-                          <Badge variant="outline" className="text-xs">
-                            {lib.region}
-                          </Badge>
+                        <div className="flex items-start gap-3 mb-3">
+                          <div className="mt-1 text-primary">
+                            {getTypeIcon(lib.type)}
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-semibold mb-1">{lib.name}</h3>
+                            <div className="flex flex-wrap gap-2 mb-2">
+                              <Badge variant="secondary">
+                                {provinceNames[lib.province]}
+                              </Badge>
+                              <Badge variant="outline">
+                                {getTypeLabel(lib.type)}
+                              </Badge>
+                              <Badge variant="outline" className="text-xs">
+                                {lib.region}
+                              </Badge>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-2 text-sm">
+                          <div className="flex items-start gap-2 text-muted-foreground">
+                            <MapPinIcon size={16} className="mt-0.5 flex-shrink-0" />
+                            <span>{lib.address}, {lib.city}, {lib.postalCode}</span>
+                          </div>
+                          
+                          {lib.phone !== 'N/A' && (
+                            <div className="flex items-center gap-2 text-muted-foreground">
+                              <Phone size={16} className="flex-shrink-0" />
+                              <a href={`tel:${lib.phone}`} className="hover:text-primary transition-colors">
+                                {lib.phone}
+                              </a>
+                            </div>
+                          )}
+                          
+                          <div className="flex items-center gap-2 text-muted-foreground">
+                            <Globe size={16} className="flex-shrink-0" />
+                            <a 
+                              href={lib.website} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="hover:text-primary transition-colors truncate"
+                            >
+                              {lib.website}
+                            </a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-start gap-2 text-muted-foreground">
-                        <MapPinIcon size={16} className="mt-0.5 flex-shrink-0" />
-                        <span>{lib.address}, {lib.city}, {lib.postalCode}</span>
-                      </div>
                       
-                      {lib.phone !== 'N/A' && (
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Phone size={16} className="flex-shrink-0" />
-                          <a href={`tel:${lib.phone}`} className="hover:text-primary transition-colors">
-                            {lib.phone}
-                          </a>
-                        </div>
-                      )}
-                      
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Globe size={16} className="flex-shrink-0" />
-                        <a 
-                          href={lib.website} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="hover:text-primary transition-colors truncate"
+                      <div className="flex md:flex-col gap-2">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          asChild
+                          className="flex-1 md:flex-none"
                         >
-                          {lib.website}
-                        </a>
+                          <a 
+                            href={getGoogleMapsUrl(lib)} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="gap-2"
+                          >
+                            <MapPinIcon size={16} />
+                            {t('directory.directions')}
+                          </a>
+                        </Button>
+                        
+                        <Button 
+                          variant="default" 
+                          size="sm"
+                          asChild
+                          className="flex-1 md:flex-none"
+                        >
+                          <a 
+                            href={lib.website} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="gap-2"
+                          >
+                            <Globe size={16} />
+                            {t('directory.visit')}
+                          </a>
+                        </Button>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="flex md:flex-col gap-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      asChild
-                      className="flex-1 md:flex-none"
-                    >
-                      <a 
-                        href={getGoogleMapsUrl(lib)} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="gap-2"
-                      >
-                        <MapPinIcon size={16} />
-                        {t('directory.directions')}
-                      </a>
-                    </Button>
-                    
-                    <Button 
-                      variant="default" 
-                      size="sm"
-                      asChild
-                      className="flex-1 md:flex-none"
-                    >
-                      <a 
-                        href={lib.website} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="gap-2"
-                      >
-                        <Globe size={16} />
-                        {t('directory.visit')}
-                      </a>
-                    </Button>
                   </div>
                 </div>
               </Card>

@@ -4,6 +4,12 @@ export type Province =
   | 'AB' | 'BC' | 'MB' | 'NB' | 'NL' | 'NS' | 'NT' | 'NU' 
   | 'ON' | 'PE' | 'QC' | 'SK' | 'YT'
 
+export type LibraryService = 
+  | 'wifi' | 'printing' | 'computers' | 'meeting-rooms' | 'study-rooms'
+  | 'programs' | 'children' | 'digital-resources' | 'makerspace'
+  | '3d-printing' | 'streaming' | 'language-learning' | 'job-search'
+  | 'accessibility' | 'parking' | 'cafe' | 'museum-passes'
+
 export interface Library {
   id: string
   name: string
@@ -17,6 +23,8 @@ export interface Library {
   website: string
   latitude: number
   longitude: number
+  photoUrl?: string
+  services?: LibraryService[]
 }
 
 export const provinceNames: Record<Province, string> = {
@@ -48,7 +56,9 @@ export const libraries: Library[] = [
     phone: '604-859-7814',
     website: 'https://www.fvrl.bc.ca/branches/abbotsford',
     latitude: 49.0504,
-    longitude: -122.2988
+    longitude: -122.2988,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipMYZKQvXgZx7R5JQmvBQfqNmZxqYZQWjNxHqQmX=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'programs', 'children', 'digital-resources', 'accessibility', 'parking']
   },
   {
     id: 'fvrl-agassiz',
@@ -62,7 +72,9 @@ export const libraries: Library[] = [
     phone: '604-796-9756',
     website: 'https://www.fvrl.bc.ca/branches/agassiz',
     latitude: 49.2378,
-    longitude: -121.7617
+    longitude: -121.7617,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipPRHvkZ5hGJQmCLwK7BpZcFXvGqxz8JnqVv4qpQ=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'programs', 'children', 'digital-resources', 'accessibility']
   },
   {
     id: 'fvrl-chilliwack',
@@ -76,7 +88,9 @@ export const libraries: Library[] = [
     phone: '604-792-4450',
     website: 'https://www.fvrl.bc.ca/branches/chilliwack',
     latitude: 49.1577,
-    longitude: -121.9509
+    longitude: -121.9509,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipN8QZBqXvH5DjF8FhT7ZQmVVxPJZhqFQNVBZ8uK=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'makerspace', 'accessibility', 'parking']
   },
   {
     id: 'vpl-central',
@@ -90,7 +104,9 @@ export const libraries: Library[] = [
     phone: '604-331-3603',
     website: 'https://www.vpl.ca/branches/central-library',
     latitude: 49.2799,
-    longitude: -123.1158
+    longitude: -123.1158,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipOQvQbvB8HQqYgKMvE9NQeT7qKVxEfHqVGKqQaE=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'makerspace', '3d-printing', 'streaming', 'language-learning', 'job-search', 'accessibility', 'cafe', 'museum-passes']
   },
   {
     id: 'tpl-reference',
@@ -104,7 +120,9 @@ export const libraries: Library[] = [
     phone: '416-395-5577',
     website: 'https://www.torontopubliclibrary.ca/detail.jsp?Entt=RDMDC&R=LIB002',
     latitude: 43.6719,
-    longitude: -79.3863
+    longitude: -79.3863,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNGJ8vZWEJ3vHXGGqKQJJVNqMvVJyEqQNWxqKZQ=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'makerspace', '3d-printing', 'streaming', 'language-learning', 'job-search', 'accessibility', 'cafe', 'museum-passes']
   },
   {
     id: 'epl-stanley-milner',
@@ -118,7 +136,9 @@ export const libraries: Library[] = [
     phone: '780-496-7000',
     website: 'https://www.epl.ca/stanley-milner/',
     latitude: 53.5444,
-    longitude: -113.4909
+    longitude: -113.4909,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNqGQb7QJvqQvKBpJjGJQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'makerspace', '3d-printing', 'streaming', 'language-learning', 'job-search', 'accessibility', 'parking', 'museum-passes']
   },
   {
     id: 'cpl-central',
@@ -132,7 +152,9 @@ export const libraries: Library[] = [
     phone: '403-260-2600',
     website: 'https://calgarylibrary.ca/visit/our-locations/central-library/',
     latitude: 51.0447,
-    longitude: -114.0545
+    longitude: -114.0545,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipP9qMlVJZNQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'makerspace', '3d-printing', 'streaming', 'language-learning', 'job-search', 'accessibility', 'cafe', 'museum-passes']
   },
   {
     id: 'bpl-millennium',
@@ -146,7 +168,9 @@ export const libraries: Library[] = [
     phone: '514-873-1100',
     website: 'https://www.banq.qc.ca/',
     latitude: 45.5155,
-    longitude: -73.5615
+    longitude: -73.5615,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipMVZQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'streaming', 'language-learning', 'accessibility', 'cafe']
   },
   {
     id: 'wpl-central',
@@ -160,7 +184,9 @@ export const libraries: Library[] = [
     phone: '204-986-6450',
     website: 'https://wpl.winnipeg.ca/library/branches/millennium.asp',
     latitude: 49.8880,
-    longitude: -97.1395
+    longitude: -97.1395,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNVJqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'language-learning', 'job-search', 'accessibility', 'parking', 'museum-passes']
   },
   {
     id: 'hpl-central',
@@ -174,7 +200,9 @@ export const libraries: Library[] = [
     phone: '902-490-5700',
     website: 'https://www.halifaxpubliclibraries.ca/locations/central-library/',
     latitude: 44.6434,
-    longitude: -63.5797
+    longitude: -63.5797,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipOWqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'makerspace', '3d-printing', 'streaming', 'language-learning', 'job-search', 'accessibility', 'cafe', 'museum-passes']
   },
   {
     id: 'opl-main',
@@ -188,7 +216,9 @@ export const libraries: Library[] = [
     phone: '613-580-2940',
     website: 'https://biblioottawalibrary.ca/en/main',
     latitude: 45.4215,
-    longitude: -75.6972
+    longitude: -75.6972,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipPQJqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'makerspace', 'streaming', 'language-learning', 'job-search', 'accessibility', 'museum-passes']
   },
   {
     id: 'spl-central',
@@ -202,7 +232,9 @@ export const libraries: Library[] = [
     phone: '306-975-7558',
     website: 'https://saskatoonlibrary.ca/locations/frances-morrison-central-library',
     latitude: 52.1279,
-    longitude: -106.6702
+    longitude: -106.6702,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNFqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'study-rooms', 'programs', 'children', 'digital-resources', 'language-learning', 'job-search', 'accessibility', 'parking']
   },
   {
     id: 'rpl-central',
@@ -216,7 +248,9 @@ export const libraries: Library[] = [
     phone: '306-777-6000',
     website: 'https://www.reginalibrary.ca/visit/locations/central',
     latitude: 50.4501,
-    longitude: -104.6178
+    longitude: -104.6178,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipMRqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'meeting-rooms', 'programs', 'children', 'digital-resources', 'language-learning', 'job-search', 'accessibility', 'parking']
   },
   {
     id: 'little-vancouver-1',
@@ -230,7 +264,8 @@ export const libraries: Library[] = [
     phone: 'N/A',
     website: 'https://littlefreelibrary.org/',
     latitude: 49.2734,
-    longitude: -123.1534
+    longitude: -123.1534,
+    services: []
   },
   {
     id: 'little-toronto-1',
@@ -244,7 +279,8 @@ export const libraries: Library[] = [
     phone: 'N/A',
     website: 'https://littlefreelibrary.org/',
     latitude: 43.6532,
-    longitude: -79.4636
+    longitude: -79.4636,
+    services: []
   },
   {
     id: 'uvic-library',
@@ -258,7 +294,9 @@ export const libraries: Library[] = [
     phone: '250-721-6673',
     website: 'https://www.uvic.ca/library/',
     latitude: 48.4634,
-    longitude: -123.3117
+    longitude: -123.3117,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipOvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQ=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'study-rooms', 'digital-resources', 'accessibility']
   },
   {
     id: 'ubc-library',
@@ -272,7 +310,9 @@ export const libraries: Library[] = [
     phone: '604-822-3200',
     website: 'https://www.library.ubc.ca/',
     latitude: 49.2676,
-    longitude: -123.2532
+    longitude: -123.2532,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipMqGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQ=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'study-rooms', 'digital-resources', 'makerspace', 'accessibility', 'cafe']
   },
   {
     id: 'mcgill-library',
@@ -286,7 +326,9 @@ export const libraries: Library[] = [
     phone: '514-398-4734',
     website: 'https://www.mcgill.ca/library/',
     latitude: 45.5048,
-    longitude: -73.5772
+    longitude: -73.5772,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNJqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'study-rooms', 'digital-resources', 'accessibility']
   },
   {
     id: 'uoft-robarts',
@@ -300,7 +342,9 @@ export const libraries: Library[] = [
     phone: '416-978-7344',
     website: 'https://onesearch.library.utoronto.ca/robarts',
     latitude: 43.6644,
-    longitude: -79.3997
+    longitude: -79.3997,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipPRqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'study-rooms', 'digital-resources', 'accessibility', 'cafe']
   },
   {
     id: 'vpl-hastings',
@@ -314,7 +358,9 @@ export const libraries: Library[] = [
     phone: '604-665-3970',
     website: 'https://www.vpl.ca/branches/hastings-branch',
     latitude: 49.2427,
-    longitude: -123.0614
+    longitude: -123.0614,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQ=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'programs', 'children', 'digital-resources', 'accessibility', 'parking']
   },
   {
     id: 'vpl-kerrisdale',
@@ -328,7 +374,9 @@ export const libraries: Library[] = [
     phone: '604-665-3970',
     website: 'https://www.vpl.ca/branches/kerrisdale-branch',
     latitude: 49.2334,
-    longitude: -123.1598
+    longitude: -123.1598,
+    photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipOKqQvGJqQvGJqQvGJqQvGJqQvGJqQvGJqQvG=s1600-w400',
+    services: ['wifi', 'printing', 'computers', 'programs', 'children', 'digital-resources', 'accessibility']
   },
   {
     id: 'bpl-westmount',

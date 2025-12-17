@@ -16,6 +16,7 @@ export const translations = {
       neighborhood: 'Local Tips',
       glossary: 'Glossary',
       directory: 'Directory',
+      services: 'Services',
       volunteer: 'Volunteer',
     },
     cultureGuide: {
@@ -132,6 +133,86 @@ export const translations = {
       tryDifferentFilters: 'Try adjusting your filters',
       legend: 'Legend',
     },
+    services: {
+      title: 'Library Services Guide',
+      subtitle: 'Discover what Canadian libraries offer - most services are completely free!',
+      mostLibraries: 'Available at Most Libraries',
+      mostLibrariesDescription: 'These services are standard at nearly all Canadian public libraries',
+      someLibraries: 'Available at Select Libraries',
+      someLibrariesDescription: 'These specialized services are offered at larger or well-funded libraries',
+      tipTitle: 'Pro Tips for Newcomers',
+      tip1: 'Call ahead or check the library website to confirm specific services are available',
+      tip2: 'Most services are free with a library card - get yours on your first visit!',
+      tip3: 'Ask librarians for help - they\'re trained to assist you and answer questions',
+      wifi: {
+        name: 'Free Wi-Fi',
+        description: 'High-speed internet access throughout the library - no time limits'
+      },
+      printing: {
+        name: 'Printing & Scanning',
+        description: 'Print documents, scan files, and make photocopies (small fee per page)'
+      },
+      computers: {
+        name: 'Public Computers',
+        description: 'Free computer access with software for work, study, and browsing'
+      },
+      meetingRooms: {
+        name: 'Meeting Rooms',
+        description: 'Bookable group study rooms for teams, tutoring, or community meetings'
+      },
+      studyRooms: {
+        name: 'Study Rooms',
+        description: 'Quiet private spaces for focused work or exam preparation'
+      },
+      programs: {
+        name: 'Free Programs',
+        description: 'Workshops, classes, book clubs, and community events for all ages'
+      },
+      children: {
+        name: 'Children\'s Programs',
+        description: 'Storytime, crafts, homework help, and play areas for kids'
+      },
+      digitalResources: {
+        name: 'Digital Resources',
+        description: 'E-books, audiobooks, magazines, and online databases you can access from home'
+      },
+      accessibility: {
+        name: 'Accessibility Services',
+        description: 'Wheelchair access, assistive technology, and accommodations for all abilities'
+      },
+      makerspace: {
+        name: 'Makerspace',
+        description: 'Creative spaces with tools for building, crafting, and hands-on learning'
+      },
+      '3dPrinting': {
+        name: '3D Printing',
+        description: 'Access to 3D printers for prototyping and creative projects'
+      },
+      streaming: {
+        name: 'Streaming Services',
+        description: 'Free access to movies, TV shows, and music through library streaming platforms'
+      },
+      languageLearning: {
+        name: 'Language Learning',
+        description: 'Tools like Mango Languages and conversation clubs to improve English/French'
+      },
+      jobSearch: {
+        name: 'Job Search Help',
+        description: 'Resume writing, interview prep, and career resources'
+      },
+      parking: {
+        name: 'Parking',
+        description: 'Free or affordable parking near the library entrance'
+      },
+      cafe: {
+        name: 'Café',
+        description: 'Coffee shop or vending machines for snacks and drinks'
+      },
+      museumPasses: {
+        name: 'Museum Passes',
+        description: 'Borrow free passes to local museums, galleries, and attractions'
+      },
+    },
   },
   pa: {
     app: {
@@ -148,6 +229,7 @@ export const translations = {
       neighborhood: 'ਸਥਾਨਕ ਸੁਝਾਅ',
       glossary: 'ਸ਼ਬਦਾਵਲੀ',
       directory: 'ਡਾਇਰੈਕਟਰੀ',
+      services: 'ਸੇਵਾਵਾਂ',
       volunteer: 'ਵਲੰਟੀਅਰ',
     },
     cultureGuide: {
@@ -264,6 +346,35 @@ export const translations = {
       tryDifferentFilters: 'ਆਪਣੇ ਫਿਲਟਰਾਂ ਨੂੰ ਵਿਵਸਥਿਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ',
       legend: 'ਕਥਾ',
     },
+    services: {
+      title: 'ਲਾਇਬ੍ਰੇਰੀ ਸੇਵਾਵਾਂ ਗਾਈਡ',
+      subtitle: 'ਖੋਜੋ ਕਿ ਕੈਨੇਡੀਅਨ ਲਾਇਬ੍ਰੇਰੀਆਂ ਕੀ ਪੇਸ਼ਕਸ਼ ਕਰਦੀਆਂ ਹਨ',
+      mostLibraries: 'ਜ਼ਿਆਦਾਤਰ ਲਾਇਬ੍ਰੇਰੀਆਂ \'ਤੇ',
+      mostLibrariesDescription: 'ਮਿਆਰੀ ਸੇਵਾਵਾਂ',
+      someLibraries: 'ਚੁਣਿੰਦਾ ਲਾਇਬ੍ਰੇਰੀਆਂ \'ਤੇ',
+      someLibrariesDescription: 'ਵਿਸ਼ੇਸ਼ ਸੇਵਾਵਾਂ',
+      tipTitle: 'ਸੁਝਾਅ',
+      tip1: 'ਪਹਿਲਾਂ ਕਾਲ ਕਰੋ',
+      tip2: 'ਮੁਫ਼ਤ ਕਾਰਡ ਪ੍ਰਾਪਤ ਕਰੋ',
+      tip3: 'ਲਾਇਬ੍ਰੇਰੀਅਨਾਂ ਤੋਂ ਪੁੱਛੋ',
+      wifi: { name: 'ਮੁਫ਼ਤ Wi-Fi', description: 'ਹਾਈ-ਸਪੀਡ ਇੰਟਰਨੈੱਟ' },
+      printing: { name: 'ਪ੍ਰਿੰਟਿੰਗ', description: 'ਦਸਤਾਵੇਜ਼ ਪ੍ਰਿੰਟ ਕਰੋ' },
+      computers: { name: 'ਕੰਪਿਊਟਰ', description: 'ਮੁਫ਼ਤ ਕੰਪਿਊਟਰ' },
+      meetingRooms: { name: 'ਮੀਟਿੰਗ ਰੂਮ', description: 'ਗਰੁੱਪ ਅਧਿਐਨ ਕਮਰੇ' },
+      studyRooms: { name: 'ਅਧਿਐਨ ਕਮਰੇ', description: 'ਸ਼ਾਂਤ ਥਾਂਵਾਂ' },
+      programs: { name: 'ਪ੍ਰੋਗਰਾਮ', description: 'ਵਰਕਸ਼ਾਪਾਂ ਅਤੇ ਕਲਾਸਾਂ' },
+      children: { name: 'ਬੱਚਿਆਂ ਦੇ ਪ੍ਰੋਗਰਾਮ', description: 'ਕਹਾਣੀਆਂ ਅਤੇ ਖੇਡਾਂ' },
+      digitalResources: { name: 'ਡਿਜੀਟਲ ਸਰੋਤ', description: 'ਈ-ਬੁੱਕਸ ਅਤੇ ਔਨਲਾਈਨ' },
+      accessibility: { name: 'ਪਹੁੰਚਯੋਗਤਾ', description: 'ਸਾਰਿਆਂ ਲਈ ਪਹੁੰਚ' },
+      makerspace: { name: 'ਮੇਕਰਸਪੇਸ', description: 'ਰਚਨਾਤਮਕ ਥਾਂਵਾਂ' },
+      '3dPrinting': { name: '3D ਪ੍ਰਿੰਟਿੰਗ', description: '3D ਪ੍ਰਿੰਟਰ' },
+      streaming: { name: 'ਸਟ੍ਰੀਮਿੰਗ', description: 'ਫਿਲਮਾਂ ਅਤੇ ਸੰਗੀਤ' },
+      languageLearning: { name: 'ਭਾਸ਼ਾ', description: 'ਅੰਗਰੇਜ਼ੀ ਸਿੱਖੋ' },
+      jobSearch: { name: 'ਨੌਕਰੀ ਮਦਦ', description: 'ਰਿਜ਼ਿਊਮੇ ਅਤੇ ਇੰਟਰਵਿਊ' },
+      parking: { name: 'ਪਾਰਕਿੰਗ', description: 'ਮੁਫ਼ਤ ਜਾਂ ਕਿਫਾਇਤੀ' },
+      cafe: { name: 'ਕੈਫੇ', description: 'ਕੌਫੀ ਅਤੇ ਸਨੈਕਸ' },
+      museumPasses: { name: 'ਮਿਊਜ਼ੀਅਮ ਪਾਸ', description: 'ਮੁਫ਼ਤ ਦਾਖਲਾ' },
+    },
   },
   zh: {
     app: {
@@ -280,6 +391,7 @@ export const translations = {
       neighborhood: '本地提示',
       glossary: '词汇表',
       directory: '目录',
+      services: '服务',
       volunteer: '志愿者',
     },
     cultureGuide: {
@@ -396,6 +508,35 @@ export const translations = {
       tryDifferentFilters: '尝试调整您的过滤器',
       legend: '图例',
     },
+    services: {
+      title: '图书馆服务指南',
+      subtitle: '发现加拿大图书馆提供的服务',
+      mostLibraries: '大多数图书馆',
+      mostLibrariesDescription: '标准服务',
+      someLibraries: '部分图书馆',
+      someLibrariesDescription: '专业服务',
+      tipTitle: '建议',
+      tip1: '提前致电确认',
+      tip2: '获取免费图书馆卡',
+      tip3: '向图书管理员咨询',
+      wifi: { name: '免费Wi-Fi', description: '高速互联网' },
+      printing: { name: '打印', description: '打印文件' },
+      computers: { name: '电脑', description: '免费电脑' },
+      meetingRooms: { name: '会议室', description: '团体学习室' },
+      studyRooms: { name: '学习室', description: '安静空间' },
+      programs: { name: '项目', description: '研讨会和课程' },
+      children: { name: '儿童项目', description: '故事和游戏' },
+      digitalResources: { name: '数字资源', description: '电子书和在线' },
+      accessibility: { name: '无障碍', description: '所有人可访问' },
+      makerspace: { name: '创客空间', description: '创意空间' },
+      '3dPrinting': { name: '3D打印', description: '3D打印机' },
+      streaming: { name: '流媒体', description: '电影和音乐' },
+      languageLearning: { name: '语言', description: '学习英语' },
+      jobSearch: { name: '求职帮助', description: '简历和面试' },
+      parking: { name: '停车', description: '免费或实惠' },
+      cafe: { name: '咖啡馆', description: '咖啡和小吃' },
+      museumPasses: { name: '博物馆通行证', description: '免费入场' },
+    },
   },
   ar: {
     app: {
@@ -412,6 +553,7 @@ export const translations = {
       neighborhood: 'نصائح محلية',
       glossary: 'المسرد',
       directory: 'الدليل',
+      services: 'الخدمات',
       volunteer: 'متطوع',
     },
     cultureGuide: {
@@ -528,6 +670,35 @@ export const translations = {
       tryDifferentFilters: 'حاول ضبط الفلاتر الخاصة بك',
       legend: 'وسيلة الإيضاح',
     },
+    services: {
+      title: 'دليل خدمات المكتبة',
+      subtitle: 'اكتشف ما تقدمه المكتبات الكندية',
+      mostLibraries: 'معظم المكتبات',
+      mostLibrariesDescription: 'الخدمات القياسية',
+      someLibraries: 'بعض المكتبات',
+      someLibrariesDescription: 'خدمات متخصصة',
+      tipTitle: 'نصائح',
+      tip1: 'اتصل مسبقًا',
+      tip2: 'احصل على بطاقة مجانية',
+      tip3: 'اسأل أمناء المكتبات',
+      wifi: { name: 'واي فاي مجاني', description: 'إنترنت عالي السرعة' },
+      printing: { name: 'الطباعة', description: 'طباعة المستندات' },
+      computers: { name: 'أجهزة الكمبيوتر', description: 'أجهزة كمبيوتر مجانية' },
+      meetingRooms: { name: 'غرف الاجتماعات', description: 'غرف دراسة جماعية' },
+      studyRooms: { name: 'غرف الدراسة', description: 'مساحات هادئة' },
+      programs: { name: 'البرامج', description: 'ورش العمل والفصول' },
+      children: { name: 'برامج الأطفال', description: 'القصص والألعاب' },
+      digitalResources: { name: 'موارد رقمية', description: 'كتب إلكترونية وعبر الإنترنت' },
+      accessibility: { name: 'إمكانية الوصول', description: 'الوصول للجميع' },
+      makerspace: { name: 'مساحة الصانع', description: 'مساحات إبداعية' },
+      '3dPrinting': { name: 'الطباعة ثلاثية الأبعاد', description: 'طابعات ثلاثية الأبعاد' },
+      streaming: { name: 'البث', description: 'أفلام وموسيقى' },
+      languageLearning: { name: 'اللغة', description: 'تعلم الإنجليزية' },
+      jobSearch: { name: 'مساعدة البحث عن وظيفة', description: 'السيرة الذاتية والمقابلات' },
+      parking: { name: 'موقف سيارات', description: 'مجاني أو بأسعار معقولة' },
+      cafe: { name: 'مقهى', description: 'قهوة ووجبات خفيفة' },
+      museumPasses: { name: 'تصاريح المتحف', description: 'دخول مجاني' },
+    },
   },
   es: {
     app: {
@@ -544,6 +715,7 @@ export const translations = {
       neighborhood: 'Consejos Locales',
       glossary: 'Glosario',
       directory: 'Directorio',
+      services: 'Servicios',
       volunteer: 'Voluntario',
     },
     cultureGuide: {
@@ -659,6 +831,35 @@ export const translations = {
       noResults: 'No se encontraron bibliotecas',
       tryDifferentFilters: 'Intenta ajustar tus filtros',
       legend: 'Leyenda',
+    },
+    services: {
+      title: 'Guía de Servicios de la Biblioteca',
+      subtitle: 'Descubre lo que ofrecen las bibliotecas canadienses',
+      mostLibraries: 'La Mayoría de las Bibliotecas',
+      mostLibrariesDescription: 'Servicios estándar',
+      someLibraries: 'Algunas Bibliotecas',
+      someLibrariesDescription: 'Servicios especializados',
+      tipTitle: 'Consejos',
+      tip1: 'Llama con anticipación',
+      tip2: 'Obtén tarjeta gratis',
+      tip3: 'Pregunta a los bibliotecarios',
+      wifi: { name: 'Wi-Fi Gratis', description: 'Internet de alta velocidad' },
+      printing: { name: 'Impresión', description: 'Imprimir documentos' },
+      computers: { name: 'Computadoras', description: 'Computadoras gratis' },
+      meetingRooms: { name: 'Salas de Reuniones', description: 'Salas de estudio grupal' },
+      studyRooms: { name: 'Salas de Estudio', description: 'Espacios tranquilos' },
+      programs: { name: 'Programas', description: 'Talleres y clases' },
+      children: { name: 'Programas Infantiles', description: 'Cuentos y juegos' },
+      digitalResources: { name: 'Recursos Digitales', description: 'E-books y en línea' },
+      accessibility: { name: 'Accesibilidad', description: 'Acceso para todos' },
+      makerspace: { name: 'Espacio Maker', description: 'Espacios creativos' },
+      '3dPrinting': { name: 'Impresión 3D', description: 'Impresoras 3D' },
+      streaming: { name: 'Streaming', description: 'Películas y música' },
+      languageLearning: { name: 'Idiomas', description: 'Aprende inglés' },
+      jobSearch: { name: 'Ayuda de Empleo', description: 'Currículum y entrevistas' },
+      parking: { name: 'Estacionamiento', description: 'Gratis o asequible' },
+      cafe: { name: 'Cafetería', description: 'Café y bocadillos' },
+      museumPasses: { name: 'Pases de Museo', description: 'Entrada gratis' },
     },
   },
 } as const

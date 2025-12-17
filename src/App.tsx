@@ -11,6 +11,7 @@ import { NeighborhoodHacks } from '@/components/library/NeighborhoodHacks'
 import { LibraryGlossary } from '@/components/library/LibraryGlossary'
 import { VolunteerProfile } from '@/components/library/VolunteerProfile'
 import { LibraryDirectory } from '@/components/library/LibraryDirectory'
+import { LibraryServices } from '@/components/library/LibraryServices'
 import { 
   BookOpen, 
   Camera, 
@@ -19,7 +20,8 @@ import {
   MapPin, 
   ChatCircleDots, 
   UserCircle,
-  ListMagnifyingGlass
+  ListMagnifyingGlass,
+  Stack
 } from '@phosphor-icons/react'
 
 function AppContent() {
@@ -46,7 +48,7 @@ function AppContent() {
 
       <main className="max-w-6xl mx-auto px-6 md:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2 h-auto bg-muted/50 p-2 mb-8">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-9 gap-2 h-auto bg-muted/50 p-2 mb-8">
             <TabsTrigger 
               value="culture" 
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
@@ -97,6 +99,13 @@ function AppContent() {
               <span className="text-xs md:text-sm">{t('navigation.directory')}</span>
             </TabsTrigger>
             <TabsTrigger 
+              value="services"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Stack size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.services')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
               value="volunteer"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
             >
@@ -131,6 +140,10 @@ function AppContent() {
 
           <TabsContent value="directory" className="mt-0">
             <LibraryDirectory />
+          </TabsContent>
+
+          <TabsContent value="services" className="mt-0">
+            <LibraryServices />
           </TabsContent>
 
           <TabsContent value="volunteer" className="mt-0">
