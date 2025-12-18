@@ -1,6 +1,6 @@
 # Planning Guide
 
-A welcoming digital companion for library users that demystifies library culture and services through relatable stories, visual guides, and gamified experiences. Now supporting both newcomers to Canada and Canadian-born users with tailored content for each audience, available in multiple languages to serve diverse communities.
+A welcoming digital companion for library users that demystifies library culture and services through relatable stories, visual guides, and gamified experiences. Supporting both newcomers to Canada and long-time residents with content organized by audience (newcomers first, then locals), available in multiple languages to serve diverse communities.
 
 **Experience Qualities**: 
 1. **Friendly** - Uses warm, approachable language that makes users feel welcomed rather than lectured, with clear explanations that respect their experiences
@@ -8,65 +8,65 @@ A welcoming digital companion for library users that demystifies library culture
 3. **Empowering** - Transforms confusion into confidence by addressing real concerns (for newcomers: privacy, cultural differences; for locals: discovering modern features) and connecting users to practical community resources
 
 **Complexity Level**: Light Application (multiple features with basic state)
-  - This app has multiple distinct sections (culture guide, visual tours, curated lists, bingo, glossary, volunteer profiles) with interactive elements and state management for the bingo game, volunteer profiles, tracking, multilingual support, and dual-audience content switching, but doesn't require complex routing or heavy data processing.
+  - This app has multiple distinct sections (culture guide, visual tours, curated lists, bingo, glossary, volunteer profiles) with interactive elements and state management for the bingo game, volunteer profiles, tracking, and multilingual support, but doesn't require complex routing or heavy data processing.
 
 ## Essential Features
 
-**Audience Selector**
-- Functionality: Toggle between "Newcomer" and "Canadian-born" audience modes in the header
-- Purpose: Tailors all content throughout the app to be relevant for either newcomers learning about Canadian library culture or Canadian-born users discovering modern library features
-- Trigger: User clicks audience selector toggle in header or app automatically detects on first use
-- Progression: Select audience → All content updates dynamically → Preference persists between sessions
-- Success criteria: All sections show appropriate content for selected audience; bingo cards track separately for each audience; smooth transitions between modes
+**Unified Audience Content**
+- Functionality: All sections display content for both newcomers AND long-time residents, with newcomer content presented first followed by local content
+- Purpose: Ensures all users can find relevant information without needing to switch modes; respects that users may benefit from content targeting either audience
+- Trigger: User navigates to any content section
+- Progression: View section → See newcomer-focused content first → Scroll to see local-focused content → Both audiences clearly labeled with badges
+- Success criteria: Clear visual separation between audience sections using headers and badges; newcomer content always appears first; no audience switching required
 
-**Culture Shock Guide (Newcomer Mode)**
+**Culture Shock Guide (Newcomer Section)**
 - Functionality: Educational content sections explaining Canadian library culture differences
 - Purpose: Reduces anxiety and cultural confusion for newcomers by addressing unspoken rules and common misconceptions
 - Trigger: User navigates to "Culture Guide" section from main navigation
 - Progression: Browse sections → Select topic (Noise Reality/Trust & Privacy/What You Can Do) → Read explanatory content with real-world context
 - Success criteria: Content is presented in scannable cards with relatable scenarios; users can quickly understand key cultural differences
 
-**Modern Library Features (Canadian-Born Mode)**
+**Modern Library Features (Local Section)**
 - Functionality: Educational content highlighting new and advanced library services that go beyond traditional book lending
-- Purpose: Helps Canadian-born users discover makerspace tools, digital resources, and community services they might not know exist
-- Trigger: User navigates to "Culture Guide" section in Canadian mode
+- Purpose: Helps long-time residents discover makerspace tools, digital resources, and community services they might not know exist
+- Trigger: User scrolls to local section within "Culture Guide"
 - Progression: Browse sections → Learn about makerspaces, digital-first services, community hubs → Discover unexpected resources
 - Success criteria: Content showcases modern library evolution; highlights practical value and cost savings of premium services
 
 **Visual Day-in-the-Life Tours**
-- Functionality: Photo diary-style walkthroughs showing how different users utilize library services
-- Purpose: Makes abstract service lists concrete through relatable user stories
-- Trigger: User selects a persona tour (Remote Worker/Family Weekend)
-- Progression: Select tour → View sequential photo cards with time stamps and activities → See list of services used
-- Success criteria: Each tour shows 4-6 timestamped activities with visual representation; users can envision themselves in the scenario
+- Functionality: Photo diary-style walkthroughs showing how different users utilize library services, with tours for both newcomers and locals
+- Purpose: Makes abstract service lists concrete through relatable user stories for different audiences
+- Trigger: User selects a persona tour from the Tours section
+- Progression: View tour categories (newcomer tours first, then local tours) → Select tour → View sequential cards with time stamps and activities → See list of services used
+- Success criteria: Each tour shows 4-6 timestamped activities; newcomer tours focus on settlement needs; local tours focus on advanced features
 
 **Hidden Menu Curated Lists**
-- Functionality: Top 5 lists highlighting library resources tailored to each audience - newcomer-focused tips for immigrants vs. advanced features for Canadian-born users
+- Functionality: Top 5 lists highlighting library resources, organized by audience with newcomer lists first followed by local lists
 - Purpose: Surfaces valuable but overlooked services that users wouldn't know to search for
 - Trigger: User browses curated list categories
-- Progression: View category cards → Select list (varies by audience: Newcomers see ESL tools and settlement services; Canadians see makerspaces and premium digital resources) → Read detailed item descriptions with audience-specific advice
+- Progression: View newcomer-focused lists (ESL tools, settlement services) → Scroll to local-focused lists (makerspaces, premium digital resources) → Read detailed item descriptions
 - Success criteria: Each list item has practical context for the audience; showcases concrete value and cost savings
 
 **Interactive Library Bingo**
-- Functionality: Gamified checklist encouraging users to try library services, with different activities for each audience
-- Purpose: Transforms passive reading into active engagement with the library through audience-appropriate challenges
+- Functionality: Gamified checklist with two separate bingo cards - one for newcomers and one for locals
+- Purpose: Transforms passive reading into active engagement with audience-appropriate challenges
 - Trigger: User accesses Bingo card from navigation
-- Progression: View bingo grid → Mark completed activities → Track progress → Download/share completed card
-- Success criteria: Grid persists user progress separately for each audience; celebrates completion milestones; provides shareable output; Newcomers get basics like "found book in first language" while Canadians get advanced tasks like "used laser cutter"
+- Progression: Choose between Newcomer Bingo or Explorer Bingo → Mark completed activities → Track progress → Download/share completed card
+- Success criteria: Two distinct bingo cards; progress tracked separately; Newcomers get basics like "found book in first language" while locals get advanced tasks like "used laser cutter"
 
 **Neighborhood Hacks**
-- Functionality: Hyper-local tips connecting library to surrounding area
-- Purpose: Helps newcomers navigate the physical neighborhood and plan visits
+- Functionality: Hyper-local tips connecting library to surrounding area, organized by newcomer needs first then local tips
+- Purpose: Helps newcomers navigate the physical neighborhood and locals discover hidden gems
 - Trigger: User explores local tips section
-- Progression: Browse categories → View transit routes, nearby cafes, parking tips → Get practical visiting information
-- Success criteria: Information is specific to local branches; includes actionable details like bus numbers and walking times
+- Progression: Browse newcomer tips (transit, settlement resources) → View local tips (events, community connections) → Get practical visiting information
+- Success criteria: Clear audience labels on tip categories; includes actionable details
 
 **Library Glossary**
-- Functionality: Plain-language dictionary translating library jargon
-- Purpose: Removes vocabulary barriers that prevent newcomers from using services
+- Functionality: Plain-language dictionary with terms relevant to newcomers first, followed by advanced terms for locals
+- Purpose: Removes vocabulary barriers and helps all users understand library terminology
 - Trigger: User searches or browses glossary terms
-- Progression: Search/scroll term list → Select term → Read simple explanation with example
-- Success criteria: Terms are explained using everyday language; includes visual examples where helpful
+- Progression: Search/scroll term list → Terms organized by audience with badges → Read simple explanation with example
+- Success criteria: Terms labeled as "Newcomer" or "Local" or shared; explained using everyday language
 
 **Library Directory & Statistics**
 - Functionality: Searchable directory of all libraries across Canada with interactive map and list views, comprehensive filtering, and statistical overview

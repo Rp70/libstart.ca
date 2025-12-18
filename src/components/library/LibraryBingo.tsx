@@ -1,11 +1,12 @@
+import { useState } from 'react'
 import { useKV } from '@github/spark/hooks'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import { Badge } from '@/components/ui/badge'
 import { Check, DownloadSimple, Trophy } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { useTranslation } from '@/hooks/use-translation'
-import { useAudience } from '@/contexts/AudienceContext'
 
 type BingoSquare = {
   id: string
@@ -40,7 +41,7 @@ const newcomerBingoSquares: BingoSquare[] = [
   { id: 'recommend', text: 'Recommended the library to a friend' }
 ]
 
-const canadianBingoSquares: BingoSquare[] = [
+const localBingoSquares: BingoSquare[] = [
   { id: 'makerspace', text: 'Tried the makerspace tools' },
   { id: 'kanopy', text: 'Streamed a film on Kanopy' },
   { id: 'pressreader', text: 'Read a foreign newspaper on PressReader' },
@@ -68,10 +69,17 @@ const canadianBingoSquares: BingoSquare[] = [
   { id: 'teach', text: 'Taught someone about a service' }
 ]
 
-export function LibraryBingo() {
-  const { audience } = useAudience()
-  const bingoSquares = audience === 'canadian' ? canadianBingoSquares : newcomerBingoSquares
-  const [completedSquares, setCompletedSquares] = useKV<string[]>(`bingo-completed-${audience}`, [])
+type BingoCardProps = {
+  title: string
+  subtitle: string
+  bingoSquares: BingoSquare[]
+  storageKey: string
+  audienceType: 'newcomer' | 'local'
+}
+
+function BingoCard({ title, subtitle, bingoSquares, storageKey, audienceType }: BingoCardProps) {
+  const [completedSquares, setCompletedSquares] = useKV<string[]>(storageKey, [])
+  const { t } = useTranslation()
 
   const toggleSquare = (id: string) => {
     setCompletedSquares((current) => {
@@ -99,12 +107,11 @@ export function LibraryBingo() {
     ctx.fillStyle = '#FBF8F3'
     ctx.fillRect(0, 0, 800, 900)
 
-    ctx.fillStyle = '#5E4BA1'
+    ctx.fillStyle = audienceType === 'newcomer' ? '#5E4BA1' : '#70B08A'
     ctx.fillRect(0, 0, 800, 80)
     ctx.fillStyle = 'white'
     ctx.font = 'bold 32px Arial'
     ctx.textAlign = 'center'
-    const title = audience === 'canadian' ? 'Library Explorer Bingo' : 'Newcomer Library Bingo'
     ctx.fillText(title, 400, 50)
 
     const gridSize = 5
@@ -160,34 +167,31 @@ export function LibraryBingo() {
     })
 
     const link = document.createElement('a')
-    link.download = 'library-bingo.png'
+    link.download = `library-bingo-${audienceType}.png`
     link.href = canvas.toDataURL()
     link.click()
   }
 
   const progress = ((completedSquares || []).length / 25) * 100
   const hasWon = (completedSquares || []).length >= 25
-  const { t } = useTranslation()
-
-  const bingoTitle = audience === 'canadian' ? 'Library Explorer Bingo' : t('bingo.title')
-  const bingoSubtitle = audience === 'canadian' 
-    ? 'Challenge yourself to discover advanced library features' 
-    : t('bingo.subtitle')
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h2 className="text-3xl font-bold mb-3">{bingoTitle}</h2>
-        <p className="text-muted-foreground text-lg">
-          {bingoSubtitle}
-        </p>
-      </div>
+    <div className="space-y-6">
+      <Card className={`p-6 ${audienceType === 'newcomer' ? 'bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30' : 'bg-gradient-to-br from-sage/10 to-sage/5 border-sage/30'}`}>
+        <div className="flex items-center gap-3 mb-4">
+          <h3 className="text-2xl font-bold">{title}</h3>
+          <Badge variant={audienceType === 'newcomer' ? 'default' : 'secondary'}>
+            {audienceType === 'newcomer' ? 'Newcomer' : 'Local'}
+          </Badge>
+        </div>
+        <p className="text-muted-foreground">{subtitle}</p>
+      </Card>
 
       <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold">{t('bingo.progress')}</h3>
+              <h4 className="text-lg font-semibold">{t('bingo.progress')}</h4>
               <p className="text-sm text-muted-foreground">
                 {(completedSquares || []).length} of 25 {t('bingo.completed')}
               </p>
@@ -213,16 +217,11 @@ export function LibraryBingo() {
         >
           <Card className="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 border-accent/50">
             <div className="text-center space-y-3">
-              <h3 className="text-2xl font-bold">🎉 Congratulations! 🎉</h3>
+              <h4 className="text-2xl font-bold">🎉 Congratulations! 🎉</h4>
               <p className="text-lg">
-                {audience === 'canadian' 
-                  ? 'You\'ve explored all 25 advanced features! You\'re a library power user now.'
-                  : 'You\'ve completed all 25 activities! You\'re a library expert now.'}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                {audience === 'canadian'
-                  ? 'Share your knowledge and help others discover what libraries offer!'
-                  : 'Share your achievement with other newcomers and help them discover the library!'}
+                {audienceType === 'newcomer' 
+                  ? 'You\'ve completed all 25 activities! You\'re a library expert now.'
+                  : 'You\'ve explored all 25 advanced features! You\'re a library power user now.'}
               </p>
             </div>
           </Card>
@@ -275,7 +274,7 @@ export function LibraryBingo() {
           size="lg"
         >
           <DownloadSimple size={20} className="mr-2" />
-          Download Bingo Card
+          Download Card
         </Button>
         <Button 
           onClick={resetBingo}
@@ -286,14 +285,118 @@ export function LibraryBingo() {
           Reset Progress
         </Button>
       </div>
+    </div>
+  )
+}
+
+export function LibraryBingo() {
+  const { t } = useTranslation()
+  const [activeCard, setActiveCard] = useState<'newcomer' | 'local' | null>(null)
+
+  if (activeCard) {
+    return (
+      <div className="space-y-8">
+        <Button 
+          variant="outline" 
+          onClick={() => setActiveCard(null)}
+          className="mb-4"
+        >
+          ← Back to Bingo Cards
+        </Button>
+
+        <BingoCard
+          title={activeCard === 'newcomer' ? 'Newcomer Library Bingo' : 'Library Explorer Bingo'}
+          subtitle={activeCard === 'newcomer' 
+            ? 'Try new library services and mark them off!'
+            : 'Challenge yourself to discover advanced library features'}
+          bingoSquares={activeCard === 'newcomer' ? newcomerBingoSquares : localBingoSquares}
+          storageKey={`bingo-completed-${activeCard}`}
+          audienceType={activeCard}
+        />
+
+        <Card className="p-6 bg-muted/50">
+          <h3 className="font-semibold mb-3">How to Play</h3>
+          <div className="space-y-2 text-sm">
+            <p>• Click or tap a square when you complete that activity</p>
+            <p>• Activities are saved automatically - you can come back anytime</p>
+            <p>• Try to complete all 25 activities to become a library expert!</p>
+            <p>• Download your card to share with friends or print it out</p>
+          </div>
+        </Card>
+      </div>
+    )
+  }
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h2 className="text-3xl font-bold mb-3">{t('bingo.title')}</h2>
+        <p className="text-muted-foreground text-lg">
+          Gamify your library experience! Choose a bingo card that matches your journey.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card 
+          className="p-6 hover:shadow-lg transition-all cursor-pointer border-2 hover:border-primary bg-gradient-to-br from-primary/10 to-transparent"
+          onClick={() => setActiveCard('newcomer')}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Badge variant="default">Newcomer</Badge>
+          </div>
+          <h3 className="text-2xl font-bold mb-3">Newcomer Library Bingo</h3>
+          <p className="text-muted-foreground mb-4">
+            Perfect for those new to Canadian libraries. Discover basic services and build confidence exploring the library.
+          </p>
+          <div className="space-y-2 text-sm">
+            <p>✓ Print resumes for free</p>
+            <p>✓ Find books in your language</p>
+            <p>✓ Connect to free Wi-Fi</p>
+            <p>✓ Ask librarians for help</p>
+          </div>
+          <Button className="w-full mt-6" variant="outline">
+            Start Newcomer Bingo →
+          </Button>
+        </Card>
+
+        <Card 
+          className="p-6 hover:shadow-lg transition-all cursor-pointer border-2 hover:border-sage bg-gradient-to-br from-sage/10 to-transparent"
+          onClick={() => setActiveCard('local')}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Badge variant="secondary">Local</Badge>
+          </div>
+          <h3 className="text-2xl font-bold mb-3">Library Explorer Bingo</h3>
+          <p className="text-muted-foreground mb-4">
+            For long-time residents ready to discover advanced features. Explore makerspace tools, digital resources, and more.
+          </p>
+          <div className="space-y-2 text-sm">
+            <p>✓ Use makerspace equipment</p>
+            <p>✓ Stream films on Kanopy</p>
+            <p>✓ Research family history</p>
+            <p>✓ Borrow power tools</p>
+          </div>
+          <Button className="w-full mt-6" variant="outline">
+            Start Explorer Bingo →
+          </Button>
+        </Card>
+      </div>
 
       <Card className="p-6 bg-muted/50">
-        <h3 className="font-semibold mb-3">How to Play</h3>
-        <div className="space-y-2 text-sm">
-          <p>• Click or tap a square when you complete that activity</p>
-          <p>• Activities are saved automatically - you can come back anytime</p>
-          <p>• Try to complete all 25 activities to become a library expert!</p>
-          <p>• Download your card to share with friends or print it out</p>
+        <h3 className="font-semibold mb-3">🎯 Why Play Library Bingo?</h3>
+        <div className="grid md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <p className="font-medium">Discover New Services</p>
+            <p className="text-muted-foreground">Many people only use 10% of what libraries offer. Bingo helps you find hidden gems!</p>
+          </div>
+          <div>
+            <p className="font-medium">Track Your Progress</p>
+            <p className="text-muted-foreground">Your progress is saved automatically. Complete activities over weeks or months.</p>
+          </div>
+          <div>
+            <p className="font-medium">Share With Friends</p>
+            <p className="text-muted-foreground">Download your card to share on social media or print for family challenges!</p>
+          </div>
         </div>
       </Card>
     </div>

@@ -2,7 +2,6 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Package, GraduationCap, Sparkle, Wrench, Laptop, Rocket } from '@phosphor-icons/react'
 import { useTranslation } from '@/hooks/use-translation'
-import { useAudience } from '@/contexts/AudienceContext'
 
 type MenuItem = {
   item: string
@@ -16,16 +15,18 @@ type MenuList = {
   description: string
   icon: any
   color: string
+  audienceType: 'newcomer' | 'local'
   items: MenuItem[]
 }
 
-const newcomerMenuLists: MenuList[] = [
+const menuLists: MenuList[] = [
   {
     id: 'borrow',
     title: 'Things You Didn\'t Know You Could Borrow',
     description: 'Unusual items from FVRL Playground - way beyond books!',
     icon: Package,
     color: 'secondary',
+    audienceType: 'newcomer',
     items: [
       {
         item: 'Radon Detector',
@@ -60,6 +61,7 @@ const newcomerMenuLists: MenuList[] = [
     description: 'Expert review of the best language learning resources',
     icon: GraduationCap,
     color: 'primary',
+    audienceType: 'newcomer',
     items: [
       {
         item: 'Mango Languages',
@@ -94,6 +96,7 @@ const newcomerMenuLists: MenuList[] = [
     description: 'Hidden gems that solve real newcomer problems',
     icon: Sparkle,
     color: 'accent',
+    audienceType: 'newcomer',
     items: [
       {
         item: 'Free Laminating',
@@ -121,16 +124,14 @@ const newcomerMenuLists: MenuList[] = [
         tip: 'All the official study guides plus practice tests. Librarians can help you find resources in your language.'
       }
     ]
-  }
-]
-
-const canadianMenuLists: MenuList[] = [
+  },
   {
     id: 'makers',
     title: 'Makerspace & Creative Tools',
     description: 'Turn your ideas into reality with professional equipment',
     icon: Wrench,
     color: 'secondary',
+    audienceType: 'local',
     items: [
       {
         item: '3D Printers',
@@ -165,6 +166,7 @@ const canadianMenuLists: MenuList[] = [
     description: 'Expensive subscriptions you get for free',
     icon: Laptop,
     color: 'primary',
+    audienceType: 'local',
     items: [
       {
         item: 'LinkedIn Learning',
@@ -199,6 +201,7 @@ const canadianMenuLists: MenuList[] = [
     description: 'Professional resources for entrepreneurs and job seekers',
     icon: Rocket,
     color: 'accent',
+    audienceType: 'local',
     items: [
       {
         item: 'Business Plan Resources',
@@ -231,10 +234,59 @@ const canadianMenuLists: MenuList[] = [
 
 export function HiddenMenu() {
   const { t } = useTranslation()
-  const { audience } = useAudience()
 
-  const menuLists = audience === 'canadian' ? canadianMenuLists : newcomerMenuLists
-  const tipLabel = audience === 'canadian' ? '💡 Pro Tip: ' : '💡 For Newcomers: '
+  const newcomerMenus = menuLists.filter(list => list.audienceType === 'newcomer')
+  const localMenus = menuLists.filter(list => list.audienceType === 'local')
+
+  const renderMenuList = (list: MenuList, tipLabel: string) => {
+    const Icon = list.icon
+    return (
+      <Card 
+        key={list.id}
+        className={`p-6 bg-gradient-to-br ${list.audienceType === 'newcomer' ? 'from-primary/5' : 'from-sage/10'} to-transparent`}
+      >
+        <div className="flex items-start gap-4 mb-6">
+          <div className={`p-3 ${list.audienceType === 'newcomer' ? 'bg-primary text-primary-foreground' : 'bg-sage text-sage-foreground'} rounded-lg`}>
+            <Icon size={32} weight="duotone" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-2xl font-bold">{list.title}</h3>
+              <Badge variant={list.audienceType === 'newcomer' ? 'outline' : 'secondary'} className="text-xs">
+                {list.audienceType === 'newcomer' ? 'Newcomer' : 'Local'}
+              </Badge>
+            </div>
+            <p className="text-muted-foreground">{list.description}</p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          {list.items.map((item, index) => (
+            <Card 
+              key={index}
+              className="p-5 hover:shadow-md transition-shadow bg-card"
+            >
+              <div className="flex items-start gap-3 mb-3">
+                <Badge className="bg-accent text-accent-foreground">
+                  #{index + 1}
+                </Badge>
+                <h4 className="text-lg font-semibold flex-1">{item.item}</h4>
+              </div>
+              <p className="text-sm text-muted-foreground mb-3">
+                {item.description}
+              </p>
+              <div className="p-3 bg-primary/5 border-l-4 border-primary rounded">
+                <p className="text-sm">
+                  <span className="font-semibold text-primary">{tipLabel}</span>
+                  {item.tip}
+                </p>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </Card>
+    )
+  }
 
   return (
     <div className="space-y-8">
@@ -245,51 +297,26 @@ export function HiddenMenu() {
         </p>
       </div>
 
-      <div className="space-y-8">
-        {menuLists.map((list) => {
-          const Icon = list.icon
-          return (
-            <Card 
-              key={list.id}
-              className={`p-6 bg-gradient-to-br from-${list.color}/5 to-transparent border-${list.color}/30`}
-            >
-              <div className="flex items-start gap-4 mb-6">
-                <div className={`p-3 bg-${list.color} text-${list.color}-foreground rounded-lg`}>
-                  <Icon size={32} weight="duotone" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">{list.title}</h3>
-                  <p className="text-muted-foreground">{list.description}</p>
-                </div>
-              </div>
+      <div className="space-y-10">
+        <div>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-1 w-8 bg-primary rounded-full" />
+            <h3 className="text-xl font-semibold text-primary">For Newcomers to Canada</h3>
+          </div>
+          <div className="space-y-8">
+            {newcomerMenus.map(list => renderMenuList(list, '💡 For Newcomers: '))}
+          </div>
+        </div>
 
-              <div className="space-y-4">
-                {list.items.map((item, index) => (
-                  <Card 
-                    key={index}
-                    className="p-5 hover:shadow-md transition-shadow bg-card"
-                  >
-                    <div className="flex items-start gap-3 mb-3">
-                      <Badge className="bg-accent text-accent-foreground">
-                        #{index + 1}
-                      </Badge>
-                      <h4 className="text-lg font-semibold flex-1">{item.item}</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      {item.description}
-                    </p>
-                    <div className="p-3 bg-primary/5 border-l-4 border-primary rounded">
-                      <p className="text-sm">
-                        <span className="font-semibold text-primary">{tipLabel}</span>
-                        {item.tip}
-                      </p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </Card>
-          )
-        })}
+        <div>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-1 w-8 bg-sage rounded-full" />
+            <h3 className="text-xl font-semibold text-sage-foreground">For Long-Time Residents</h3>
+          </div>
+          <div className="space-y-8">
+            {localMenus.map(list => renderMenuList(list, '💡 Pro Tip: '))}
+          </div>
+        </div>
       </div>
 
       <Card className="p-6 bg-accent/10 border-accent/30">
