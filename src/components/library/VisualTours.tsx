@@ -2,7 +2,19 @@ import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Briefcase, Users, Clock, GraduationCap, Heart, Books, Leaf } from '@phosphor-icons/react'
+import { 
+  Briefcase, 
+  Users, 
+  Clock, 
+  GraduationCap, 
+  Heart, 
+  Books, 
+  Leaf,
+  Student,
+  Armchair,
+  Baby,
+  Laptop
+} from '@phosphor-icons/react'
 import { useTranslation } from '@/hooks/use-translation'
 
 type Tour = {
@@ -146,6 +158,94 @@ const tours: Tour[] = [
     ]
   },
   {
+    id: 'international-student',
+    title: 'The International Student',
+    description: 'How international students maximize library resources for success',
+    persona: 'Meet Priya - International student from India studying Computer Science',
+    icon: Student,
+    color: 'primary',
+    audienceType: 'newcomer',
+    steps: [
+      {
+        time: '8:30 AM',
+        activity: 'Early Morning Study',
+        description: 'Priya arrives early to secure her favorite quiet study spot before classes.',
+        service: 'Extended study hours & quiet zones'
+      },
+      {
+        time: '10:00 AM',
+        activity: 'Academic Research',
+        description: 'She accesses academic journals and databases for her research paper through the library portal.',
+        service: 'Free academic database access'
+      },
+      {
+        time: '12:30 PM',
+        activity: 'Group Project Meeting',
+        description: 'Priya books a group study room to work on her team project with classmates.',
+        service: 'Collaborative study rooms'
+      },
+      {
+        time: '2:00 PM',
+        activity: 'Textbook Savings',
+        description: 'She borrows course textbooks on reserve instead of buying expensive new copies.',
+        service: 'Course reserves & textbook lending'
+      },
+      {
+        time: '4:00 PM',
+        activity: 'Career Prep',
+        description: 'Priya uses LinkedIn Learning to take a coding bootcamp course for her job search.',
+        service: 'LinkedIn Learning & professional development'
+      },
+      {
+        time: '6:00 PM',
+        activity: 'Unwind & Connect',
+        description: 'She joins the international students book club to meet friends and practice English.',
+        service: 'Student clubs & social programs'
+      }
+    ]
+  },
+  {
+    id: 'new-parent',
+    title: 'The New Parent Journey',
+    description: 'How new parents with babies find community and resources',
+    persona: 'Meet Maria - First-time mom with 8-month-old baby Sofia',
+    icon: Baby,
+    color: 'secondary',
+    audienceType: 'newcomer',
+    steps: [
+      {
+        time: '10:00 AM',
+        activity: 'Baby Rhyme Time',
+        description: 'Maria and Sofia join other parents for songs, rhymes, and gentle movement activities.',
+        service: 'Free baby programs (0-18 months)'
+      },
+      {
+        time: '11:00 AM',
+        activity: 'Parent Connection',
+        description: 'She meets other new parents and exchanges numbers while babies play on soft mats.',
+        service: 'Parent networking opportunities'
+      },
+      {
+        time: '11:30 AM',
+        activity: 'Parenting Resources',
+        description: 'Maria borrows board books for Sofia and parenting guides in her native Spanish.',
+        service: 'Multilingual parenting collection'
+      },
+      {
+        time: '12:00 PM',
+        activity: 'Comfortable Feeding',
+        description: 'She uses the family room to nurse Sofia in a private, comfortable space.',
+        service: 'Family rooms & nursing spaces'
+      },
+      {
+        time: '12:30 PM',
+        activity: 'Settlement Support',
+        description: 'Maria speaks with a settlement worker about childcare options and parental benefits.',
+        service: 'Newcomer family support services'
+      }
+    ]
+  },
+  {
     id: 'lifelong-learner',
     title: 'The Lifelong Learner',
     description: 'How long-time residents rediscover their library',
@@ -265,6 +365,100 @@ const tours: Tour[] = [
         activity: 'Gardening Books & Seeds',
         description: 'Ava picks up organic gardening books and native plant seeds from the seed library.',
         service: 'Gardening resources & seed library'
+      }
+    ]
+  },
+  {
+    id: 'senior-active',
+    title: 'The Active Senior',
+    description: 'How seniors stay connected, healthy, and engaged',
+    persona: 'Meet Harold - 72-year-old retiree embracing technology',
+    icon: Armchair,
+    color: 'sage',
+    audienceType: 'local',
+    steps: [
+      {
+        time: '9:00 AM',
+        activity: 'Morning Newspaper',
+        description: 'Harold reads newspapers from around the world on library tablets with large font settings.',
+        service: 'Digital newspapers & accessibility features'
+      },
+      {
+        time: '10:00 AM',
+        activity: 'Tech Tutoring',
+        description: 'A patient volunteer helps Harold set up video calls to connect with his grandchildren overseas.',
+        service: 'One-on-one tech help for seniors'
+      },
+      {
+        time: '11:30 AM',
+        activity: 'Health & Wellness',
+        description: 'Harold attends the weekly gentle chair yoga session offered in the community room.',
+        service: 'Free senior wellness programs'
+      },
+      {
+        time: '1:00 PM',
+        activity: 'Large Print Books',
+        description: 'He browses the large print collection and picks up audiobooks for his daily walks.',
+        service: 'Large print & audiobook collections'
+      },
+      {
+        time: '2:30 PM',
+        activity: 'Seniors Social Club',
+        description: 'Harold joins the weekly coffee & conversation group to meet friends and play cards.',
+        service: 'Senior social programs'
+      },
+      {
+        time: '3:30 PM',
+        activity: 'Home Delivery Signup',
+        description: 'He signs up for home delivery service for weeks when mobility is challenging.',
+        service: 'Homebound delivery services'
+      }
+    ]
+  },
+  {
+    id: 'high-school-student',
+    title: 'The High School Student',
+    description: 'How teens use the library for study and social connection',
+    persona: 'Meet Emma - Grade 11 student preparing for university',
+    icon: Laptop,
+    color: 'primary',
+    audienceType: 'local',
+    steps: [
+      {
+        time: '3:30 PM',
+        activity: 'After-School Arrival',
+        description: 'Emma grabs a snack from home and claims a quiet table in the teen zone.',
+        service: 'Dedicated teen study spaces'
+      },
+      {
+        time: '4:00 PM',
+        activity: 'Homework Help',
+        description: 'She gets help with calculus from a volunteer tutor during homework help hours.',
+        service: 'Free tutoring & homework help'
+      },
+      {
+        time: '5:00 PM',
+        activity: 'Research Project',
+        description: 'Emma uses the library databases to find credible sources for her history essay.',
+        service: 'Academic databases & research support'
+      },
+      {
+        time: '6:00 PM',
+        activity: 'University Prep',
+        description: 'She attends a workshop on university applications and scholarship opportunities.',
+        service: 'Post-secondary prep workshops'
+      },
+      {
+        time: '7:00 PM',
+        activity: 'Teen Advisory Board',
+        description: 'Emma participates in the Teen Advisory Board meeting to plan upcoming events.',
+        service: 'Teen leadership programs'
+      },
+      {
+        time: '8:00 PM',
+        activity: 'Study Group',
+        description: 'She meets friends in a study room to prepare for their upcoming biology exam.',
+        service: 'Evening study room access'
       }
     ]
   }

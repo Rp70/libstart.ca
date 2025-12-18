@@ -34,11 +34,28 @@ A welcoming digital companion for library users that demystifies library culture
 - Success criteria: Content showcases modern library evolution; highlights practical value and cost savings of premium services
 
 **Visual Day-in-the-Life Tours**
-- Functionality: Photo diary-style walkthroughs showing how different users utilize library services, with tours for both newcomers and locals
-- Purpose: Makes abstract service lists concrete through relatable user stories for different audiences
+- Functionality: Photo diary-style walkthroughs showing how different users utilize library services, with tours for both newcomers and locals across multiple personas
+- Purpose: Makes abstract service lists concrete through relatable user stories for different audiences and life stages
 - Trigger: User selects a persona tour from the Tours section
 - Progression: View tour categories (newcomer tours first, then local tours) → Select tour → View sequential cards with time stamps and activities → See list of services used
-- Success criteria: Each tour shows 4-6 timestamped activities; newcomer tours focus on settlement needs; local tours focus on advanced features
+- Success criteria: Each tour shows 4-6 timestamped activities; newcomer tours include settlement journeys, students, and parents; local tours include seniors, teens, and lifelong learners
+- Personas covered:
+  - **Newcomers**: Remote Worker, Family Weekend, Settlement Journey, International Student, New Parent
+  - **Locals**: Lifelong Learner, Community Connector, Eco Explorer, Active Senior, High School Student
+
+**Library Event Calendar**
+- Functionality: Filterable calendar of events across library branches, organized by audience category (children, teens, adults, seniors, newcomers, all-ages)
+- Purpose: Helps users discover free programs happening at their local library and plan visits around events
+- Trigger: User navigates to "Events" section from main navigation
+- Progression: View all events → Filter by library or audience category → Browse event cards → See event details including time, location, and registration requirements
+- Success criteria: Events are categorized by audience with color-coded badges; filters update results in real-time; recurring events display their schedule patterns
+
+**User Testimonials**
+- Functionality: Collection of real user stories showing how Canadian libraries have impacted lives, organized by audience type (newcomers first, then locals)
+- Purpose: Builds trust and inspires users by showing authentic examples of library impact
+- Trigger: User navigates to "Stories" section from main navigation
+- Progression: View all testimonials → Filter by newcomer/local stories → Read detailed testimonials with highlighted outcomes → See submit story CTA
+- Success criteria: Testimonials include diverse personas (students, seniors, parents, professionals); each story highlights a specific positive outcome; clear visual separation between newcomer and local stories
 
 **Hidden Menu Curated Lists**
 - Functionality: Top 5 lists highlighting library resources, organized by audience with newcomer lists first followed by local lists

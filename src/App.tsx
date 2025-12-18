@@ -12,6 +12,8 @@ import { LibraryGlossary } from '@/components/library/LibraryGlossary'
 import { VolunteerProfile } from '@/components/library/VolunteerProfile'
 import { LibraryDirectory } from '@/components/library/LibraryDirectory'
 import { LibraryServices } from '@/components/library/LibraryServices'
+import { LibraryEvents } from '@/components/library/LibraryEvents'
+import { Testimonials } from '@/components/library/Testimonials'
 import { 
   BookOpen, 
   Camera, 
@@ -21,7 +23,9 @@ import {
   ChatCircleDots, 
   UserCircle,
   ListMagnifyingGlass,
-  Stack
+  Stack,
+  CalendarBlank,
+  Quotes
 } from '@phosphor-icons/react'
 
 function AppContent() {
@@ -48,7 +52,7 @@ function AppContent() {
 
       <main className="max-w-6xl mx-auto px-6 md:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-9 gap-2 h-auto bg-muted/50 p-2 mb-8">
+          <TabsList className="grid w-full grid-cols-3 md:grid-cols-4 lg:grid-cols-11 gap-2 h-auto bg-muted/50 p-2 mb-8">
             <TabsTrigger 
               value="culture" 
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
@@ -106,6 +110,20 @@ function AppContent() {
               <span className="text-xs md:text-sm">{t('navigation.services')}</span>
             </TabsTrigger>
             <TabsTrigger 
+              value="events"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+            >
+              <CalendarBlank size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.events')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="testimonials"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
+            >
+              <Quotes size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.stories')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
               value="volunteer"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
             >
@@ -144,6 +162,14 @@ function AppContent() {
 
           <TabsContent value="services" className="mt-0">
             <LibraryServices />
+          </TabsContent>
+
+          <TabsContent value="events" className="mt-0">
+            <LibraryEvents />
+          </TabsContent>
+
+          <TabsContent value="testimonials" className="mt-0">
+            <Testimonials />
           </TabsContent>
 
           <TabsContent value="volunteer" className="mt-0">

@@ -17,6 +17,8 @@ export const translations = {
       glossary: 'Glossary',
       directory: 'Directory',
       services: 'Services',
+      events: 'Events',
+      stories: 'Stories',
       volunteer: 'Volunteer',
     },
     cultureGuide: {
@@ -254,6 +256,8 @@ export const translations = {
       glossary: 'ਸ਼ਬਦਾਵਲੀ',
       directory: 'ਡਾਇਰੈਕਟਰੀ',
       services: 'ਸੇਵਾਵਾਂ',
+      events: 'ਸਮਾਗਮ',
+      stories: 'ਕਹਾਣੀਆਂ',
       volunteer: 'ਵਲੰਟੀਅਰ',
     },
     cultureGuide: {
@@ -416,6 +420,8 @@ export const translations = {
       glossary: '词汇表',
       directory: '目录',
       services: '服务',
+      events: '活动',
+      stories: '故事',
       volunteer: '志愿者',
     },
     cultureGuide: {
@@ -578,6 +584,8 @@ export const translations = {
       glossary: 'المسرد',
       directory: 'الدليل',
       services: 'الخدمات',
+      events: 'الفعاليات',
+      stories: 'قصص',
       volunteer: 'متطوع',
     },
     cultureGuide: {
@@ -740,6 +748,8 @@ export const translations = {
       glossary: 'Glosario',
       directory: 'Directorio',
       services: 'Servicios',
+      events: 'Eventos',
+      stories: 'Historias',
       volunteer: 'Voluntario',
     },
     cultureGuide: {
