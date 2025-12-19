@@ -14,6 +14,11 @@ import { LibraryDirectory } from '@/components/library/LibraryDirectory'
 import { LibraryServices } from '@/components/library/LibraryServices'
 import { LibraryEvents } from '@/components/library/LibraryEvents'
 import { Testimonials } from '@/components/library/Testimonials'
+import { BookClubFinder } from '@/components/library/BookClubFinder'
+import { AccessibilityGuide } from '@/components/library/AccessibilityGuide'
+import { QuietHoursTracker } from '@/components/library/QuietHoursTracker'
+import { CareerPathways } from '@/components/library/CareerPathways'
+import { SpecialCollections } from '@/components/library/SpecialCollections'
 import { 
   BookOpen, 
   Camera, 
@@ -25,7 +30,12 @@ import {
   ListMagnifyingGlass,
   Stack,
   CalendarBlank,
-  Quotes
+  Quotes,
+  BookBookmark,
+  Wheelchair,
+  SpeakerSimpleSlash,
+  TrendUp,
+  Vault
 } from '@phosphor-icons/react'
 
 function AppContent() {
@@ -52,7 +62,7 @@ function AppContent() {
 
       <main className="max-w-6xl mx-auto px-6 md:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 md:grid-cols-4 lg:grid-cols-11 gap-2 h-auto bg-muted/50 p-2 mb-8">
+          <TabsList className="grid w-full grid-cols-3 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-16 gap-2 h-auto bg-muted/50 p-2 mb-8">
             <TabsTrigger 
               value="culture" 
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
@@ -130,6 +140,41 @@ function AppContent() {
               <UserCircle size={20} />
               <span className="text-xs md:text-sm">{t('navigation.volunteer')}</span>
             </TabsTrigger>
+            <TabsTrigger 
+              value="bookclubs"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <BookBookmark size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.bookClubs')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="accessibility"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-sage data-[state=active]:text-sage-foreground"
+            >
+              <Wheelchair size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.accessibility')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="quiethours"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <SpeakerSimpleSlash size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.quietHours')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="careers"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+            >
+              <TrendUp size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.careers')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="collections"
+              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
+            >
+              <Vault size={20} />
+              <span className="text-xs md:text-sm">{t('navigation.collections')}</span>
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="culture" className="mt-0">
@@ -174,6 +219,26 @@ function AppContent() {
 
           <TabsContent value="volunteer" className="mt-0">
             <VolunteerProfile />
+          </TabsContent>
+
+          <TabsContent value="bookclubs" className="mt-0">
+            <BookClubFinder />
+          </TabsContent>
+
+          <TabsContent value="accessibility" className="mt-0">
+            <AccessibilityGuide />
+          </TabsContent>
+
+          <TabsContent value="quiethours" className="mt-0">
+            <QuietHoursTracker />
+          </TabsContent>
+
+          <TabsContent value="careers" className="mt-0">
+            <CareerPathways />
+          </TabsContent>
+
+          <TabsContent value="collections" className="mt-0">
+            <SpecialCollections />
           </TabsContent>
         </Tabs>
       </main>

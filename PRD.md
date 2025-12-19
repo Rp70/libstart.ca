@@ -106,6 +106,41 @@ A welcoming digital companion for library users that demystifies library culture
 - Progression: First visit → Detect browser language → Set app language automatically → User can override via language selector → Language preference persists between sessions
 - Success criteria: All UI text translates properly; RTL support works for Arabic; fonts display correctly for all scripts; language preference saves to user's device; browser language is detected on first visit and set automatically
 
+**Book Club Finder**
+- Functionality: Searchable directory of library-hosted book clubs across Canada with filtering by genre, language, and availability
+- Purpose: Helps users find community connections through reading groups, especially valuable for language learners and newcomers seeking social integration
+- Trigger: User navigates to "Book Clubs" section from main navigation
+- Progression: View all book clubs → Filter by genre/language/library → See meeting times and availability → Access contact information → Learn about starting own club
+- Success criteria: Clubs displayed with meeting frequency, language, capacity, and current book; filters work in real-time; includes beginner-friendly and ESL options
+
+**Accessibility Services Guide**
+- Functionality: Comprehensive expandable guide to accessibility features available at library branches with specific branch availability
+- Purpose: Ensures users with disabilities know exactly what accommodations exist and how to access them - information often buried on official websites
+- Trigger: User navigates to "Accessibility" section from main navigation
+- Progression: Browse service categories → Expand service for details → See which branches offer it → Learn how to access and request → Get pro tips for using service
+- Success criteria: Services organized by type (visual, hearing, mobility, cognitive); appointment requirements clearly marked; branch-specific availability shown; includes hidden services like home delivery
+
+**Quiet Hours Tracker**
+- Functionality: Time-based guide showing noise levels and crowd patterns at different library branches throughout the week
+- Purpose: Helps users plan visits based on their noise tolerance and work needs - crucial info not available on official sites
+- Trigger: User navigates to "Quiet Hours" section from main navigation
+- Progression: Select library → Filter by noise level preference → View day/time slots with activity descriptions → See what activities are best suited for each time → Learn community patterns
+- Success criteria: Time slots labeled as quiet/moderate/busy; includes typical activities and crowd levels; filterable by both library and noise preference; shows best use cases for each period
+
+**Career Pathways Guide**
+- Functionality: Comprehensive guide to building job-ready skills using free library resources, organized by industry with specific resource lists
+- Purpose: Reveals how libraries can replace expensive professional development courses - information scattered across multiple official pages
+- Trigger: User navigates to "Career Paths" section from main navigation
+- Progression: View career categories → Select industry → Expand pathway for full details → See specific library resources → Review possible careers → Read implementation tips → Book career counseling
+- Success criteria: 8+ career pathways covering diverse industries; each lists specific free library resources; shows cost savings vs paid alternatives; includes certification info and pro tips
+
+**Special Collections & Archives**
+- Functionality: Directory of hidden archival collections and special materials at library branches with access instructions
+- Purpose: Showcases rare historical resources and archives that most library users don't know exist - usually hidden in library back rooms
+- Trigger: User navigates to "Archives" section from main navigation
+- Progression: Browse collection types → Read collection descriptions and highlights → Learn access requirements → See digital availability → Understand unique value → Request research assistance
+- Success criteria: Collections organized by type and library; includes appointment requirements; shows digital access options; explains why each matters to specific user groups; highlights materials for family history research
+
 ## Edge Case Handling
 - **Empty Bingo State**: Show encouraging message with suggestions for first activities to try
 - **No Volunteer Photo**: Display friendly placeholder avatar with initials or library icon
