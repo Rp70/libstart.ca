@@ -154,13 +154,6 @@ function AppContent() {
               <span className="text-xs md:text-sm">{t('navigation.accessibility')}</span>
             </TabsTrigger>
             <TabsTrigger 
-              value="quiethours"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-            >
-              <SpeakerSimpleSlash size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.quietHours')}</span>
-            </TabsTrigger>
-            <TabsTrigger 
               value="careers"
               className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
             >
