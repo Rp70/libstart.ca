@@ -7,7 +7,6 @@ import { CultureGuide } from '@/components/library/CultureGuide'
 import { VisualTours } from '@/components/library/VisualTours'
 import { HiddenMenu } from '@/components/library/HiddenMenu'
 import { LibraryBingo } from '@/components/library/LibraryBingo'
-import { NeighborhoodHacks } from '@/components/library/NeighborhoodHacks'
 import { LibraryGlossary } from '@/components/library/LibraryGlossary'
 import { VolunteerProfile } from '@/components/library/VolunteerProfile'
 import { LibraryDirectory } from '@/components/library/LibraryDirectory'
@@ -89,13 +88,6 @@ function AppContent() {
             >
               <CheckSquare size={20} />
               <span className="text-xs md:text-sm">{t('navigation.bingo')}</span>
-            </TabsTrigger>
-            <TabsTrigger 
-              value="neighborhood"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-            >
-              <MapPin size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.neighborhood')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="glossary"
@@ -183,10 +175,6 @@ function AppContent() {
 
           <TabsContent value="bingo" className="mt-0">
             <LibraryBingo />
-          </TabsContent>
-
-          <TabsContent value="neighborhood" className="mt-0">
-            <NeighborhoodHacks />
           </TabsContent>
 
           <TabsContent value="glossary" className="mt-0">
