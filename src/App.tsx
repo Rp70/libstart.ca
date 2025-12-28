@@ -16,7 +16,6 @@ import { LibraryEvents } from '@/components/library/LibraryEvents'
 import { Testimonials } from '@/components/library/Testimonials'
 import { BookClubFinder } from '@/components/library/BookClubFinder'
 import { AccessibilityGuide } from '@/components/library/AccessibilityGuide'
-import { QuietHoursTracker } from '@/components/library/QuietHoursTracker'
 import { CareerPathways } from '@/components/library/CareerPathways'
 import { SpecialCollections } from '@/components/library/SpecialCollections'
 import { 
@@ -227,10 +226,6 @@ function AppContent() {
 
           <TabsContent value="accessibility" className="mt-0">
             <AccessibilityGuide />
-          </TabsContent>
-
-          <TabsContent value="quiethours" className="mt-0">
-            <QuietHoursTracker />
           </TabsContent>
 
           <TabsContent value="careers" className="mt-0">
