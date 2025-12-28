@@ -42,122 +42,124 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-primary text-primary-foreground py-6 px-6 md:px-8 shadow-lg">
+      <header className="bg-primary text-primary-foreground py-4 sm:py-6 px-4 sm:px-6 md:px-8 shadow-lg">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex-1">
-              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3 sm:gap-4">
+            <div className="flex-1 w-full sm:w-auto">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-1 sm:mb-2">
                 {t('app.title')}
               </h1>
-              <p className="text-primary-foreground/90 text-base md:text-lg italic">
+              <p className="text-primary-foreground/90 text-sm sm:text-base md:text-lg italic">
                 {t('app.tagline')}
               </p>
             </div>
-            <LanguageSelector />
+            <div className="w-full sm:w-auto">
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 md:px-8 py-8">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-16 gap-2 h-auto bg-muted/50 p-2 mb-8">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-14 gap-1.5 sm:gap-2 h-auto bg-muted/50 p-1.5 sm:p-2 mb-6 sm:mb-8">
             <TabsTrigger 
               value="culture" 
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <BookOpen size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.culture')}</span>
+              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.culture')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="tours"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <Camera size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.tours')}</span>
+              <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.tours')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="menu"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <Lightbulb size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.menu')}</span>
+              <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.menu')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="bingo"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <CheckSquare size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.bingo')}</span>
+              <CheckSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.bingo')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="glossary"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <ChatCircleDots size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.glossary')}</span>
+              <ChatCircleDots className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.glossary')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="directory"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-sage data-[state=active]:text-sage-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-sage data-[state=active]:text-sage-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <ListMagnifyingGlass size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.directory')}</span>
+              <ListMagnifyingGlass className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.directory')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="services"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <Stack size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.services')}</span>
+              <Stack className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.services')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="events"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <CalendarBlank size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.events')}</span>
+              <CalendarBlank className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.events')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="testimonials"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <Quotes size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.stories')}</span>
+              <Quotes className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.stories')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="volunteer"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <UserCircle size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.volunteer')}</span>
+              <UserCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.volunteer')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="bookclubs"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <BookBookmark size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.bookClubs')}</span>
+              <BookBookmark className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.bookClubs')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="accessibility"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-sage data-[state=active]:text-sage-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-sage data-[state=active]:text-sage-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <Wheelchair size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.accessibility')}</span>
+              <Wheelchair className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.accessibility')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="careers"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <TrendUp size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.careers')}</span>
+              <TrendUp className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.careers')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="collections"
-              className="flex flex-col items-center gap-1 py-3 px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground"
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground min-h-[60px] sm:min-h-[70px]"
             >
-              <Vault size={20} />
-              <span className="text-xs md:text-sm">{t('navigation.collections')}</span>
+              <Vault className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.collections')}</span>
             </TabsTrigger>
           </TabsList>
 
@@ -219,15 +221,15 @@ function AppContent() {
         </Tabs>
       </main>
 
-      <footer className="bg-muted mt-16 py-8 px-6 md:px-8">
+      <footer className="bg-muted mt-8 sm:mt-12 md:mt-16 py-6 sm:py-8 px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p className="text-sm">
+          <p className="text-xs sm:text-sm">
             {t('app.footer')}
           </p>
-          <p className="text-xs mt-2">
+          <p className="text-[10px] sm:text-xs mt-2">
             {t('app.footerDisclaimer')}
           </p>
-          <p className="text-sm mt-4 font-medium bg-muted-foreground/10 p-4 rounded-lg">
+          <p className="text-xs sm:text-sm mt-3 sm:mt-4 font-medium bg-muted-foreground/10 p-3 sm:p-4 rounded-lg">
             {t('app.footerNote')}
           </p>
         </div>

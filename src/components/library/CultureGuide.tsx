@@ -7,32 +7,32 @@ export function CultureGuide() {
   const { t } = useTranslation()
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
       <div>
-        <h2 className="text-3xl font-bold mb-3">{t('cultureGuide.title')}</h2>
-        <p className="text-muted-foreground text-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{t('cultureGuide.title')}</h2>
+        <p className="text-muted-foreground text-base sm:text-lg">
           {t('cultureGuide.subtitle')}
         </p>
       </div>
 
       <div>
-        <div className="flex items-center gap-3 mb-6">
-          <div className="h-1 w-8 bg-primary rounded-full" />
-          <h3 className="text-xl font-semibold text-primary">For Newcomers to Canada</h3>
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <div className="h-1 w-6 sm:w-8 bg-primary rounded-full" />
+          <h3 className="text-lg sm:text-xl font-semibold text-primary">For Newcomers to Canada</h3>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-secondary/10 to-secondary/5 border-secondary/20">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-secondary text-secondary-foreground rounded-lg">
-                <GlobeHemisphereWest size={28} weight="duotone" />
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-secondary/10 to-secondary/5 border-secondary/20">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="p-2 sm:p-3 bg-secondary text-secondary-foreground rounded-lg shrink-0">
+                <GlobeHemisphereWest className="w-6 h-6 sm:w-7 sm:h-7" weight="duotone" />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-xl font-semibold">{t('cultureGuide.noiseTitle')}</h3>
-                  <Badge variant="outline" className="text-xs">Newcomer</Badge>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold">{t('cultureGuide.noiseTitle')}</h3>
+                  <Badge variant="outline" className="text-[10px] sm:text-xs">Newcomer</Badge>
                 </div>
-                <div className="space-y-3 text-sm leading-relaxed">
+                <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm leading-relaxed">
                   <p>
                     <strong>{t('cultureGuide.noiseSurprise')}</strong> {t('cultureGuide.noiseDescription')}
                   </p>
@@ -53,17 +53,17 @@ export function CultureGuide() {
             </div>
           </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-primary text-primary-foreground rounded-lg">
-                <ShieldCheck size={28} weight="duotone" />
+          <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="p-2 sm:p-3 bg-primary text-primary-foreground rounded-lg shrink-0">
+                <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7" weight="duotone" />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-xl font-semibold">{t('cultureGuide.trustTitle')}</h3>
-                  <Badge variant="outline" className="text-xs">Newcomer</Badge>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold">{t('cultureGuide.trustTitle')}</h3>
+                  <Badge variant="outline" className="text-[10px] sm:text-xs">Newcomer</Badge>
                 </div>
-                <div className="space-y-3 text-sm leading-relaxed">
+                <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm leading-relaxed">
                   <p>
                     <strong>{t('cultureGuide.trustYourRight')}</strong>
                   </p>
@@ -81,17 +81,17 @@ export function CultureGuide() {
             </div>
           </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-sage/10 to-sage/5 border-sage/20 md:col-span-2 lg:col-span-1">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-sage text-sage-foreground rounded-lg">
-                <Coffee size={28} weight="duotone" />
+          <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-sage/10 to-sage/5 border-sage/20 md:col-span-2 lg:col-span-1">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="p-2 sm:p-3 bg-sage text-sage-foreground rounded-lg shrink-0">
+                <Coffee className="w-6 h-6 sm:w-7 sm:h-7" weight="duotone" />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-xl font-semibold">{t('cultureGuide.comfortTitle')}</h3>
-                  <Badge variant="outline" className="text-xs">Newcomer</Badge>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold">{t('cultureGuide.comfortTitle')}</h3>
+                  <Badge variant="outline" className="text-[10px] sm:text-xs">Newcomer</Badge>
                 </div>
-                <div className="space-y-3 text-sm leading-relaxed">
+                <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm leading-relaxed">
                   <p>
                     <strong>{t('cultureGuide.comfortWelcome')}</strong>
                   </p>
