@@ -49,8 +49,8 @@ function AppContent() {
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
                 {t('app.title')}
               </h1>
-              <p className="text-primary-foreground/90 text-base md:text-lg">
-                {t('app.subtitle')}
+              <p className="text-primary-foreground/90 text-base md:text-lg italic">
+                {t('app.tagline')}
               </p>
             </div>
             <LanguageSelector />
@@ -226,6 +226,9 @@ function AppContent() {
           </p>
           <p className="text-xs mt-2">
             {t('app.footerDisclaimer')}
+          </p>
+          <p className="text-sm mt-4 font-medium bg-muted-foreground/10 p-4 rounded-lg">
+            {t('app.footerNote')}
           </p>
         </div>
       </footer>

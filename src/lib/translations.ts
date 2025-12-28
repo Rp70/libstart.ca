@@ -4,9 +4,10 @@ export const translations = {
   en: {
     app: {
       title: 'Your Library Companion',
-      subtitle: 'Discover everything Canadian libraries have to offer',
+      tagline: 'Start your Canadian journey at the library, for free',
       footer: 'Created with care for library users across Canada 🇨🇦',
       footerDisclaimer: 'This is an unofficial guide. For official information, visit your local library.',
+      footerNote: 'In Canada, libraries are funded by your taxes. This means you have already paid for these services! Using the library is simply claiming what belongs to you.',
     },
     navigation: {
       culture: 'Culture',
@@ -331,9 +332,10 @@ export const translations = {
   pa: {
     app: {
       title: 'ਤੁਹਾਡਾ ਲਾਇਬ੍ਰੇਰੀ ਸਾਥੀ',
-      subtitle: 'ਕੈਨੇਡੀਅਨ ਲਾਇਬ੍ਰੇਰੀਆਂ ਲਈ ਨਵੇਂ ਆਏ ਲੋਕਾਂ ਲਈ ਇੱਕ ਦੋਸਤਾਨਾ ਗਾਈਡ',
+      tagline: 'ਆਪਣੀ ਕੈਨੇਡੀਅਨ ਯਾਤਰਾ ਲਾਇਬ੍ਰੇਰੀ ਵਿੱਚ, ਮੁਫ਼ਤ ਸ਼ੁਰੂ ਕਰੋ',
       footer: 'ਕੈਨੇਡਾ ਵਿੱਚ ਨਵੇਂ ਆਏ ਲੋਕਾਂ ਲਈ ਦੇਖਭਾਲ ਨਾਲ ਬਣਾਇਆ ਗਿਆ 🇨🇦',
       footerDisclaimer: 'ਇਹ ਇੱਕ ਗੈਰ-ਰਸਮੀ ਗਾਈਡ ਹੈ। ਅਧਿਕਾਰਤ ਜਾਣਕਾਰੀ ਲਈ, ਆਪਣੀ ਸਥਾਨਕ ਫਰੇਜ਼ਰ ਵੈਲੀ ਖੇਤਰੀ ਲਾਇਬ੍ਰੇਰੀ ਸ਼ਾਖਾ ਤੇ ਜਾਓ।',
+      footerNote: 'ਕੈਨੇਡਾ ਵਿੱਚ, ਲਾਇਬ੍ਰੇਰੀਆਂ ਤੁਹਾਡੇ ਟੈਕਸਾਂ ਦੁਆਰਾ ਫੰਡ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ। ਇਸ ਦਾ ਮਤਲਬ ਹੈ ਕਿ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਇਹਨਾਂ ਸੇਵਾਵਾਂ ਲਈ ਭੁਗਤਾਨ ਕਰ ਚੁੱਕੇ ਹੋ! ਲਾਇਬ੍ਰੇਰੀ ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਸਿਰਫ਼ ਉਹ ਦਾਅਵਾ ਕਰਨਾ ਹੈ ਜੋ ਤੁਹਾਡਾ ਹੈ।',
     },
     navigation: {
       culture: 'ਸੱਭਿਆਚਾਰ',
@@ -500,9 +502,10 @@ export const translations = {
   zh: {
     app: {
       title: '您的图书馆伙伴',
-      subtitle: '为加拿大新移民提供的友好指南',
+      tagline: '从图书馆免费开始您的加拿大之旅',
       footer: '为加拿大新移民精心制作 🇨🇦',
       footerDisclaimer: '这是非官方指南。如需官方信息，请访问您当地的弗雷泽河谷地区图书馆分馆。',
+      footerNote: '在加拿大，图书馆由您的税款资助。这意味着您已经为这些服务付费了！使用图书馆只是在索取属于您的东西。',
     },
     navigation: {
       culture: '文化',
@@ -669,9 +672,10 @@ export const translations = {
   ar: {
     app: {
       title: 'رفيقك في المكتبة',
-      subtitle: 'دليل ودود للقادمين الجدد إلى المكتبات الكندية',
+      tagline: 'ابدأ رحلتك الكندية في المكتبة، مجانًا',
       footer: 'صُنع بعناية للقادمين الجدد إلى كندا 🇨🇦',
       footerDisclaimer: 'هذا دليل غير رسمي. للحصول على معلومات رسمية، قم بزيارة فرع مكتبة فريزر فالي الإقليمية المحلي الخاص بك.',
+      footerNote: 'في كندا، يتم تمويل المكتبات من خلال ضرائبك. هذا يعني أنك قد دفعت بالفعل مقابل هذه الخدمات! استخدام المكتبة هو ببساطة المطالبة بما يخصك.',
     },
     navigation: {
       culture: 'الثقافة',
@@ -838,9 +842,10 @@ export const translations = {
   es: {
     app: {
       title: 'Tu Compañero de Biblioteca',
-      subtitle: 'Una guía amigable para recién llegados a las bibliotecas canadienses',
+      tagline: 'Comienza tu viaje canadiense en la biblioteca, gratis',
       footer: 'Creado con cuidado para recién llegados a Canadá 🇨🇦',
       footerDisclaimer: 'Esta es una guía no oficial. Para información oficial, visite su sucursal local de la Biblioteca Regional del Valle de Fraser.',
+      footerNote: 'En Canadá, las bibliotecas se financian con sus impuestos. ¡Esto significa que ya pagaste por estos servicios! Usar la biblioteca es simplemente reclamar lo que te pertenece.',
     },
     navigation: {
       culture: 'Cultura',
