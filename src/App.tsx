@@ -49,7 +49,7 @@ function AppContent() {
               {t('app.title')}
             </h1>
             <p className="text-sm sm:text-base md:text-lg opacity-90">
-              {t('app.subtitle')}
+              {t('app.tagline')}
             </p>
           </div>
           <div className="w-full sm:w-auto">
