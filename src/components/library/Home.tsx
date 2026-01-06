@@ -28,7 +28,10 @@ export function Home() {
           <Button 
             size="lg" 
             className="w-full sm:w-auto gap-2"
-            onClick={() => document.querySelector('[value="directory"]')?.dispatchEvent(new Event('click', { bubbles: true }))}
+            onClick={() => {
+              const directoryTab = document.querySelector('[value="directory"]') as HTMLElement
+              if (directoryTab) directoryTab.click()
+            }}
           >
             <BookOpen size={20} />
             {t('home.findLibrary')}
@@ -61,7 +64,7 @@ export function Home() {
         <div className="space-y-4 sm:space-y-5 text-sm sm:text-base leading-relaxed">
           <p>{t('home.purposeIntro')}</p>
           
-          <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-5 md:grid-cols-3">
             <div className="space-y-3">
               <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
                 <CheckCircle size={20} className="text-primary" weight="duotone" />
@@ -83,6 +86,31 @@ export function Home() {
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1 shrink-0">•</span>
                   <span>{t('home.forNewcomers4')}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
+                <Users size={20} className="text-primary" weight="duotone" />
+                {t('home.forLocalUsersTitle')}
+              </h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span>{t('home.forLocalUsers1')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span>{t('home.forLocalUsers2')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span>{t('home.forLocalUsers3')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span>{t('home.forLocalUsers4')}</span>
                 </li>
               </ul>
             </div>
@@ -112,6 +140,73 @@ export function Home() {
               </ul>
             </div>
           </div>
+        </div>
+      </Card>
+
+      {/* Community Impact Section - Moved here */}
+      <Card className="bg-gradient-to-br from-sage/20 to-accent/20 p-6 sm:p-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+          <Users size={24} className="sm:w-7 sm:h-7 text-primary" weight="duotone" />
+          {t('home.impactTitle')}
+        </h2>
+        <div className="space-y-4 sm:space-y-5 text-sm sm:text-base leading-relaxed">
+          <p className="text-lg font-medium">{t('home.impactIntro')}</p>
+          
+          <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
+            <div className="bg-background/50 p-4 sm:p-5 rounded-lg space-y-3">
+              <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
+                <CheckCircle size={20} className="text-primary" weight="duotone" />
+                {t('home.impactForNewcomersTitle')}
+              </h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForNewcomers1')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForNewcomers2')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForNewcomers3')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForNewcomers4')}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-background/50 p-4 sm:p-5 rounded-lg space-y-3">
+              <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
+                <CheckCircle size={20} className="text-primary" weight="duotone" />
+                {t('home.impactForLocalUsersTitle')}
+              </h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForLocalUsers1')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForLocalUsers2')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForLocalUsers3')}</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span>{t('home.impactForLocalUsers4')}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="font-medium pt-3 sm:pt-4 text-center text-lg">
+            {t('home.impactClosing')}
+          </p>
         </div>
       </Card>
 
@@ -166,6 +261,26 @@ export function Home() {
                 <p className="text-sm sm:text-base text-muted-foreground">{t('home.contributeStep4')}</p>
               </div>
             </div>
+
+            <div className="flex gap-3 sm:gap-4">
+              <div className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">
+                5
+              </div>
+              <div>
+                <h3 className="font-semibold text-base sm:text-lg mb-1">{t('home.contributeStep5Title')}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{t('home.contributeStep5')}</p>
+              </div>
+            </div>
+
+            <div className="flex gap-3 sm:gap-4">
+              <div className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">
+                6
+              </div>
+              <div>
+                <h3 className="font-semibold text-base sm:text-lg mb-1">{t('home.contributeStep6Title')}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{t('home.contributeStep6')}</p>
+              </div>
+            </div>
           </div>
 
           <div className="pt-4 sm:pt-6 border-t border-border">
@@ -185,43 +300,6 @@ export function Home() {
               </a>
             </Button>
           </div>
-        </div>
-      </Card>
-
-      {/* Community Impact Section */}
-      <Card className="bg-gradient-to-br from-sage/20 to-accent/20 p-6 sm:p-8">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-          <Users size={24} className="sm:w-7 sm:h-7 text-primary" weight="duotone" />
-          {t('home.impactTitle')}
-        </h2>
-        <div className="space-y-4 sm:space-y-5 text-sm sm:text-base leading-relaxed">
-          <p>{t('home.impactIntro')}</p>
-          
-          <div className="bg-background/50 p-4 sm:p-6 rounded-lg space-y-3">
-            <h3 className="font-semibold text-base sm:text-lg">{t('home.impactSuccessTitle')}</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
-                <span>{t('home.impactSuccess1')}</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
-                <span>{t('home.impactSuccess2')}</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
-                <span>{t('home.impactSuccess3')}</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
-                <span>{t('home.impactSuccess4')}</span>
-              </li>
-            </ul>
-          </div>
-
-          <p className="font-medium pt-3 sm:pt-4">
-            {t('home.impactClosing')}
-          </p>
         </div>
       </Card>
 
