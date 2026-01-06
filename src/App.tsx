@@ -315,7 +315,7 @@ function AppContent() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
         <div className="mt-0">
             <TabsContent value="home" className="mt-0">
-              <Home />
+              <Home setActiveTab={setActiveTab} />
             </TabsContent>
 
             <TabsContent value="culture" className="mt-0">

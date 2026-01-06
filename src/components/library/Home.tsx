@@ -11,7 +11,11 @@ import {
 } from '@phosphor-icons/react'
 import { useTranslation } from '@/hooks/use-translation'
 
-export function Home() {
+interface HomeProps {
+  setActiveTab: (tab: string) => void
+}
+
+export function Home({ setActiveTab }: HomeProps) {
   const { t } = useTranslation()
 
   return (
@@ -28,10 +32,7 @@ export function Home() {
           <Button 
             size="lg" 
             className="w-full sm:w-auto gap-2"
-            onClick={() => {
-              const directoryTab = document.querySelector('[value="directory"]') as HTMLElement
-              if (directoryTab) directoryTab.click()
-            }}
+            onClick={() => setActiveTab('directory')}
           >
             <BookOpen size={20} />
             {t('home.findLibrary')}
@@ -315,10 +316,7 @@ export function Home() {
           <Button 
             size="lg" 
             className="w-full sm:w-auto gap-2"
-            onClick={() => {
-              const directoryTab = document.querySelector('[data-tab="directory"]') as HTMLElement
-              if (directoryTab) directoryTab.click()
-            }}
+            onClick={() => setActiveTab('directory')}
           >
             <BookOpen size={20} />
             {t('home.findYourLibrary')}
@@ -327,10 +325,7 @@ export function Home() {
             variant="outline" 
             size="lg" 
             className="w-full sm:w-auto gap-2"
-            onClick={() => {
-              const cultureTab = document.querySelector('[data-tab="culture"]') as HTMLElement
-              if (cultureTab) cultureTab.click()
-            }}
+            onClick={() => setActiveTab('culture')}
           >
             {t('home.learnMore')}
             <ArrowRight size={20} />
