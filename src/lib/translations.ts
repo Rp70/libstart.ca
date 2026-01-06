@@ -8,8 +8,10 @@ export const translations = {
       footer: 'Created with care for library users across Canada 🇨🇦',
       footerDisclaimer: 'This is an unofficial guide. For official information, visit your local library.',
       footerNote: 'In Canada, libraries are funded by your taxes. This means you have already paid for these services! Using the library is simply claiming what belongs to you.',
+      footerGitHub: 'Contribute on GitHub',
     },
     navigation: {
+      home: 'Home',
       culture: 'Culture',
       tours: 'Tours',
       menu: 'Hidden Menu',
@@ -32,6 +34,47 @@ export const translations = {
       learn: 'Learn',
       access: 'Access',
       connect: 'Connect',
+    },
+    home: {
+      heroTitle: 'Welcome to LibStart',
+      heroSubtitle: 'Your guide to discovering free library services across Canada',
+      findLibrary: 'Find Your Library',
+      contribute: 'Contribute on GitHub',
+      purposeTitle: 'Our Purpose',
+      purposeIntro: 'LibStart bridges the gap between newcomers to Canada and the incredible free resources available at public libraries. We believe everyone deserves to know what they have already paid for through their taxes.',
+      forNewcomersTitle: 'For Newcomers',
+      forNewcomers1: 'Discover free services you didn\'t know existed',
+      forNewcomers2: 'Learn Canadian library culture and expectations',
+      forNewcomers3: 'Find libraries near you with multilingual support',
+      forNewcomers4: 'Access job search help, language learning, and settlement resources',
+      forCanadaTitle: 'Contributing Back to Canada',
+      forCanada1: 'Informed library users strengthen our public institutions',
+      forCanada2: 'Higher library usage justifies continued public funding',
+      forCanada3: 'Newcomers bring fresh perspectives and enrich library programs',
+      forCanada4: 'Successful integration benefits entire communities',
+      contributeTitle: 'How to Contribute',
+      contributeIntro: 'LibStart is open source and community-driven. Here\'s how you can help improve this resource for newcomers:',
+      contributeStep1Title: 'Report Issues',
+      contributeStep1: 'Found a broken link or outdated information? Create an issue on GitHub to let us know.',
+      contributeStep2Title: 'Add Libraries',
+      contributeStep2: 'Know a library that should be listed? Submit a pull request with the details.',
+      contributeStep3Title: 'Improve Translations',
+      contributeStep3: 'Help make the site more accessible by improving translations in Punjabi, Chinese, Arabic, or Spanish.',
+      contributeStep4Title: 'Share Your Experience',
+      contributeStep4: 'Add tips, insights, or local knowledge that could help other newcomers.',
+      viewOnGitHub: 'View on GitHub',
+      impactTitle: 'Community Impact',
+      impactIntro: 'When newcomers discover and use library services, everyone benefits:',
+      impactSuccessTitle: 'Success Stories',
+      impactSuccess1: 'Language learners find free conversation circles',
+      impactSuccess2: 'Job seekers access resume help and interview prep',
+      impactSuccess3: 'Families discover free programs and museum passes',
+      impactSuccess4: 'Students find quiet study spaces and technology',
+      impactClosing: 'Your library card is already paid for - start using it today!',
+      getStartedTitle: 'Ready to Get Started?',
+      getStartedSubtitle: 'Explore the resources and find your local library to begin your journey.',
+      findYourLibrary: 'Find Your Library',
+      learnMore: 'Learn More',
     },
     cultureGuide: {
       title: 'Library Culture Shock Guide',
@@ -344,6 +387,7 @@ export const translations = {
       footerNote: 'ਕੈਨੇਡਾ ਵਿੱਚ, ਲਾਇਬ੍ਰੇਰੀਆਂ ਤੁਹਾਡੇ ਟੈਕਸਾਂ ਦੁਆਰਾ ਫੰਡ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ। ਇਸ ਦਾ ਮਤਲਬ ਹੈ ਕਿ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਇਹਨਾਂ ਸੇਵਾਵਾਂ ਲਈ ਭੁਗਤਾਨ ਕਰ ਚੁੱਕੇ ਹੋ! ਲਾਇਬ੍ਰੇਰੀ ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਸਿਰਫ਼ ਉਹ ਦਾਅਵਾ ਕਰਨਾ ਹੈ ਜੋ ਤੁਹਾਡਾ ਹੈ।',
     },
     navigation: {
+      home: 'ਘਰ',
       culture: 'ਸੱਭਿਆਚਾਰ',
       tours: 'ਟੂਰ',
       menu: 'ਛੁਪਿਆ ਮੀਨੂ',
@@ -366,6 +410,47 @@ export const translations = {
       learn: 'ਸਿੱਖੋ',
       access: 'ਪਹੁੰਚ',
       connect: 'ਜੁੜੋ',
+    },
+    home: {
+      heroTitle: 'LibStart ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ',
+      heroSubtitle: 'ਕੈਨੇਡਾ ਭਰ ਵਿੱਚ ਮੁਫ਼ਤ ਲਾਇਬ੍ਰੇਰੀ ਸੇਵਾਵਾਂ ਦੀ ਖੋਜ ਕਰਨ ਲਈ ਤੁਹਾਡੀ ਗਾਈਡ',
+      findLibrary: 'ਆਪਣੀ ਲਾਇਬ੍ਰੇਰੀ ਲੱਭੋ',
+      contribute: 'GitHub \'ਤੇ ਯੋਗਦਾਨ ਪਾਓ',
+      purposeTitle: 'ਸਾਡਾ ਉਦੇਸ਼',
+      purposeIntro: 'LibStart ਕੈਨੇਡਾ ਆਏ ਨਵੇਂ ਲੋਕਾਂ ਅਤੇ ਜਨਤਕ ਲਾਇਬ੍ਰੇਰੀਆਂ ਵਿੱਚ ਉਪਲਬਧ ਸ਼ਾਨਦਾਰ ਮੁਫ਼ਤ ਸਰੋਤਾਂ ਵਿਚਕਾਰ ਪੁਲ ਬਣਾਉਂਦਾ ਹੈ।',
+      forNewcomersTitle: 'ਨਵੇਂ ਆਏ ਲੋਕਾਂ ਲਈ',
+      forNewcomers1: 'ਮੁਫ਼ਤ ਸੇਵਾਵਾਂ ਦੀ ਖੋਜ ਕਰੋ',
+      forNewcomers2: 'ਕੈਨੇਡੀਅਨ ਲਾਇਬ੍ਰੇਰੀ ਸੱਭਿਆਚਾਰ ਸਿੱਖੋ',
+      forNewcomers3: 'ਆਪਣੇ ਨੇੜੇ ਲਾਇਬ੍ਰੇਰੀਆਂ ਲੱਭੋ',
+      forNewcomers4: 'ਨੌਕਰੀ ਖੋਜ ਮਦਦ ਅਤੇ ਭਾਸ਼ਾ ਸਿੱਖਣ',
+      forCanadaTitle: 'ਕੈਨੇਡਾ ਨੂੰ ਵਾਪਸ ਯੋਗਦਾਨ',
+      forCanada1: 'ਜਾਣਕਾਰ ਉਪਯੋਗਕਰਤਾ ਸੰਸਥਾਵਾਂ ਨੂੰ ਮਜ਼ਬੂਤ ​​ਕਰਦੇ ਹਨ',
+      forCanada2: 'ਵੱਧ ਵਰਤੋਂ ਜਨਤਕ ਫੰਡਿੰਗ ਨੂੰ ਜਾਇਜ਼ ਠਹਿਰਾਉਂਦੀ ਹੈ',
+      forCanada3: 'ਨਵੇਂ ਨਜ਼ਰੀਏ ਪ੍ਰੋਗਰਾਮਾਂ ਨੂੰ ਅਮੀਰ ਬਣਾਉਂਦੇ ਹਨ',
+      forCanada4: 'ਸਫਲ ਏਕੀਕਰਣ ਸਮੁਦਾਇਆਂ ਨੂੰ ਲਾਭ ਦਿੰਦਾ ਹੈ',
+      contributeTitle: 'ਯੋਗਦਾਨ ਕਿਵੇਂ ਕਰੀਏ',
+      contributeIntro: 'LibStart ਓਪਨ ਸੋਰਸ ਅਤੇ ਕਮਿਊਨਿਟੀ-ਸੰਚਾਲਿਤ ਹੈ।',
+      contributeStep1Title: 'ਮੁੱਦਿਆਂ ਦੀ ਰਿਪੋਰਟ ਕਰੋ',
+      contributeStep1: 'GitHub \'ਤੇ ਮੁੱਦਾ ਬਣਾਓ',
+      contributeStep2Title: 'ਲਾਇਬ੍ਰੇਰੀਆਂ ਜੋੜੋ',
+      contributeStep2: 'ਵੇਰਵਿਆਂ ਦੇ ਨਾਲ ਪੁੱਲ ਬੇਨਤੀ ਜਮ੍ਹਾਂ ਕਰੋ',
+      contributeStep3Title: 'ਅਨੁਵਾਦ ਸੁਧਾਰੋ',
+      contributeStep3: 'ਅਨੁਵਾਦਾਂ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰੋ',
+      contributeStep4Title: 'ਆਪਣਾ ਅਨੁਭਵ ਸਾਂਝਾ ਕਰੋ',
+      contributeStep4: 'ਸੁਝਾਅ ਅਤੇ ਸਥਾਨਕ ਗਿਆਨ ਜੋੜੋ',
+      viewOnGitHub: 'GitHub \'ਤੇ ਵੇਖੋ',
+      impactTitle: 'ਕਮਿਊਨਿਟੀ ਪ੍ਰਭਾਵ',
+      impactIntro: 'ਜਦੋਂ ਨਵੇਂ ਆਏ ਲੋਕ ਲਾਇਬ੍ਰੇਰੀ ਸੇਵਾਵਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ, ਸਾਰਿਆਂ ਨੂੰ ਲਾਭ ਹੁੰਦਾ ਹੈ:',
+      impactSuccessTitle: 'ਸਫਲਤਾ ਦੀਆਂ ਕਹਾਣੀਆਂ',
+      impactSuccess1: 'ਭਾਸ਼ਾ ਸਿਖਿਆਰਥੀ ਮੁਫ਼ਤ ਸਮੂਹ ਲੱਭਦੇ ਹਨ',
+      impactSuccess2: 'ਨੌਕਰੀ ਖੋਜਣ ਵਾਲਿਆਂ ਨੂੰ ਰੈਜ਼ਿਊਮੇ ਮਦਦ ਮਿਲਦੀ ਹੈ',
+      impactSuccess3: 'ਪਰਿਵਾਰਾਂ ਨੂੰ ਮੁਫ਼ਤ ਪ੍ਰੋਗਰਾਮ ਮਿਲਦੇ ਹਨ',
+      impactSuccess4: 'ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਸ਼ਾਂਤ ਥਾਂਵਾਂ ਮਿਲਦੀਆਂ ਹਨ',
+      impactClosing: 'ਤੁਹਾਡਾ ਲਾਇਬ੍ਰੇਰੀ ਕਾਰਡ ਪਹਿਲਾਂ ਹੀ ਭੁਗਤਾਨ ਕੀਤਾ ਹੋਇਆ ਹੈ!',
+      getStartedTitle: 'ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?',
+      getStartedSubtitle: 'ਸਰੋਤਾਂ ਦੀ ਖੋਜ ਕਰੋ ਅਤੇ ਆਪਣੀ ਸਥਾਨਕ ਲਾਇਬ੍ਰੇਰੀ ਲੱਭੋ',
+      findYourLibrary: 'ਆਪਣੀ ਲਾਇਬ੍ਰੇਰੀ ਲੱਭੋ',
+      learnMore: 'ਹੋਰ ਜਾਣੋ',
     },
     cultureGuide: {
       title: 'ਲਾਇਬ੍ਰੇਰੀ ਸੱਭਿਆਚਾਰ ਝਟਕਾ ਗਾਈਡ',
@@ -520,6 +605,7 @@ export const translations = {
       footerNote: '在加拿大，图书馆由您的税款资助。这意味着您已经为这些服务付费了！使用图书馆只是在索取属于您的东西。',
     },
     navigation: {
+      home: '主页',
       culture: '文化',
       tours: '导览',
       menu: '隐藏菜单',
@@ -542,6 +628,47 @@ export const translations = {
       learn: '学习',
       access: '访问',
       connect: '连接',
+    },
+    home: {
+      heroTitle: '欢迎来到 LibStart',
+      heroSubtitle: '您探索加拿大各地免费图书馆服务的指南',
+      findLibrary: '查找您的图书馆',
+      contribute: '在 GitHub 上贡献',
+      purposeTitle: '我们的目的',
+      purposeIntro: 'LibStart 在加拿大新移民和公共图书馆提供的令人难以置信的免费资源之间架起桥梁。',
+      forNewcomersTitle: '为新移民',
+      forNewcomers1: '发现您不知道存在的免费服务',
+      forNewcomers2: '了解加拿大图书馆文化',
+      forNewcomers3: '找到您附近的图书馆',
+      forNewcomers4: '获得求职帮助和语言学习',
+      forCanadaTitle: '回馈加拿大',
+      forCanada1: '知情的用户加强公共机构',
+      forCanada2: '更高的使用率证明持续的公共资金',
+      forCanada3: '新移民带来新的视角',
+      forCanada4: '成功的融合使整个社区受益',
+      contributeTitle: '如何贡献',
+      contributeIntro: 'LibStart 是开源和社区驱动的。',
+      contributeStep1Title: '报告问题',
+      contributeStep1: '在 GitHub 上创建问题',
+      contributeStep2Title: '添加图书馆',
+      contributeStep2: '提交包含详细信息的拉取请求',
+      contributeStep3Title: '改进翻译',
+      contributeStep3: '帮助改进翻译',
+      contributeStep4Title: '分享您的经验',
+      contributeStep4: '添加提示和本地知识',
+      viewOnGitHub: '在 GitHub 上查看',
+      impactTitle: '社区影响',
+      impactIntro: '当新移民发现并使用图书馆服务时，每个人都会受益：',
+      impactSuccessTitle: '成功故事',
+      impactSuccess1: '语言学习者找到免费的对话小组',
+      impactSuccess2: '求职者获得简历帮助',
+      impactSuccess3: '家庭发现免费项目',
+      impactSuccess4: '学生找到安静的学习空间',
+      impactClosing: '您的图书馆卡已经付费 - 今天就开始使用它！',
+      getStartedTitle: '准备开始了吗？',
+      getStartedSubtitle: '探索资源并找到您当地的图书馆',
+      findYourLibrary: '查找您的图书馆',
+      learnMore: '了解更多',
     },
     cultureGuide: {
       title: '图书馆文化冲击指南',
@@ -696,6 +823,7 @@ export const translations = {
       footerNote: 'في كندا، يتم تمويل المكتبات من خلال ضرائبك. هذا يعني أنك قد دفعت بالفعل مقابل هذه الخدمات! استخدام المكتبة هو ببساطة المطالبة بما يخصك.',
     },
     navigation: {
+      home: 'الصفحة الرئيسية',
       culture: 'الثقافة',
       tours: 'جولات',
       menu: 'القائمة المخفية',
@@ -718,6 +846,47 @@ export const translations = {
       learn: 'تعلم',
       access: 'الوصول',
       connect: 'اتصل',
+    },
+    home: {
+      heroTitle: 'مرحبًا بك في LibStart',
+      heroSubtitle: 'دليلك لاكتشاف خدمات المكتبة المجانية في جميع أنحاء كندا',
+      findLibrary: 'ابحث عن مكتبتك',
+      contribute: 'ساهم على GitHub',
+      purposeTitle: 'هدفنا',
+      purposeIntro: 'يربط LibStart بين الوافدين الجدد إلى كندا والموارد المجانية المذهلة المتاحة في المكتبات العامة.',
+      forNewcomersTitle: 'للوافدين الجدد',
+      forNewcomers1: 'اكتشف الخدمات المجانية',
+      forNewcomers2: 'تعلم ثقافة المكتبة الكندية',
+      forNewcomers3: 'ابحث عن المكتبات بالقرب منك',
+      forNewcomers4: 'احصل على مساعدة في البحث عن عمل وتعلم اللغة',
+      forCanadaTitle: 'المساهمة في كندا',
+      forCanada1: 'المستخدمون المطلعون يقوون المؤسسات العامة',
+      forCanada2: 'زيادة الاستخدام تبرر التمويل العام',
+      forCanada3: 'الوافدون الجدد يجلبون وجهات نظر جديدة',
+      forCanada4: 'التكامل الناجح يفيد المجتمعات بأكملها',
+      contributeTitle: 'كيف تساهم',
+      contributeIntro: 'LibStart مفتوح المصدر ومدفوع بالمجتمع.',
+      contributeStep1Title: 'الإبلاغ عن المشاكل',
+      contributeStep1: 'قم بإنشاء مشكلة على GitHub',
+      contributeStep2Title: 'إضافة مكتبات',
+      contributeStep2: 'قدم طلب سحب مع التفاصيل',
+      contributeStep3Title: 'تحسين الترجمات',
+      contributeStep3: 'ساعد في تحسين الترجمات',
+      contributeStep4Title: 'شارك تجربتك',
+      contributeStep4: 'أضف نصائح ومعرفة محلية',
+      viewOnGitHub: 'عرض على GitHub',
+      impactTitle: 'التأثير المجتمعي',
+      impactIntro: 'عندما يكتشف الوافدون الجدد خدمات المكتبة ويستخدمونها، يستفيد الجميع:',
+      impactSuccessTitle: 'قصص النجاح',
+      impactSuccess1: 'متعلمو اللغة يجدون دوائر محادثة مجانية',
+      impactSuccess2: 'الباحثون عن عمل يحصلون على مساعدة في السيرة الذاتية',
+      impactSuccess3: 'العائلات تكتشف البرامج المجانية',
+      impactSuccess4: 'الطلاب يجدون مساحات دراسة هادئة',
+      impactClosing: 'بطاقة مكتبتك مدفوعة بالفعل - ابدأ في استخدامها اليوم!',
+      getStartedTitle: 'هل أنت مستعد للبدء؟',
+      getStartedSubtitle: 'استكشف الموارد وابحث عن مكتبتك المحلية',
+      findYourLibrary: 'ابحث عن مكتبتك',
+      learnMore: 'تعلم المزيد',
     },
     cultureGuide: {
       title: 'دليل الصدمة الثقافية للمكتبة',
@@ -872,6 +1041,7 @@ export const translations = {
       footerNote: 'En Canadá, las bibliotecas se financian con sus impuestos. ¡Esto significa que ya pagaste por estos servicios! Usar la biblioteca es simplemente reclamar lo que te pertenece.',
     },
     navigation: {
+      home: 'Inicio',
       culture: 'Cultura',
       tours: 'Recorridos',
       menu: 'Menú Oculto',
@@ -894,6 +1064,47 @@ export const translations = {
       learn: 'Aprender',
       access: 'Acceder',
       connect: 'Conectar',
+    },
+    home: {
+      heroTitle: 'Bienvenido a LibStart',
+      heroSubtitle: 'Tu guía para descubrir servicios gratuitos de biblioteca en todo Canadá',
+      findLibrary: 'Encuentra Tu Biblioteca',
+      contribute: 'Contribuir en GitHub',
+      purposeTitle: 'Nuestro Propósito',
+      purposeIntro: 'LibStart conecta a los recién llegados a Canadá con los increíbles recursos gratuitos disponibles en las bibliotecas públicas.',
+      forNewcomersTitle: 'Para Recién Llegados',
+      forNewcomers1: 'Descubre servicios gratuitos',
+      forNewcomers2: 'Aprende la cultura de biblioteca canadiense',
+      forNewcomers3: 'Encuentra bibliotecas cerca de ti',
+      forNewcomers4: 'Obtén ayuda de búsqueda de empleo y aprendizaje de idiomas',
+      forCanadaTitle: 'Contribuyendo a Canadá',
+      forCanada1: 'Los usuarios informados fortalecen las instituciones públicas',
+      forCanada2: 'Mayor uso justifica la financiación pública',
+      forCanada3: 'Los recién llegados aportan nuevas perspectivas',
+      forCanada4: 'La integración exitosa beneficia a comunidades enteras',
+      contributeTitle: 'Cómo Contribuir',
+      contributeIntro: 'LibStart es de código abierto e impulsado por la comunidad.',
+      contributeStep1Title: 'Reportar Problemas',
+      contributeStep1: 'Crea un problema en GitHub',
+      contributeStep2Title: 'Agregar Bibliotecas',
+      contributeStep2: 'Envía una solicitud de extracción con detalles',
+      contributeStep3Title: 'Mejorar Traducciones',
+      contributeStep3: 'Ayuda a mejorar las traducciones',
+      contributeStep4Title: 'Comparte Tu Experiencia',
+      contributeStep4: 'Agrega consejos y conocimiento local',
+      viewOnGitHub: 'Ver en GitHub',
+      impactTitle: 'Impacto Comunitario',
+      impactIntro: 'Cuando los recién llegados descubren y usan los servicios de biblioteca, todos se benefician:',
+      impactSuccessTitle: 'Historias de Éxito',
+      impactSuccess1: 'Los estudiantes de idiomas encuentran círculos de conversación gratuitos',
+      impactSuccess2: 'Los buscadores de empleo obtienen ayuda con currículums',
+      impactSuccess3: 'Las familias descubren programas gratuitos',
+      impactSuccess4: 'Los estudiantes encuentran espacios de estudio tranquilos',
+      impactClosing: '¡Tu tarjeta de biblioteca ya está pagada - comienza a usarla hoy!',
+      getStartedTitle: '¿Listo para Comenzar?',
+      getStartedSubtitle: 'Explora los recursos y encuentra tu biblioteca local',
+      findYourLibrary: 'Encuentra Tu Biblioteca',
+      learnMore: 'Aprende Más',
     },
     cultureGuide: {
       title: 'Guía del Choque Cultural de la Biblioteca',

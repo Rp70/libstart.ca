@@ -12,6 +12,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 import { useTranslation } from '@/hooks/use-translation'
 import { LanguageSelector } from '@/components/library/LanguageSelector'
 import LibStartLogo from '@/components/ui/LibStartLogo'
+import { Home } from '@/components/library/Home'
 import { CultureGuide } from '@/components/library/CultureGuide'
 import { VisualTours } from '@/components/library/VisualTours'
 import { LibraryBingo } from '@/components/library/LibraryBingo'
@@ -36,11 +37,12 @@ import {
   TrendUp,
   Vault,
   List,
-  CaretDown
+  CaretDown,
+  House
 } from '@phosphor-icons/react'
 
 function AppContent() {
-  const [activeTab, setActiveTab] = useState('culture')
+  const [activeTab, setActiveTab] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { t } = useTranslation()
 
@@ -70,6 +72,14 @@ function AppContent() {
                 </SheetTrigger>
                 <SheetContent side="left" className="w-[280px] sm:w-[320px]">
                 <div className="flex flex-col gap-2 mt-6">
+                  <Button
+                    variant={activeTab === 'home' ? 'default' : 'ghost'}
+                    className="justify-start gap-2"
+                    onClick={() => { setActiveTab('home'); setMobileMenuOpen(false) }}
+                  >
+                    <House size={18} />
+                    {t('navigation.home')}
+                  </Button>
                   <Button
                     variant={activeTab === 'culture' ? 'default' : 'ghost'}
                     className="justify-start gap-2"
@@ -167,6 +177,16 @@ function AppContent() {
           {/* Desktop Navigation - Grouped Dropdowns with Language Selector */}
           <div className="hidden lg:flex items-center justify-between py-4">
             <div className="flex gap-3">
+            {/* Home */}
+            <Button 
+              variant="ghost" 
+              className="gap-2 text-primary-foreground hover:bg-primary-foreground/10 h-11 px-4 text-base"
+              onClick={() => setActiveTab('home')}
+            >
+              <House size={20} />
+              {t('navigation.home')}
+            </Button>
+            
             {/* Discover */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -271,6 +291,10 @@ function AppContent() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
         <div className="mt-0">
+            <TabsContent value="home" className="mt-0">
+              <Home />
+            </TabsContent>
+
             <TabsContent value="culture" className="mt-0">
               <CultureGuide />
             </TabsContent>
@@ -328,6 +352,23 @@ function AppContent() {
           <p className="text-xs sm:text-sm mt-3 sm:mt-4 font-medium bg-muted-foreground/10 p-3 sm:p-4 rounded-lg">
             {t('app.footerNote')}
           </p>
+          <div className="mt-4 sm:mt-6">
+            <a 
+              href="https://github.com/Rp70/libstart.ca" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm hover:text-primary transition-colors"
+            >
+              <svg 
+                viewBox="0 0 16 16" 
+                className="w-4 h-4" 
+                fill="currentColor"
+              >
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              {t('app.footerGitHub')}
+            </a>
+          </div>
         </div>
       </footer>
       </Tabs>
