@@ -11,6 +11,7 @@ import {
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import { useTranslation } from '@/hooks/use-translation'
 import { LanguageSelector } from '@/components/library/LanguageSelector'
+import LibStartLogo from '@/components/ui/LibStartLogo'
 import { CultureGuide } from '@/components/library/CultureGuide'
 import { VisualTours } from '@/components/library/VisualTours'
 import { LibraryBingo } from '@/components/library/LibraryBingo'
@@ -48,12 +49,10 @@ function AppContent() {
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <header className="bg-primary text-primary-foreground shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            {/* Title Section */}
+            {/* Logo Section */}
             <div className="py-4 sm:py-5 border-b border-primary-foreground/10">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1">
-                {t('app.title')}
-              </h1>
-              <p className="text-sm sm:text-base md:text-lg opacity-90">
+              <LibStartLogo className="w-64 md:w-80" />
+              <p className="text-sm sm:text-base md:text-lg opacity-90 mt-2">
                 {t('app.tagline')}
               </p>
             </div>

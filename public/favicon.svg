@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#1e3a8a" />
+  <!-- Open book icon -->
+  <g transform="translate(8, 14)">
+    <!-- Left page -->
+    <path d="M4 10 Q4 8 6 8 L22 8 L22 36 L6 36 Q4 36 4 34 Z" fill="#84cc16" />
+    <!-- Right page -->
+    <path d="M26 8 L42 8 Q44 8 44 10 L44 34 Q44 36 42 36 L26 36 Z" fill="#84cc16" />
+    <!-- Center binding -->
+    <rect x="23" y="8" width="2" height="28" fill="#1e3a8a" />
+    <!-- Page lines on left -->
+    <line x1="8" y1="14" x2="18" y2="14" stroke="#1e3a8a" strokeWidth="1.5" />
+    <line x1="8" y1="18" x2="18" y2="18" stroke="#1e3a8a" strokeWidth="1.5" />
+    <line x1="8" y1="22" x2="18" y2="22" stroke="#1e3a8a" strokeWidth="1.5" />
+    <!-- Page lines on right -->
+    <line x1="30" y1="14" x2="40" y2="14" stroke="#1e3a8a" strokeWidth="1.5" />
+    <line x1="30" y1="18" x2="40" y2="18" stroke="#1e3a8a" strokeWidth="1.5" />
+    <line x1="30" y1="22" x2="40" y2="22" stroke="#1e3a8a" strokeWidth="1.5" />
+  </g>
+</svg>
