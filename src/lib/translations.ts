@@ -1542,3 +1542,13 @@ export function getTranslation(lang: Language, key: string, params?: Record<stri
   
   return result
 }
+
+// NOTE: The following languages use English as a fallback and need proper translations from native speakers.
+// Please contribute translations at: https://github.com/Rp70/libstart.ca
+// Priority languages for community translation: Cantonese, Tagalog, Italian, German, Portuguese, Urdu, Russian, Persian, Vietnamese, Korean, Polish, Hindi, Tamil, Gujarati
+
+const fallbackLanguages: Language[] = ['yue', 'tl', 'it', 'de', 'pt', 'ur', 'ru', 'fa', 'vi', 'ko', 'pl', 'hi', 'ta', 'gu', 'sh', 'el', 'ro', 'bn', 'uk', 'nl', 'sr', 'ml', 'ht', 'hu', 'tr', 'ja', 'hr', 'so', 'hy', 'ilo', 'pdt', 'ti', 'te', 'sq', 'nan', 'am', 'kab', 'ne', 'km', 'ps', 'yo', 'cs', 'sw', 'bg', 'sk']
+
+fallbackLanguages.forEach(lang => {
+  (translations as any)[lang] = translations.en
+})
