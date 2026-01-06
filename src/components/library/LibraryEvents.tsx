@@ -51,19 +51,19 @@ export function LibraryEvents() {
             <h4 className="font-medium mb-2 text-sm sm:text-base">What to Expect</h4>
             <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="text-primary mt-1 shrink-0">•</span>
+                <span className="text-primary text-base shrink-0">✓</span>
                 <span>Most library events and programs are <strong>completely free</strong></span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-primary mt-1 shrink-0">•</span>
+                <span className="text-primary text-base shrink-0">✓</span>
                 <span>Events include storytimes, book clubs, tech help, workshops, and community programs</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-primary mt-1 shrink-0">•</span>
+                <span className="text-primary text-base shrink-0">✓</span>
                 <span>Many programs are offered for specific age groups: children, teens, adults, and seniors</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-primary mt-1 shrink-0">•</span>
+                <span className="text-primary text-base shrink-0">✓</span>
                 <span>Some events require advance registration, while others are drop-in</span>
               </li>
             </ul>
@@ -73,11 +73,11 @@ export function LibraryEvents() {
             <h4 className="font-medium mb-2 text-sm sm:text-base">Programs for Newcomers</h4>
             <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="text-primary mt-1 shrink-0">•</span>
+                <span className="text-primary text-base shrink-0">✓</span>
                 <span>English conversation circles and language practice</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-primary mt-1 shrink-0">•</span>
+                <span className="text-primary text-base shrink-0">✓</span>
                 <span>Settlement services and citizenship test preparation</span>
               </li>
               <li className="flex items-start gap-2">

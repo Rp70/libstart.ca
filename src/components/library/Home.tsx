@@ -72,19 +72,19 @@ export function Home() {
               </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forNewcomers1')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forNewcomers2')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forNewcomers3')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forNewcomers4')}</span>
                 </li>
               </ul>
@@ -97,19 +97,19 @@ export function Home() {
               </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forLocalUsers1')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forLocalUsers2')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forLocalUsers3')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forLocalUsers4')}</span>
                 </li>
               </ul>
@@ -122,19 +122,19 @@ export function Home() {
               </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forCanada1')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forCanada2')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forCanada3')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1 shrink-0">•</span>
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.forCanada4')}</span>
                 </li>
               </ul>
@@ -160,19 +160,19 @@ export function Home() {
               </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.impactForNewcomers1')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.impactForNewcomers2')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.impactForNewcomers3')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.impactForNewcomers4')}</span>
                 </li>
               </ul>
@@ -185,11 +185,11 @@ export function Home() {
               </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.impactForLocalUsers1')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Heart size={16} className="text-primary mt-1 shrink-0" weight="fill" />
+                  <span className="text-primary text-lg shrink-0">✓</span>
                   <span>{t('home.impactForLocalUsers2')}</span>
                 </li>
                 <li className="flex items-start gap-2">

@@ -282,7 +282,7 @@ export function SpecialCollections() {
                     <ul className="space-y-1">
                       {collection.highlights.map((highlight, idx) => (
                         <li key={idx} className="text-sm text-foreground/80 flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-primary text-base">✓</span>
                           <span>{highlight}</span>
                         </li>
                       ))}
