@@ -27,6 +27,12 @@ export const translations = {
       careers: 'Career Paths',
       collections: 'Archives',
     },
+    groups: {
+      discover: 'Discover',
+      learn: 'Learn',
+      access: 'Access',
+      connect: 'Connect',
+    },
     cultureGuide: {
       title: 'Library Culture Shock Guide',
       subtitle: 'Understanding Canadian libraries - what might surprise you',
@@ -355,6 +361,12 @@ export const translations = {
       careers: 'ਕੈਰੀਅਰ',
       collections: 'ਆਰਕਾਈਵਜ਼',
     },
+    groups: {
+      discover: 'ਖੋਜੋ',
+      learn: 'ਸਿੱਖੋ',
+      access: 'ਪਹੁੰਚ',
+      connect: 'ਜੁੜੋ',
+    },
     cultureGuide: {
       title: 'ਲਾਇਬ੍ਰੇਰੀ ਸੱਭਿਆਚਾਰ ਝਟਕਾ ਗਾਈਡ',
       subtitle: 'ਕੈਨੇਡੀਅਨ ਲਾਇਬ੍ਰੇਰੀਆਂ ਨੂੰ ਸਮਝਣਾ - ਜੋ ਤੁਹਾਨੂੰ ਹੈਰਾਨ ਕਰ ਸਕਦਾ ਹੈ',
@@ -524,6 +536,12 @@ export const translations = {
       quietHours: '安静时间',
       careers: '职业',
       collections: '档案',
+    },
+    groups: {
+      discover: '发现',
+      learn: '学习',
+      access: '访问',
+      connect: '连接',
     },
     cultureGuide: {
       title: '图书馆文化冲击指南',
@@ -695,6 +713,12 @@ export const translations = {
       careers: 'المسارات المهنية',
       collections: 'الأرشيفات',
     },
+    groups: {
+      discover: 'اكتشف',
+      learn: 'تعلم',
+      access: 'الوصول',
+      connect: 'اتصل',
+    },
     cultureGuide: {
       title: 'دليل الصدمة الثقافية للمكتبة',
       subtitle: 'فهم المكتبات الكندية - ما قد يفاجئك',
@@ -864,6 +888,12 @@ export const translations = {
       quietHours: 'Horas Tranquilas',
       careers: 'Carreras',
       collections: 'Archivos',
+    },
+    groups: {
+      discover: 'Descubrir',
+      learn: 'Aprender',
+      access: 'Acceder',
+      connect: 'Conectar',
     },
     cultureGuide: {
       title: 'Guía del Choque Cultural de la Biblioteca',
