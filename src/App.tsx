@@ -139,6 +139,14 @@ function AppContent() {
                     {t('navigation.events')}
                   </Button>
                   <Button
+                    variant={activeTab === 'careers' ? 'default' : 'ghost'}
+                    className="justify-start gap-2"
+                    onClick={() => { setActiveTab('careers'); setMobileMenuOpen(false) }}
+                  >
+                    <TrendUp size={18} />
+                    {t('navigation.careers')}
+                  </Button>
+                  <Button
                     variant={activeTab === 'volunteer' ? 'default' : 'ghost'}
                     className="justify-start gap-2"
                     onClick={() => { setActiveTab('volunteer'); setMobileMenuOpen(false) }}
@@ -161,14 +169,6 @@ function AppContent() {
                   >
                     <Wheelchair size={18} />
                     {t('navigation.accessibility')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'careers' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('careers'); setMobileMenuOpen(false) }}
-                  >
-                    <TrendUp size={18} />
-                    {t('navigation.careers')}
                   </Button>
                   <Button
                     variant={activeTab === 'collections' ? 'default' : 'ghost'}
@@ -282,6 +282,10 @@ function AppContent() {
                   <CalendarBlank size={18} className="mr-3" />
                   {t('navigation.events')}
                 </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('careers')} className={activeTab === 'careers' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                  <TrendUp size={18} className="mr-3" />
+                  {t('navigation.careers')}
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setActiveTab('volunteer')} className={activeTab === 'volunteer' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
                   <UserCircle size={18} className="mr-3" />
                   {t('navigation.volunteer')}
@@ -289,10 +293,6 @@ function AppContent() {
                 <DropdownMenuItem onClick={() => setActiveTab('libraryChampion')} className={activeTab === 'libraryChampion' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
                   <Users size={18} className="mr-3" />
                   {t('navigation.libraryChampion')}
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('careers')} className={activeTab === 'careers' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
-                  <TrendUp size={18} className="mr-3" />
-                  {t('navigation.careers')}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
