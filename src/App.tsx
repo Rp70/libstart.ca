@@ -245,3 +245,75 @@ function App() {
 }
 
 export default App
+          <TabsContent value="bingo" className="mt-0">
+            <LibraryBingo />
+          </TabsContent>
+
+          <TabsContent value="glossary" className="mt-0">
+            <LibraryGlossary />
+          </TabsContent>
+
+          <TabsContent value="directory" className="mt-0">
+            <LibraryDirectory />
+          </TabsContent>
+
+          <TabsContent value="services" className="mt-0">
+            <LibraryServices />
+          </TabsContent>
+
+          <TabsContent value="events" className="mt-0">
+            <LibraryEvents />
+          </TabsContent>
+
+          <TabsContent value="testimonials" className="mt-0">
+            <Testimonials />
+          </TabsContent>
+
+          <TabsContent value="volunteer" className="mt-0">
+            <VolunteerProfile />
+          </TabsContent>
+
+          <TabsContent value="bookclubs" className="mt-0">
+            <BookClubFinder />
+          </TabsContent>
+
+          <TabsContent value="accessibility" className="mt-0">
+            <AccessibilityGuide />
+          </TabsContent>
+
+          <TabsContent value="careers" className="mt-0">
+            <CareerPathways />
+          </TabsContent>
+
+          <TabsContent value="collections" className="mt-0">
+            <SpecialCollections />
+          </TabsContent>
+        </Tabs>
+      </main>
+
+      <footer className="bg-muted mt-12 sm:mt-16 py-6 sm:py-8 px-4 sm:px-6 md:px-8">
+        <div className="max-w-7xl mx-auto text-center text-muted-foreground">
+          <p className="text-xs sm:text-sm">
+            {t('app.footer')}
+          </p>
+          <p className="text-[10px] sm:text-xs mt-2">
+            {t('app.footerDisclaimer')}
+          </p>
+          <p className="text-xs sm:text-sm mt-3 sm:mt-4 font-medium bg-muted-foreground/10 p-3 sm:p-4 rounded-lg">
+            {t('app.footerNote')}
+          </p>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
+  )
+}
+
+export default App
