@@ -1,5 +1,4 @@
 import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { useTranslation } from '@/hooks/use-translation'
 import { 
@@ -202,17 +201,13 @@ export function LibraryChampion() {
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
           {t('libraryChampion.getStartedDescription')}
         </p>
-        <Button 
-          size="lg" 
-          className="bg-primary text-primary-foreground hover:bg-primary/90"
-          onClick={() => {
-            const volunteerTab = document.querySelector('[value="volunteer"]') as HTMLElement
-            volunteerTab?.click()
-          }}
-        >
-          <UserCircle size={20} className="mr-2" weight="duotone" />
-          {t('libraryChampion.createProfileButton')}
-        </Button>
+        <p className="text-sm text-muted-foreground mb-4">
+          Navigate to "Library Champion tool" in the Connect menu to create your profile
+        </p>
+        <div className="flex items-center justify-center gap-2 text-primary">
+          <UserCircle size={24} weight="duotone" />
+          <span className="font-semibold">Connect → Library Champion tool</span>
+        </div>
       </Card>
     </div>
   )
