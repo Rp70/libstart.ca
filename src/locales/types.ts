@@ -1,0 +1,441 @@
+import { Language } from '../lib/i18n'
+
+// Translation structure based on English (the complete translation)
+export interface TranslationKeys {
+  app: {
+    title: string
+    tagline: string
+    footer: string
+    footerDisclaimer: string
+    footerNote: string
+    footerGitHub: string
+  }
+  navigation: {
+    home: string
+    culture: string
+    tours: string
+    menu: string
+    bingo: string
+    neighborhood: string
+    glossary: string
+    directory: string
+    services: string
+    events: string
+    stories: string
+    volunteer: string
+    libraryChampion: string
+    bookClubs: string
+    accessibility: string
+    quietHours: string
+    careers: string
+    collections: string
+  }
+  groups: {
+    discover: string
+    learn: string
+    access: string
+    connect: string
+  }
+  home: {
+    heroTitle: string
+    heroSubtitle: string
+    findLibrary: string
+    contribute: string
+    purposeTitle: string
+    purposeIntro: string
+    forNewcomersTitle: string
+    forNewcomers1: string
+    forNewcomers2: string
+    forNewcomers3: string
+    forNewcomers4: string
+    forLocalUsersTitle: string
+    forLocalUsers1: string
+    forLocalUsers2: string
+    forLocalUsers3: string
+    forLocalUsers4: string
+    forCanadaTitle: string
+    forCanada1: string
+    forCanada2: string
+    forCanada3: string
+    forCanada4: string
+    impactTitle: string
+    impactIntro: string
+    impactForNewcomersTitle: string
+    impactForNewcomers1: string
+    impactForNewcomers2: string
+    impactForNewcomers3: string
+    impactForNewcomers4: string
+    impactForLocalUsersTitle: string
+    impactForLocalUsers1: string
+    impactForLocalUsers2: string
+    impactForLocalUsers3: string
+    impactForLocalUsers4: string
+    impactClosing: string
+    contributeTitle: string
+    contributeIntro: string
+    contributeStep1Title: string
+    contributeStep1: string
+    contributeStep2Title: string
+    contributeStep2: string
+    contributeStep3Title: string
+    contributeStep3: string
+    contributeStep4Title: string
+    contributeStep4: string
+    contributeStep5Title: string
+    contributeStep5: string
+    contributeStep6Title: string
+    contributeStep6: string
+    contributeBenefitsTitle: string
+    contributeBenefit1: string
+    contributeBenefit2: string
+    contributeBenefit3: string
+    contributeBenefit4: string
+    contributeBenefit5: string
+    contributeBenefit6: string
+    viewOnGitHub: string
+    getStartedTitle: string
+    getStartedSubtitle: string
+    findYourLibrary: string
+    learnMore: string
+  }
+  cultureGuide: {
+    title: string
+    subtitle: string
+    canadianTitle: string
+    canadianSubtitle: string
+    noiseTitle: string
+    noiseSurprise: string
+    noiseDescription: string
+    noiseHub: string
+    noiseCommunityHub: string
+    noiseMightSee: string
+    noiseChildren: string
+    noiseTeens: string
+    noisePeople: string
+    noiseEvents: string
+    noiseQuiet: string
+    trustTitle: string
+    trustYourRight: string
+    trustNoTracking: string
+    trustNoSharing: string
+    trustNoJudgment: string
+    trustFreedom: string
+    trustSafe: string
+    comfortTitle: string
+    comfortWelcome: string
+    comfortNap: string
+    comfortCoffee: string
+    comfortStay: string
+    comfortPhone: string
+    comfortBathroom: string
+    comfortRespect: string
+    beyondBooksTitle: string
+    beyondBooksSurprise: string
+    beyondBooksDescription: string
+    beyondBooksMuseum: string
+    beyondBooksTools: string
+    beyondBooksInstruments: string
+    beyondBooksSeeds: string
+    beyondBooksTip: string
+    digitalTitle: string
+    digitalNoCard: string
+    digitalEbooks: string
+    digitalAudiobooks: string
+    digitalMagazines: string
+    digitalMovies: string
+    digitalTip: string
+    communityTitle: string
+    communityHub: string
+    communityMakers: string
+    communityJobs: string
+    communityBusiness: string
+    communityMeet: string
+    communityTip: string
+  }
+  tours: {
+    title: string
+    subtitle: string
+    remoteWorkerTitle: string
+    remoteWorkerDescription: string
+    familyWeekendTitle: string
+    familyWeekendDescription: string
+    servicesUsed: string
+  }
+  hiddenMenu: {
+    title: string
+    subtitle: string
+    borrowTitle: string
+    borrowDescription: string
+    toolsTitle: string
+    toolsDescription: string
+    viewDetails: string
+  }
+  bingo: {
+    title: string
+    subtitle: string
+    reset: string
+    download: string
+    progress: string
+    completed: string
+    congratulations: string
+    completedMessage: string
+    close: string
+  }
+  neighborhood: {
+    title: string
+    subtitle: string
+    coffeeTitle: string
+    coffeeDescription: string
+    transitTitle: string
+    transitDescription: string
+    parkingTitle: string
+    parkingDescription: string
+  }
+  glossary: {
+    title: string
+    subtitle: string
+    search: string
+    noResults: string
+  }
+  volunteer: {
+    title: string
+    subtitle: string
+    createProfile: string
+    editProfile: string
+    yourName: string
+    yourMessage: string
+    uploadPhoto: string
+    generate: string
+    cancel: string
+    shareTitle: string
+    downloadQR: string
+    copyLink: string
+    linkCopied: string
+    views: string
+    messagePlaceholder: string
+  }
+  libraryChampion: {
+    title: string
+    subtitle: string
+    whatIsTitle: string
+    whatIsDescription: string
+    whyBecomeTitle: string
+    whyBecomeDescription: string
+    reason1: string
+    reason2: string
+    reason3: string
+    reason4: string
+    howItWorksTitle: string
+    step1Title: string
+    step1Description: string
+    step2Title: string
+    step2Description: string
+    step3Title: string
+    step3Description: string
+    step4Title: string
+    step4Description: string
+    getStartedTitle: string
+    getStartedDescription: string
+    createProfileButton: string
+    impactTitle: string
+    impactDescription: string
+    impact1: string
+    impact2: string
+    impact3: string
+    impact4: string
+    impact5: string
+    tipsTitle: string
+    tip1: string
+    tip2: string
+    tip3: string
+    tip4: string
+    tip5: string
+  }
+  directory: {
+    title: string
+    totalLibraries: string
+    provincesServed: string
+    byType: string
+    searchPlaceholder: string
+    selectProvince: string
+    selectType: string
+    allProvinces: string
+    allTypes: string
+    typePublic: string
+    typePrivate: string
+    typeLittle: string
+    showingResults: string
+    listView: string
+    mapView: string
+    directions: string
+    visit: string
+    noResults: string
+    tryDifferentFilters: string
+    legend: string
+  }
+  services: {
+    title: string
+    subtitle: string
+    mostLibraries: string
+    mostLibrariesDescription: string
+    someLibraries: string
+    someLibrariesDescription: string
+    tipTitle: string
+    tip1: string
+    tip2: string
+    tip3: string
+    wifi: {
+      name: string
+      description: string
+    }
+    printing: {
+      name: string
+      description: string
+    }
+    computers: {
+      name: string
+      description: string
+    }
+    meetingRooms: {
+      name: string
+      description: string
+    }
+    studyRooms: {
+      name: string
+      description: string
+    }
+    programs: {
+      name: string
+      description: string
+    }
+    children: {
+      name: string
+      description: string
+    }
+    digitalResources: {
+      name: string
+      description: string
+    }
+    accessibility: {
+      name: string
+      description: string
+    }
+    makerspace: {
+      name: string
+      description: string
+    }
+    '3dPrinting': {
+      name: string
+      description: string
+    }
+    streaming: {
+      name: string
+      description: string
+    }
+    languageLearning: {
+      name: string
+      description: string
+    }
+    jobSearch: {
+      name: string
+      description: string
+    }
+    parking: {
+      name: string
+      description: string
+    }
+    cafe: {
+      name: string
+      description: string
+    }
+    museumPasses: {
+      name: string
+      description: string
+    }
+  }
+  bookClubs: {
+    title: string
+    description: string
+    proTip: string
+    proTipText: string
+    searchPlaceholder: string
+    allGenres: string
+    noResults: string
+    tryDifferentSearch: string
+    members: string
+    full: string
+    currentlyReading: string
+    startYourOwn: string
+    startYourOwnText: string
+    learnMore: string
+  }
+  accessibility: {
+    title: string
+    description: string
+    didYouKnow: string
+    didYouKnowText: string
+    allBranches: string
+    mostBranches: string
+    selectBranches: string
+    howToAccess: string
+    availableAt: string
+    proTip: string
+    appointmentRequired: string
+    needMoreHelp: string
+    needMoreHelpText: string
+    contactInfo: string
+  }
+  quietHours: {
+    title: string
+    description: string
+    insiderTip: string
+    insiderTipText: string
+    selectLibrary: string
+    filterByNoise: string
+    allLevels: string
+    quiet: string
+    moderate: string
+    busy: string
+    crowdLevel: string
+    typicalActivity: string
+    bestFor: string
+    noResults: string
+    tryDifferentFilter: string
+    communityContribution: string
+    communityContributionText: string
+    shareYourObservations: string
+  }
+  careerPathways: {
+    title: string
+    description: string
+    moneyTip: string
+    moneyTipText: string
+    filterByIndustry: string
+    allIndustries: string
+    showLess: string
+    showDetails: string
+    libraryResources: string
+    possibleCareers: string
+    certification: string
+    proTip: string
+    needGuidance: string
+    needGuidanceText: string
+    bookAppointment: string
+  }
+  specialCollections: {
+    title: string
+    description: string
+    secretTip: string
+    secretTipText: string
+    appointmentRequired: string
+    highlights: string
+    access: string
+    digitalAccess: string
+    whyItMatters: string
+    researchHelp: string
+    researchHelpText: string
+    askLibrarian: string
+  }
+}
+
+export { Language }
