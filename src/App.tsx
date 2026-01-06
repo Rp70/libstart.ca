@@ -17,6 +17,7 @@ import { CultureGuide } from '@/components/library/CultureGuide'
 import { VisualTours } from '@/components/library/VisualTours'
 import { LibraryBingo } from '@/components/library/LibraryBingo'
 import { LibraryGlossary } from '@/components/library/LibraryGlossary'
+import { LibraryChampion } from '@/components/library/LibraryChampion'
 import { VolunteerProfile } from '@/components/library/VolunteerProfile'
 import { LibraryDirectory } from '@/components/library/LibraryDirectory'
 import { LibraryServices } from '@/components/library/LibraryServices'
@@ -38,7 +39,8 @@ import {
   Vault,
   List,
   CaretDown,
-  House
+  House,
+  Users
 } from '@phosphor-icons/react'
 
 function AppContent() {
@@ -143,6 +145,14 @@ function AppContent() {
                   >
                     <UserCircle size={18} />
                     {t('navigation.volunteer')}
+                  </Button>
+                  <Button
+                    variant={activeTab === 'libraryChampion' ? 'default' : 'ghost'}
+                    className="justify-start gap-2"
+                    onClick={() => { setActiveTab('libraryChampion'); setMobileMenuOpen(false) }}
+                  >
+                    <Users size={18} />
+                    {t('navigation.libraryChampion')}
                   </Button>
                   <Button
                     variant={activeTab === 'accessibility' ? 'default' : 'ghost'}
@@ -276,6 +286,10 @@ function AppContent() {
                   <UserCircle size={18} className="mr-3" />
                   {t('navigation.volunteer')}
                 </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('libraryChampion')} className={activeTab === 'libraryChampion' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                  <Users size={18} className="mr-3" />
+                  {t('navigation.libraryChampion')}
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setActiveTab('careers')} className={activeTab === 'careers' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
                   <TrendUp size={18} className="mr-3" />
                   {t('navigation.careers')}
@@ -325,6 +339,10 @@ function AppContent() {
 
             <TabsContent value="volunteer" className="mt-0">
               <VolunteerProfile />
+            </TabsContent>
+
+            <TabsContent value="libraryChampion" className="mt-0">
+              <LibraryChampion />
             </TabsContent>
 
             <TabsContent value="accessibility" className="mt-0">
