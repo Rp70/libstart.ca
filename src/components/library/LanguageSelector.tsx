@@ -11,7 +11,11 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { Language, languages } from '@/lib/i18n'
 import { Translate, MagnifyingGlass } from '@phosphor-icons/react'
 
-export function LanguageSelector() {
+interface LanguageSelectorProps {
+  iconOnly?: boolean
+}
+
+export function LanguageSelector({ iconOnly = false }: LanguageSelectorProps) {
   const { language, setLanguage } = useLanguage()
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -28,10 +32,16 @@ export function LanguageSelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="default" className="gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-primary-foreground/20 h-11 px-4 text-base">
-          <Translate size={20} />
-          <span className="hidden sm:inline">{languages[language].nativeName}</span>
-        </Button>
+        {iconOnly ? (
+          <Button variant="outline" size="icon" className="h-11 w-11">
+            <Translate size={24} />
+          </Button>
+        ) : (
+          <Button variant="outline" size="default" className="gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-primary-foreground/20 h-11 px-4 text-base">
+            <Translate size={20} />
+            <span className="hidden sm:inline">{languages[language].nativeName}</span>
+          </Button>
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[280px] max-h-[400px]">
         <div className="p-2 pb-1 sticky top-0 bg-background z-10">

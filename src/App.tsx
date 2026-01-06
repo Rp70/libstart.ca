@@ -53,149 +53,154 @@ function AppContent() {
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <header className="bg-background border-b-2 border-primary/20 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            {/* Logo Section */}
-            <div className="py-4 sm:py-5 border-b border-border">
+            {/* Mobile Header - Sticky */}
+            <div className="lg:hidden sticky top-0 z-50 bg-background py-3 flex items-center justify-between gap-3">
               <LibStartLogo 
-                className="w-48 sm:w-56 md:w-64" 
+                className="w-32 sm:w-40 cursor-pointer" 
                 onClick={() => setActiveTab('home')}
               />
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-2">
-                {t('app.tagline')}
-              </p>
+              <div className="flex items-center gap-2">
+                <LanguageSelector iconOnly />
+                <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="outline" size="icon" className="h-11 w-11">
+                      <List size={24} />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="left" className="w-[280px] sm:w-[320px]">
+                  <div className="flex flex-col gap-2 mt-6">
+                    <Button
+                      variant={activeTab === 'home' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('home'); setMobileMenuOpen(false) }}
+                    >
+                      <House size={18} />
+                      {t('navigation.home')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'culture' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('culture'); setMobileMenuOpen(false) }}
+                    >
+                      <BookOpen size={18} />
+                      {t('navigation.culture')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'tours' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('tours'); setMobileMenuOpen(false) }}
+                    >
+                      <Camera size={18} />
+                      {t('navigation.tours')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'bingo' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('bingo'); setMobileMenuOpen(false) }}
+                    >
+                      <CheckSquare size={18} />
+                      {t('navigation.bingo')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'glossary' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('glossary'); setMobileMenuOpen(false) }}
+                    >
+                      <ChatCircleDots size={18} />
+                      {t('navigation.glossary')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'directory' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('directory'); setMobileMenuOpen(false) }}
+                    >
+                      <MapPin size={18} />
+                      {t('navigation.directory')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'services' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('services'); setMobileMenuOpen(false) }}
+                    >
+                      <ListMagnifyingGlass size={18} />
+                      {t('navigation.services')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'events' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('events'); setMobileMenuOpen(false) }}
+                    >
+                      <CalendarBlank size={18} />
+                      {t('navigation.events')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'careers' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('careers'); setMobileMenuOpen(false) }}
+                    >
+                      <TrendUp size={18} />
+                      {t('navigation.careers')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'volunteer' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('volunteer'); setMobileMenuOpen(false) }}
+                    >
+                      <UserCircle size={18} />
+                      {t('navigation.volunteer')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'libraryChampion' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('libraryChampion'); setMobileMenuOpen(false) }}
+                    >
+                      <Users size={18} />
+                      {t('navigation.libraryChampion')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'accessibility' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('accessibility'); setMobileMenuOpen(false) }}
+                    >
+                      <Wheelchair size={18} />
+                      {t('navigation.accessibility')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'collections' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('collections'); setMobileMenuOpen(false) }}
+                    >
+                      <Vault size={18} />
+                      {t('navigation.collections')}
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+              </div>
             </div>
 
-            {/* Mobile Navigation - Dropdown Menu */}
-            <div className="lg:hidden py-4 flex items-center justify-between gap-3">
-              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="outline" className="flex-1 justify-between h-11">
-                    <span className="flex items-center gap-2">
-                      <List size={20} />
-                      {t('navigation.' + activeTab)}
-                    </span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left" className="w-[280px] sm:w-[320px]">
-                <div className="flex flex-col gap-2 mt-6">
-                  <Button
-                    variant={activeTab === 'home' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('home'); setMobileMenuOpen(false) }}
-                  >
-                    <House size={18} />
-                    {t('navigation.home')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'culture' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('culture'); setMobileMenuOpen(false) }}
-                  >
-                    <BookOpen size={18} />
-                    {t('navigation.culture')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'tours' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('tours'); setMobileMenuOpen(false) }}
-                  >
-                    <Camera size={18} />
-                    {t('navigation.tours')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'bingo' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('bingo'); setMobileMenuOpen(false) }}
-                  >
-                    <CheckSquare size={18} />
-                    {t('navigation.bingo')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'glossary' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('glossary'); setMobileMenuOpen(false) }}
-                  >
-                    <ChatCircleDots size={18} />
-                    {t('navigation.glossary')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'directory' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('directory'); setMobileMenuOpen(false) }}
-                  >
-                    <MapPin size={18} />
-                    {t('navigation.directory')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'services' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('services'); setMobileMenuOpen(false) }}
-                  >
-                    <ListMagnifyingGlass size={18} />
-                    {t('navigation.services')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'events' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('events'); setMobileMenuOpen(false) }}
-                  >
-                    <CalendarBlank size={18} />
-                    {t('navigation.events')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'careers' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('careers'); setMobileMenuOpen(false) }}
-                  >
-                    <TrendUp size={18} />
-                    {t('navigation.careers')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'volunteer' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('volunteer'); setMobileMenuOpen(false) }}
-                  >
-                    <UserCircle size={18} />
-                    {t('navigation.volunteer')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'libraryChampion' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('libraryChampion'); setMobileMenuOpen(false) }}
-                  >
-                    <Users size={18} />
-                    {t('navigation.libraryChampion')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'accessibility' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('accessibility'); setMobileMenuOpen(false) }}
-                  >
-                    <Wheelchair size={18} />
-                    {t('navigation.accessibility')}
-                  </Button>
-                  <Button
-                    variant={activeTab === 'collections' ? 'default' : 'ghost'}
-                    className="justify-start gap-2"
-                    onClick={() => { setActiveTab('collections'); setMobileMenuOpen(false) }}
-                  >
-                    <Vault size={18} />
-                    {t('navigation.collections')}
-                  </Button>
-                </div>
-              </SheetContent>
-            </Sheet>
-            <LanguageSelector />
-          </div>
+            {/* Desktop Header */}
+            <div className="hidden lg:block">
+              {/* Logo Section */}
+              <div className="py-4 sm:py-5 border-b border-border">
+                <LibStartLogo 
+                  className="w-48 sm:w-56 md:w-64 cursor-pointer" 
+                  onClick={() => setActiveTab('home')}
+                />
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-2">
+                  {t('app.tagline')}
+                </p>
+              </div>
 
-          {/* Desktop Navigation - Grouped Dropdowns with Language Selector */}
-          <div className="hidden lg:flex items-center justify-between py-4">
-            <div className="flex gap-3">
-            {/* Home */}
-            <Button 
-              variant="ghost" 
-              className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base"
-              onClick={() => setActiveTab('home')}
-            >
+              {/* Desktop Navigation - Sticky */}
+              <div className="sticky top-0 z-50 bg-background flex items-center justify-between py-4 border-t border-border">
+                <div className="flex gap-3">
+                {/* Home */}
+                <Button 
+                  variant="ghost" 
+                  className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base"
+                  onClick={() => setActiveTab('home')}
+                >
               <House size={20} />
               {t('navigation.home')}
             </Button>
@@ -299,12 +304,13 @@ function AppContent() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+                </div>
+                
+                <LanguageSelector />
+              </div>
             </div>
-            
-            <LanguageSelector />
           </div>
-        </div>
-      </header>
+        </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
         <div className="mt-0">
