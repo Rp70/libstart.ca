@@ -284,6 +284,39 @@ export function Home({ setActiveTab }: HomeProps) {
             </div>
           </div>
 
+          <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
+              <Heart size={24} className="text-accent" weight="fill" />
+              {t('home.contributeBenefitsTitle')}
+            </h3>
+            <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-accent/5 border border-accent/20">
+                <span className="text-accent text-xl shrink-0">✓</span>
+                <p className="text-sm sm:text-base">{t('home.contributeBenefit1')}</p>
+              </div>
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-accent/5 border border-accent/20">
+                <span className="text-accent text-xl shrink-0">✓</span>
+                <p className="text-sm sm:text-base">{t('home.contributeBenefit2')}</p>
+              </div>
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-accent/5 border border-accent/20">
+                <span className="text-accent text-xl shrink-0">✓</span>
+                <p className="text-sm sm:text-base">{t('home.contributeBenefit3')}</p>
+              </div>
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-accent/5 border border-accent/20">
+                <span className="text-accent text-xl shrink-0">✓</span>
+                <p className="text-sm sm:text-base">{t('home.contributeBenefit4')}</p>
+              </div>
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-accent/5 border border-accent/20">
+                <span className="text-accent text-xl shrink-0">✓</span>
+                <p className="text-sm sm:text-base">{t('home.contributeBenefit5')}</p>
+              </div>
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-accent/5 border border-accent/20">
+                <span className="text-accent text-xl shrink-0">✓</span>
+                <p className="text-sm sm:text-base">{t('home.contributeBenefit6')}</p>
+              </div>
+            </div>
+          </div>
+
           <div className="pt-4 sm:pt-6 border-t border-border">
             <Button 
               asChild 
