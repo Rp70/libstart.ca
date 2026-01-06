@@ -85,16 +85,19 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.02 260);
   
-  --primary: oklch(0.55 0.15 260);
+  /* Logo dark blue: #1e3a8a (blue-900) */
+  --primary: oklch(0.35 0.12 255);
   --primary-foreground: oklch(1 0 0);
   
-  --secondary: oklch(0.65 0.12 45);
+  /* Complementary warm tone for secondary */
+  --secondary: oklch(0.60 0.10 60);
   --secondary-foreground: oklch(0.98 0.01 90);
   
   --muted: oklch(0.95 0.01 90);
   --muted-foreground: oklch(0.50 0.02 260);
   
-  --accent: oklch(0.70 0.20 85);
+  /* Logo lime green: #84cc16 (lime-500) */
+  --accent: oklch(0.78 0.19 130);
   --accent-foreground: oklch(0.20 0.02 260);
   
   --destructive: oklch(0.55 0.22 25);
@@ -102,9 +105,10 @@
   
   --border: oklch(0.88 0.01 260);
   --input: oklch(0.88 0.01 260);
-  --ring: oklch(0.55 0.15 260);
+  --ring: oklch(0.35 0.12 255);
   
-  --sage: oklch(0.70 0.08 150);
+  /* Sage green for nature/calm sections */
+  --sage: oklch(0.65 0.08 145);
   --sage-foreground: oklch(0.20 0.02 260);
   
   --radius: 0.75rem;

@@ -2,11 +2,18 @@ import React from 'react';
 
 interface LibStartLogoProps {
   className?: string;
+  onClick?: () => void;
 }
 
-const LibStartLogo: React.FC<LibStartLogoProps> = ({ className = "w-64" }) => {
+const LibStartLogo: React.FC<LibStartLogoProps> = ({ className = "w-48", onClick }) => {
   return (
-    <div className={`inline-flex items-center justify-center ${className}`}>
+    <div 
+      className={`inline-flex items-center justify-center ${className} ${onClick ? 'cursor-pointer hover:opacity-80 transition-opacity' : ''}`}
+      onClick={onClick}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={onClick ? (e) => { if (e.key === 'Enter' || e.key === ' ') onClick() } : undefined}
+    >
       <svg
         viewBox="0 6 170 32"
         xmlns="http://www.w3.org/2000/svg"

@@ -233,32 +233,32 @@ export function LibraryGlossary() {
     <AccordionItem 
       key={`${prefix}-${index}`} 
       value={`${prefix}-item-${index}`}
-      className="border rounded-lg px-6 bg-card hover:shadow-md transition-shadow"
+      className="border rounded-lg px-4 sm:px-6 bg-card hover:shadow-md transition-shadow"
     >
-      <AccordionTrigger className="hover:no-underline py-4">
+      <AccordionTrigger className="hover:no-underline py-3 sm:py-4">
         <div className="flex flex-col items-start gap-1 text-left">
-          <div className="flex items-center gap-2">
-            <span className="text-lg font-semibold">{item.term}</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-base sm:text-lg font-semibold">{item.term}</span>
             {item.audienceType === 'newcomer' && (
-              <Badge variant="outline" className="text-xs">Newcomer</Badge>
+              <Badge variant="outline" className="text-[10px] sm:text-xs">Newcomer</Badge>
             )}
             {item.audienceType === 'local' && (
-              <Badge variant="secondary" className="text-xs">Local</Badge>
+              <Badge variant="secondary" className="text-[10px] sm:text-xs">Local</Badge>
             )}
           </div>
-          <span className="text-sm text-primary font-medium">
+          <span className="text-xs sm:text-sm text-primary font-medium">
             = {item.simple}
           </span>
         </div>
       </AccordionTrigger>
       <AccordionContent className="pb-4 pt-2">
-        <div className="space-y-3">
-          <p className="text-muted-foreground">
+        <div className="space-y-2 sm:space-y-3">
+          <p className="text-sm sm:text-base text-muted-foreground">
             {item.explanation}
           </p>
           {item.example && (
             <div className="p-3 bg-accent/10 border-l-4 border-accent rounded">
-              <p className="text-sm">
+              <p className="text-xs sm:text-sm">
                 <span className="font-semibold">Example: </span>
                 {item.example}
               </p>
@@ -270,15 +270,15 @@ export function LibraryGlossary() {
   )
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
       <div>
-        <h2 className="text-3xl font-bold mb-3">{t('glossary.title')}</h2>
-        <p className="text-muted-foreground text-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{t('glossary.title')}</h2>
+        <p className="text-muted-foreground text-base sm:text-lg">
           {t('glossary.subtitle')}
         </p>
       </div>
 
-      <Card className="p-4">
+      <Card className="p-4 sm:p-6">
         <div className="relative">
           <MagnifyingGlass 
             size={20} 
@@ -301,34 +301,34 @@ export function LibraryGlossary() {
           </p>
         </Card>
       ) : (
-        <div className="space-y-10">
+        <div className="space-y-10 sm:space-y-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 bg-primary rounded-full" />
-              <h3 className="text-xl font-semibold text-primary">Essential Terms for Newcomers</h3>
-              <Badge variant="outline">{newcomerOnlyTerms.length + sharedTerms.length} terms</Badge>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="h-1 w-6 sm:w-8 bg-primary rounded-full" />
+              <h3 className="text-lg sm:text-xl font-semibold text-primary">Essential Terms for Newcomers</h3>
+              <Badge variant="outline" className="text-xs sm:text-sm">{newcomerOnlyTerms.length + sharedTerms.length} terms</Badge>
             </div>
-            <Accordion type="single" collapsible className="space-y-3">
+            <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
               {newcomerTerms.map((item, index) => renderTermItem(item, index, 'newcomer'))}
             </Accordion>
           </div>
 
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 bg-sage rounded-full" />
-              <h3 className="text-xl font-semibold text-sage-foreground">Advanced Terms for Long-Time Residents</h3>
-              <Badge variant="secondary">{localOnlyTerms.length} terms</Badge>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="h-1 w-6 sm:w-8 bg-sage rounded-full" />
+              <h3 className="text-lg sm:text-xl font-semibold text-sage-foreground">Advanced Terms for Long-Time Residents</h3>
+              <Badge variant="secondary" className="text-xs sm:text-sm">{localOnlyTerms.length} terms</Badge>
             </div>
-            <Accordion type="single" collapsible className="space-y-3">
+            <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
               {localOnlyTerms.map((item, index) => renderTermItem(item, index, 'local'))}
             </Accordion>
           </div>
         </div>
       )}
 
-      <Card className="p-6 bg-muted/50">
-        <h3 className="font-semibold mb-3">💬 Don't See a Term?</h3>
-        <p className="text-sm text-muted-foreground">
+      <Card className="p-4 sm:p-6 bg-muted/50">
+        <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">💬 Don't See a Term?</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground">
           Library staff are happy to explain any confusing words or procedures. 
           Don't hesitate to ask - there are no "stupid questions" at the library!
         </p>

@@ -20,11 +20,11 @@ export function LibraryChampion() {
   const { t } = useTranslation()
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
       {/* Header */}
       <div>
-        <h2 className="text-3xl font-bold mb-3">{t('libraryChampion.title')}</h2>
-        <p className="text-muted-foreground text-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{t('libraryChampion.title')}</h2>
+        <p className="text-muted-foreground text-base sm:text-lg">
           {t('libraryChampion.subtitle')}
         </p>
       </div>

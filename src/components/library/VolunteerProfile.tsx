@@ -163,15 +163,15 @@ export function VolunteerProfile() {
   const { t } = useTranslation()
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
       <div>
-        <h2 className="text-3xl font-bold mb-3">{t('volunteer.title')}</h2>
-        <p className="text-muted-foreground text-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{t('volunteer.title')}</h2>
+        <p className="text-muted-foreground text-base sm:text-lg">
           {t('volunteer.subtitle')}
         </p>
       </div>
 
-      <Card className="p-6 bg-gradient-to-br from-secondary/10 to-secondary/5 border-secondary/30">
+      <Card className="p-4 sm:p-6 bg-gradient-to-br from-secondary/10 to-secondary/5 border-secondary/30">
         <div className="flex items-start gap-4">
           <div className="p-3 bg-secondary text-secondary-foreground rounded-lg">
             <UserCircle size={32} weight="duotone" />

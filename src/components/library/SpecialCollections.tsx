@@ -215,18 +215,18 @@ export function SpecialCollections() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="space-y-3">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="space-y-2 sm:space-y-3">
         <div className="flex items-center gap-2">
-          <Vault size={28} className="text-primary" weight="duotone" />
-          <h2 className="text-3xl font-bold">{t('specialCollections.title')}</h2>
+          <Vault size={24} className="sm:w-7 sm:h-7 text-primary" weight="duotone" />
+          <h2 className="text-2xl sm:text-3xl font-bold">{t('specialCollections.title')}</h2>
         </div>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-muted-foreground text-base sm:text-lg">
           {t('specialCollections.description')}
         </p>
       </div>
 
-      <Card className="p-6 bg-accent/10 border-accent/20">
+      <Card className="p-4 sm:p-6 bg-accent/10 border-accent/20">
         <div className="flex items-start gap-3">
           <Lightbulb size={24} className="text-accent-foreground flex-shrink-0 mt-1" />
           <div className="space-y-1">

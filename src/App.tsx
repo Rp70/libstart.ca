@@ -51,12 +51,15 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-background">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <header className="bg-primary text-primary-foreground shadow-lg">
+        <header className="bg-background border-b-2 border-primary/20 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             {/* Logo Section */}
-            <div className="py-4 sm:py-5 border-b border-primary-foreground/10">
-              <LibStartLogo className="w-64 md:w-80" />
-              <p className="text-sm sm:text-base md:text-lg opacity-90 mt-2">
+            <div className="py-4 sm:py-5 border-b border-border">
+              <LibStartLogo 
+                className="w-48 sm:w-56 md:w-64" 
+                onClick={() => setActiveTab('home')}
+              />
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-2">
                 {t('app.tagline')}
               </p>
             </div>
@@ -65,7 +68,7 @@ function AppContent() {
             <div className="lg:hidden py-4 flex items-center justify-between gap-3">
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="outline" className="flex-1 justify-between bg-primary-foreground text-primary hover:bg-primary-foreground/90 h-11">
+                  <Button variant="outline" className="flex-1 justify-between h-11">
                     <span className="flex items-center gap-2">
                       <List size={20} />
                       {t('navigation.' + activeTab)}
@@ -190,7 +193,7 @@ function AppContent() {
             {/* Home */}
             <Button 
               variant="ghost" 
-              className="gap-2 text-primary-foreground hover:bg-primary-foreground/10 h-11 px-4 text-base"
+              className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base"
               onClick={() => setActiveTab('home')}
             >
               <House size={20} />
@@ -200,22 +203,22 @@ function AppContent() {
             {/* Discover */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="gap-2 text-primary-foreground hover:bg-primary-foreground/10 h-11 px-4 text-base">
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
                   <BookOpen size={20} />
                   {t('groups.discover')}
                   <CaretDown size={16} />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[200px]">
-                <DropdownMenuItem onClick={() => setActiveTab('culture')} className={activeTab === 'culture' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('culture')} className={activeTab === 'culture' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <BookOpen size={18} className="mr-3" />
                   {t('navigation.culture')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('tours')} className={activeTab === 'tours' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('tours')} className={activeTab === 'tours' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <Camera size={18} className="mr-3" />
                   {t('navigation.tours')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('collections')} className={activeTab === 'collections' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('collections')} className={activeTab === 'collections' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <Vault size={18} className="mr-3" />
                   {t('navigation.collections')}
                 </DropdownMenuItem>
@@ -225,18 +228,18 @@ function AppContent() {
             {/* Learn */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="gap-2 text-primary-foreground hover:bg-primary-foreground/10 h-11 px-4 text-base">
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
                   <CheckSquare size={20} />
                   {t('groups.learn')}
                   <CaretDown size={16} />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[200px]">
-                <DropdownMenuItem onClick={() => setActiveTab('bingo')} className={activeTab === 'bingo' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('bingo')} className={activeTab === 'bingo' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <CheckSquare size={18} className="mr-3" />
                   {t('navigation.bingo')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('glossary')} className={activeTab === 'glossary' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('glossary')} className={activeTab === 'glossary' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <ChatCircleDots size={18} className="mr-3" />
                   {t('navigation.glossary')}
                 </DropdownMenuItem>
@@ -246,22 +249,22 @@ function AppContent() {
             {/* Access */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="gap-2 text-primary-foreground hover:bg-primary-foreground/10 h-11 px-4 text-base">
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
                   <MapPin size={20} />
                   {t('groups.access')}
                   <CaretDown size={16} />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[200px]">
-                <DropdownMenuItem onClick={() => setActiveTab('directory')} className={activeTab === 'directory' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('directory')} className={activeTab === 'directory' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <MapPin size={18} className="mr-3" />
                   {t('navigation.directory')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('services')} className={activeTab === 'services' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('services')} className={activeTab === 'services' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <ListMagnifyingGlass size={18} className="mr-3" />
                   {t('navigation.services')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('accessibility')} className={activeTab === 'accessibility' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('accessibility')} className={activeTab === 'accessibility' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <Wheelchair size={18} className="mr-3" />
                   {t('navigation.accessibility')}
                 </DropdownMenuItem>
@@ -271,26 +274,26 @@ function AppContent() {
             {/* Connect */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="gap-2 text-primary-foreground hover:bg-primary-foreground/10 h-11 px-4 text-base">
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
                   <CalendarBlank size={20} />
                   {t('groups.connect')}
                   <CaretDown size={16} />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[200px]">
-                <DropdownMenuItem onClick={() => setActiveTab('events')} className={activeTab === 'events' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('events')} className={activeTab === 'events' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <CalendarBlank size={18} className="mr-3" />
                   {t('navigation.events')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('careers')} className={activeTab === 'careers' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('careers')} className={activeTab === 'careers' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <TrendUp size={18} className="mr-3" />
                   {t('navigation.careers')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('volunteer')} className={activeTab === 'volunteer' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('volunteer')} className={activeTab === 'volunteer' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <UserCircle size={18} className="mr-3" />
                   {t('navigation.volunteer')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setActiveTab('libraryChampion')} className={activeTab === 'libraryChampion' ? 'bg-accent' : '' + ' py-3 text-base cursor-pointer'}>
+                <DropdownMenuItem onClick={() => setActiveTab('libraryChampion')} className={activeTab === 'libraryChampion' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
                   <Users size={18} className="mr-3" />
                   {t('navigation.libraryChampion')}
                 </DropdownMenuItem>

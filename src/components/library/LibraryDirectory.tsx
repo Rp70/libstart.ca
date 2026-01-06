@@ -78,9 +78,9 @@ export function LibraryDirectory() {
   }
   
   return (
-    <div className="space-y-8">
-      <Card className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground p-8">
-        <h2 className="text-3xl font-bold mb-6">{t('directory.title')}</h2>
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
+      <Card className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground p-6 sm:p-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{t('directory.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6">
