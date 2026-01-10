@@ -30,6 +30,25 @@ import { hu } from './hu'
 import { tr } from './tr'
 import { ja } from './ja'
 import { hr } from './hr'
+import { so } from './so'
+import { hy } from './hy'
+import { ilo } from './ilo'
+import { pdt } from './pdt'
+import { ti } from './ti'
+import { te } from './te'
+import { sq } from './sq'
+import { nan } from './nan'
+import { am } from './am'
+import { kab } from './kab'
+import { ne } from './ne'
+import { km } from './km'
+import { ps } from './ps'
+import { yo } from './yo'
+import { cs } from './cs'
+import { sw } from './sw'
+import { bg } from './bg'
+import { sk } from './sk'
+import { sh } from './sh'
 
 /**
  * Deep merge two objects, with source taking precedence over target
@@ -90,19 +109,30 @@ export const locales = {
   tr: deepMerge(en, tr),
   ja: deepMerge(en, ja),
   hr: deepMerge(en, hr),
+  so: deepMerge(en, so),
+  hy: deepMerge(en, hy),
+  ilo: deepMerge(en, ilo),
+  pdt: deepMerge(en, pdt),
+  ti: deepMerge(en, ti),
+  te: deepMerge(en, te),
+  sq: deepMerge(en, sq),
+  nan: deepMerge(en, nan),
+  am: deepMerge(en, am),
+  kab: deepMerge(en, kab),
+  ne: deepMerge(en, ne),
+  km: deepMerge(en, km),
+  ps: deepMerge(en, ps),
+  yo: deepMerge(en, yo),
+  cs: deepMerge(en, cs),
+  sw: deepMerge(en, sw),
+  bg: deepMerge(en, bg),
+  sk: deepMerge(en, sk),
+  sh: deepMerge(en, sh),
 } as const
 
-// Fallback languages that use English directly
-const fallbackLanguages: Language[] = [
-  'sh', 'so', 'hy', 'ilo', 'pdt', 'ti', 'te', 'sq', 
-  'nan', 'am', 'kab', 'ne', 'km', 'ps', 'yo', 'cs', 'sw', 'bg', 'sk'
-]
-
-// Add fallback languages that use English
+// All 50 languages now have dedicated translation files!
+// No fallback languages needed - 100% coverage achieved! 🎉
 const translations: Record<Language, any> = { ...locales } as any
-fallbackLanguages.forEach(lang => {
-  translations[lang] = en
-})
 
 /**
  * Get a translation for a given language and key path
@@ -145,4 +175,4 @@ export function getTranslation(lang: Language, key: string, params?: Record<stri
 
 // Re-export types and language modules
 export type { TranslationKeys, Language } from './types'
-export { en, pa, zh, ar, es, it, de, pt, ur, ru, fa, vi, ko, pl, hi, tl, yue, ta, gu, bn, el, ro, uk, nl, sr, ml }
+export { en, pa, zh, ar, es, it, de, pt, ur, ru, fa, vi, ko, pl, hi, tl, yue, ta, gu, bn, el, ro, uk, nl, sr, ml, ht, hu, tr, ja, hr, so, hy, ilo, pdt, ti, te, sq, nan, am, kab, ne, km, ps, yo, cs, sw, bg, sk, sh }
