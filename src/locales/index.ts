@@ -25,6 +25,11 @@ import { uk } from './uk'
 import { nl } from './nl'
 import { sr } from './sr'
 import { ml } from './ml'
+import { ht } from './ht'
+import { hu } from './hu'
+import { tr } from './tr'
+import { ja } from './ja'
+import { hr } from './hr'
 
 /**
  * Deep merge two objects, with source taking precedence over target
@@ -80,11 +85,16 @@ export const locales = {
   nl: deepMerge(en, nl),
   sr: deepMerge(en, sr),
   ml: deepMerge(en, ml),
+  ht: deepMerge(en, ht),
+  hu: deepMerge(en, hu),
+  tr: deepMerge(en, tr),
+  ja: deepMerge(en, ja),
+  hr: deepMerge(en, hr),
 } as const
 
 // Fallback languages that use English directly
 const fallbackLanguages: Language[] = [
-  'sh', 'ht', 'hu', 'tr', 'ja', 'hr', 'so', 'hy', 'ilo', 'pdt', 'ti', 'te', 'sq', 
+  'sh', 'so', 'hy', 'ilo', 'pdt', 'ti', 'te', 'sq', 
   'nan', 'am', 'kab', 'ne', 'km', 'ps', 'yo', 'cs', 'sw', 'bg', 'sk'
 ]
 
