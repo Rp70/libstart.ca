@@ -16,6 +16,8 @@ import { pl } from './pl'
 import { hi } from './hi'
 import { tl } from './tl'
 import { yue } from './yue'
+import { ta } from './ta'
+import { gu } from './gu'
 
 /**
  * Deep merge two objects, with source taking precedence over target
@@ -62,11 +64,13 @@ export const locales = {
   hi: deepMerge(en, hi),
   tl: deepMerge(en, tl),
   yue: deepMerge(en, yue),
+  ta: deepMerge(en, ta),
+  gu: deepMerge(en, gu),
 } as const
 
 // Fallback languages that use English directly
 const fallbackLanguages: Language[] = [
-  'ta', 'gu', 'sh', 'el', 'ro', 'bn', 'uk', 'nl', 'sr', 'ml', 
+  'sh', 'el', 'ro', 'bn', 'uk', 'nl', 'sr', 'ml', 
   'ht', 'hu', 'tr', 'ja', 'hr', 'so', 'hy', 'ilo', 'pdt', 'ti', 'te', 'sq', 
   'nan', 'am', 'kab', 'ne', 'km', 'ps', 'yo', 'cs', 'sw', 'bg', 'sk'
 ]
