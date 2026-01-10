@@ -15,6 +15,7 @@ import { ko } from './ko'
 import { pl } from './pl'
 import { hi } from './hi'
 import { tl } from './tl'
+import { yue } from './yue'
 
 /**
  * Deep merge two objects, with source taking precedence over target
@@ -60,11 +61,12 @@ export const locales = {
   pl: deepMerge(en, pl),
   hi: deepMerge(en, hi),
   tl: deepMerge(en, tl),
+  yue: deepMerge(en, yue),
 } as const
 
 // Fallback languages that use English directly
 const fallbackLanguages: Language[] = [
-  'yue', 'ta', 'gu', 'sh', 'el', 'ro', 'bn', 'uk', 'nl', 'sr', 'ml', 
+  'ta', 'gu', 'sh', 'el', 'ro', 'bn', 'uk', 'nl', 'sr', 'ml', 
   'ht', 'hu', 'tr', 'ja', 'hr', 'so', 'hy', 'ilo', 'pdt', 'ti', 'te', 'sq', 
   'nan', 'am', 'kab', 'ne', 'km', 'ps', 'yo', 'cs', 'sw', 'bg', 'sk'
 ]
@@ -116,4 +118,4 @@ export function getTranslation(lang: Language, key: string, params?: Record<stri
 
 // Re-export types and language modules
 export type { TranslationKeys, Language } from './types'
-export { en, pa, zh, ar, es, it, de, pt, ur, ru, fa, vi, ko, pl, hi, tl }
+export { en, pa, zh, ar, es, it, de, pt, ur, ru, fa, vi, ko, pl, hi, tl, yue }
