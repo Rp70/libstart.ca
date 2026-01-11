@@ -17,6 +17,8 @@ import { BookClubFinder } from '@/components/library/BookClubFinder'
 import { AccessibilityGuide } from '@/components/library/AccessibilityGuide'
 import { CareerPathways } from '@/components/library/CareerPathways'
 import { SpecialCollections } from '@/components/library/SpecialCollections'
+import { LibraryQuiz } from '@/components/library/LibraryQuiz'
+import { VisitPlanner } from '@/components/library/VisitPlanner'
 import { 
   BookOpen, 
   Camera, 
@@ -33,7 +35,9 @@ import {
   Wheelchair,
   SpeakerSimpleSlash,
   TrendUp,
-  Vault
+  Vault,
+  GameController,
+  CalendarCheck
 } from '@phosphor-icons/react'
 
 function AppContent() {
@@ -60,7 +64,7 @@ function AppContent() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-14 gap-1.5 sm:gap-2 h-auto bg-muted/50 p-1.5 sm:p-2 mb-6 sm:mb-8 overflow-x-auto">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-16 gap-1.5 sm:gap-2 h-auto bg-muted/50 p-1.5 sm:p-2 mb-6 sm:mb-8 overflow-x-auto">
             <TabsTrigger 
               value="culture" 
               className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
@@ -159,6 +163,20 @@ function AppContent() {
               <Vault size={18} className="sm:w-5 sm:h-5" />
               <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.collections')}</span>
             </TabsTrigger>
+            <TabsTrigger 
+              value="quiz" 
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
+            >
+              <GameController size={18} className="sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">Quiz</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="planner" 
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
+            >
+              <CalendarCheck size={18} className="sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">Planner</span>
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="culture" className="mt-0">
@@ -215,6 +233,14 @@ function AppContent() {
 
           <TabsContent value="collections" className="mt-0">
             <SpecialCollections />
+          </TabsContent>
+
+          <TabsContent value="quiz" className="mt-0">
+            <LibraryQuiz />
+          </TabsContent>
+
+          <TabsContent value="planner" className="mt-0">
+            <VisitPlanner />
           </TabsContent>
         </Tabs>
       </main>
