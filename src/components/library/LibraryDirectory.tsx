@@ -77,10 +77,34 @@ export function LibraryDirectory() {
     return `https://www.google.com/maps/search/?api=1&query=${query}`
   }
   
+  const getLibraryPlaceholder = (lib: Library) => {
+    const initials = lib.name
+      .split(' ')
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 3)
+    
+    const colors = {
+      public: 'from-blue-500 to-blue-600',
+      private: 'from-purple-500 to-purple-600',
+      little: 'from-green-500 to-green-600'
+    }
+    
+    return (
+      <div className={`w-full h-full bg-gradient-to-br ${colors[lib.type]} flex items-center justify-center text-white`}>
+        <div className="text-center">
+          <div className="text-4xl font-bold mb-2">{initials}</div>
+          <div className="text-xs opacity-80 capitalize">{lib.type}</div>
+        </div>
+      </div>
+    )
+  }
+  
   return (
-    <div className="space-y-8">
-      <Card className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground p-8">
-        <h2 className="text-3xl font-bold mb-6">{t('directory.title')}</h2>
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
+      <Card className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground p-6 sm:p-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{t('directory.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6">
@@ -189,16 +213,20 @@ export function LibraryDirectory() {
             {filteredLibraries.map((lib) => (
               <Card key={lib.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="flex flex-col md:flex-row">
-                  {lib.photoUrl && (
-                    <div className="w-full md:w-48 h-48 md:h-auto flex-shrink-0 bg-muted">
+                  <div className="w-full md:w-48 h-48 md:h-auto flex-shrink-0 bg-muted relative">
+                    {lib.photoUrl ? (
                       <img 
-                        src={lib.photoUrl} 
+                        src={lib.photoUrl}
                         alt={lib.name}
                         className="w-full h-full object-cover"
                         loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none'
+                        }}
                       />
-                    </div>
-                  )}
+                    ) : null}
+                    {!lib.photoUrl && getLibraryPlaceholder(lib)}
+                  </div>
                   <div className="flex-1 p-6">
                     <div className="flex flex-col md:flex-row md:items-start gap-4">
                       <div className="flex-1">

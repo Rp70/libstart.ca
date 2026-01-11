@@ -1,19 +1,27 @@
 import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import { useTranslation } from '@/hooks/use-translation'
 import { LanguageSelector } from '@/components/library/LanguageSelector'
+import LibStartLogo from '@/components/ui/LibStartLogo'
+import { Home } from '@/components/library/Home'
 import { CultureGuide } from '@/components/library/CultureGuide'
 import { VisualTours } from '@/components/library/VisualTours'
-import { HiddenMenu } from '@/components/library/HiddenMenu'
 import { LibraryBingo } from '@/components/library/LibraryBingo'
 import { LibraryGlossary } from '@/components/library/LibraryGlossary'
+import { LibraryChampion } from '@/components/library/LibraryChampion'
 import { VolunteerProfile } from '@/components/library/VolunteerProfile'
 import { LibraryDirectory } from '@/components/library/LibraryDirectory'
 import { LibraryServices } from '@/components/library/LibraryServices'
 import { LibraryEvents } from '@/components/library/LibraryEvents'
-import { Testimonials } from '@/components/library/Testimonials'
-import { BookClubFinder } from '@/components/library/BookClubFinder'
 import { AccessibilityGuide } from '@/components/library/AccessibilityGuide'
 import { CareerPathways } from '@/components/library/CareerPathways'
 import { SpecialCollections } from '@/components/library/SpecialCollections'
@@ -22,18 +30,13 @@ import { VisitPlanner } from '@/components/library/VisitPlanner'
 import { 
   BookOpen, 
   Camera, 
-  Lightbulb, 
   CheckSquare, 
   MapPin, 
   ChatCircleDots, 
   UserCircle,
   ListMagnifyingGlass,
-  Stack,
   CalendarBlank,
-  Quotes,
-  BookBookmark,
   Wheelchair,
-  SpeakerSimpleSlash,
   TrendUp,
   Vault,
   GameController,
@@ -41,26 +44,273 @@ import {
 } from '@phosphor-icons/react'
 
 function AppContent() {
-  const [activeTab, setActiveTab] = useState('culture')
+  const [activeTab, setActiveTab] = useState('home')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { t } = useTranslation()
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-primary text-primary-foreground py-4 sm:py-6 px-4 sm:px-6 md:px-8 shadow-lg">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
-          <div className="flex-1">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">
-              {t('app.title')}
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg opacity-90">
-              {t('app.tagline')}
-            </p>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <header className="bg-background border-b-2 border-primary/20 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            {/* Mobile Header - Sticky */}
+            <div className="lg:hidden sticky top-0 z-50 bg-background py-3 flex items-center justify-between gap-3">
+              <LibStartLogo 
+                className="w-32 sm:w-40 cursor-pointer" 
+                onClick={() => setActiveTab('home')}
+              />
+              <div className="flex items-center gap-2">
+                <LanguageSelector iconOnly />
+                <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="outline" size="icon" className="h-11 w-11">
+                      <List size={24} />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="left" className="w-[280px] sm:w-[320px]">
+                  <div className="flex flex-col gap-2 mt-6">
+                    <Button
+                      variant={activeTab === 'home' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('home'); setMobileMenuOpen(false) }}
+                    >
+                      <House size={18} />
+                      {t('navigation.home')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'culture' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('culture'); setMobileMenuOpen(false) }}
+                    >
+                      <BookOpen size={18} />
+                      {t('navigation.culture')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'tours' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('tours'); setMobileMenuOpen(false) }}
+                    >
+                      <Camera size={18} />
+                      {t('navigation.tours')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'bingo' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('bingo'); setMobileMenuOpen(false) }}
+                    >
+                      <CheckSquare size={18} />
+                      {t('navigation.bingo')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'glossary' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('glossary'); setMobileMenuOpen(false) }}
+                    >
+                      <ChatCircleDots size={18} />
+                      {t('navigation.glossary')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'directory' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('directory'); setMobileMenuOpen(false) }}
+                    >
+                      <MapPin size={18} />
+                      {t('navigation.directory')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'services' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('services'); setMobileMenuOpen(false) }}
+                    >
+                      <ListMagnifyingGlass size={18} />
+                      {t('navigation.services')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'events' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('events'); setMobileMenuOpen(false) }}
+                    >
+                      <CalendarBlank size={18} />
+                      {t('navigation.events')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'careers' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('careers'); setMobileMenuOpen(false) }}
+                    >
+                      <TrendUp size={18} />
+                      {t('navigation.careers')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'volunteer' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('volunteer'); setMobileMenuOpen(false) }}
+                    >
+                      <UserCircle size={18} />
+                      {t('navigation.volunteer')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'libraryChampion' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('libraryChampion'); setMobileMenuOpen(false) }}
+                    >
+                      <Users size={18} />
+                      {t('navigation.libraryChampion')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'accessibility' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('accessibility'); setMobileMenuOpen(false) }}
+                    >
+                      <Wheelchair size={18} />
+                      {t('navigation.accessibility')}
+                    </Button>
+                    <Button
+                      variant={activeTab === 'collections' ? 'default' : 'ghost'}
+                      className="justify-start gap-2"
+                      onClick={() => { setActiveTab('collections'); setMobileMenuOpen(false) }}
+                    >
+                      <Vault size={18} />
+                      {t('navigation.collections')}
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+              </div>
+            </div>
+
+            {/* Desktop Header */}
+            <div className="hidden lg:block">
+              {/* Logo Section */}
+              <div className="py-4 sm:py-5 border-b border-border">
+                <LibStartLogo 
+                  className="w-48 sm:w-56 md:w-64 cursor-pointer" 
+                  onClick={() => setActiveTab('home')}
+                />
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-2">
+                  {t('app.tagline')}
+                </p>
+              </div>
+
+              {/* Desktop Navigation - Sticky */}
+              <div className="sticky top-0 z-50 bg-background flex items-center justify-between py-4 border-t border-border">
+                <div className="flex gap-3">
+                {/* Home */}
+                <Button 
+                  variant="ghost" 
+                  className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base"
+                  onClick={() => setActiveTab('home')}
+                >
+              <House size={20} />
+              {t('navigation.home')}
+            </Button>
+            
+            {/* Discover */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
+                  <BookOpen size={20} />
+                  {t('groups.discover')}
+                  <CaretDown size={16} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-[200px]">
+                <DropdownMenuItem onClick={() => setActiveTab('culture')} className={activeTab === 'culture' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <BookOpen size={18} className="mr-3" />
+                  {t('navigation.culture')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('tours')} className={activeTab === 'tours' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <Camera size={18} className="mr-3" />
+                  {t('navigation.tours')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('collections')} className={activeTab === 'collections' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <Vault size={18} className="mr-3" />
+                  {t('navigation.collections')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Learn */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
+                  <CheckSquare size={20} />
+                  {t('groups.learn')}
+                  <CaretDown size={16} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-[200px]">
+                <DropdownMenuItem onClick={() => setActiveTab('bingo')} className={activeTab === 'bingo' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <CheckSquare size={18} className="mr-3" />
+                  {t('navigation.bingo')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('glossary')} className={activeTab === 'glossary' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <ChatCircleDots size={18} className="mr-3" />
+                  {t('navigation.glossary')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Access */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
+                  <MapPin size={20} />
+                  {t('groups.access')}
+                  <CaretDown size={16} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-[200px]">
+                <DropdownMenuItem onClick={() => setActiveTab('directory')} className={activeTab === 'directory' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <MapPin size={18} className="mr-3" />
+                  {t('navigation.directory')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('services')} className={activeTab === 'services' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <ListMagnifyingGlass size={18} className="mr-3" />
+                  {t('navigation.services')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('accessibility')} className={activeTab === 'accessibility' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <Wheelchair size={18} className="mr-3" />
+                  {t('navigation.accessibility')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Connect */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="gap-2 text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-4 text-base">
+                  <CalendarBlank size={20} />
+                  {t('groups.connect')}
+                  <CaretDown size={16} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-[200px]">
+                <DropdownMenuItem onClick={() => setActiveTab('events')} className={activeTab === 'events' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <CalendarBlank size={18} className="mr-3" />
+                  {t('navigation.events')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('careers')} className={activeTab === 'careers' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <TrendUp size={18} className="mr-3" />
+                  {t('navigation.careers')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('volunteer')} className={activeTab === 'volunteer' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <UserCircle size={18} className="mr-3" />
+                  {t('navigation.volunteer')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setActiveTab('libraryChampion')} className={activeTab === 'libraryChampion' ? 'bg-accent text-accent-foreground' : '' + ' py-3 text-base cursor-pointer hover:bg-accent/50'}>
+                  <Users size={18} className="mr-3" />
+                  {t('navigation.libraryChampion')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+                </div>
+                
+                <LanguageSelector />
+              </div>
+            </div>
           </div>
-          <div className="w-full sm:w-auto">
-            <LanguageSelector />
-          </div>
-        </div>
-      </header>
+        </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -179,49 +429,49 @@ function AppContent() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="culture" className="mt-0">
-            <CultureGuide />
-          </TabsContent>
+            <TabsContent value="culture" className="mt-0">
+              <CultureGuide />
+            </TabsContent>
 
-          <TabsContent value="tours" className="mt-0">
-            <VisualTours />
-          </TabsContent>
+            <TabsContent value="tours" className="mt-0">
+              <VisualTours />
+            </TabsContent>
 
-          <TabsContent value="hiddenmenu" className="mt-0">
-            <HiddenMenu />
-          </TabsContent>
+            <TabsContent value="bingo" className="mt-0">
+              <LibraryBingo />
+            </TabsContent>
 
-          <TabsContent value="bingo" className="mt-0">
-            <LibraryBingo />
-          </TabsContent>
+            <TabsContent value="glossary" className="mt-0">
+              <LibraryGlossary />
+            </TabsContent>
 
-          <TabsContent value="glossary" className="mt-0">
-            <LibraryGlossary />
-          </TabsContent>
+            <TabsContent value="directory" className="mt-0">
+              <LibraryDirectory />
+            </TabsContent>
 
-          <TabsContent value="directory" className="mt-0">
-            <LibraryDirectory />
-          </TabsContent>
+            <TabsContent value="services" className="mt-0">
+              <LibraryServices />
+            </TabsContent>
 
-          <TabsContent value="services" className="mt-0">
-            <LibraryServices />
-          </TabsContent>
+            <TabsContent value="events" className="mt-0">
+              <LibraryEvents />
+            </TabsContent>
 
-          <TabsContent value="events" className="mt-0">
-            <LibraryEvents />
-          </TabsContent>
+            <TabsContent value="volunteer" className="mt-0">
+              <VolunteerProfile />
+            </TabsContent>
 
-          <TabsContent value="testimonials" className="mt-0">
-            <Testimonials />
-          </TabsContent>
+            <TabsContent value="libraryChampion" className="mt-0">
+              <LibraryChampion />
+            </TabsContent>
 
-          <TabsContent value="volunteer" className="mt-0">
-            <VolunteerProfile />
-          </TabsContent>
+            <TabsContent value="accessibility" className="mt-0">
+              <AccessibilityGuide />
+            </TabsContent>
 
-          <TabsContent value="bookclubs" className="mt-0">
-            <BookClubFinder />
-          </TabsContent>
+            <TabsContent value="careers" className="mt-0">
+              <CareerPathways />
+            </TabsContent>
 
           <TabsContent value="accessibility" className="mt-0">
             <AccessibilityGuide />
@@ -256,8 +506,26 @@ function AppContent() {
           <p className="text-xs sm:text-sm mt-3 sm:mt-4 font-medium bg-muted-foreground/10 p-3 sm:p-4 rounded-lg">
             {t('app.footerNote')}
           </p>
+          <div className="mt-4 sm:mt-6">
+            <a 
+              href="https://github.com/Rp70/libstart.ca" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm hover:text-primary transition-colors"
+            >
+              <svg 
+                viewBox="0 0 16 16" 
+                className="w-4 h-4" 
+                fill="currentColor"
+              >
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              {t('app.footerGitHub')}
+            </a>
+          </div>
         </div>
       </footer>
+      </Tabs>
     </div>
   )
 }

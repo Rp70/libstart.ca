@@ -328,10 +328,10 @@ export function LibraryBingo() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
       <div>
-        <h2 className="text-3xl font-bold mb-3">{t('bingo.title')}</h2>
-        <p className="text-muted-foreground text-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{t('bingo.title')}</h2>
+        <p className="text-muted-foreground text-base sm:text-lg">
           Gamify your library experience! Choose a bingo card that matches your journey.
         </p>
       </div>

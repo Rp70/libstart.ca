@@ -39,11 +39,23 @@ export function CultureGuide() {
                   <p>
                     {t('cultureGuide.noiseHub')} <strong>{t('cultureGuide.noiseCommunityHub')}</strong>{t('cultureGuide.noiseMightSee')}
                   </p>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li>{t('cultureGuide.noiseChildren')}</li>
-                    <li>{t('cultureGuide.noiseTeens')}</li>
-                    <li>{t('cultureGuide.noisePeople')}</li>
-                    <li>{t('cultureGuide.noiseEvents')}</li>
+                  <ul className="space-y-2">
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.noiseChildren')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.noiseTeens')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.noisePeople')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.noiseEvents')}</span>
+                    </li>
                   </ul>
                   <p className="text-primary font-medium mt-4">
                     {t('cultureGuide.noiseQuiet')}
@@ -67,11 +79,23 @@ export function CultureGuide() {
                   <p>
                     <strong>{t('cultureGuide.trustYourRight')}</strong>
                   </p>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li>{t('cultureGuide.trustNoTracking')}</li>
-                    <li>{t('cultureGuide.trustNoSharing')}</li>
-                    <li>{t('cultureGuide.trustNoJudgment')}</li>
-                    <li>{t('cultureGuide.trustFreedom')}</li>
+                  <ul className="space-y-2">
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.trustNoTracking')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.trustNoSharing')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.trustNoJudgment')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.trustFreedom')}</span>
+                    </li>
                   </ul>
                   <p className="text-primary font-medium mt-4">
                     {t('cultureGuide.trustSafe')}
@@ -148,11 +172,23 @@ export function CultureGuide() {
                   <p>
                     <strong>{t('cultureGuide.beyondBooksSurprise')}</strong> {t('cultureGuide.beyondBooksDescription')}
                   </p>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li>{t('cultureGuide.beyondBooksMuseum')}</li>
-                    <li>{t('cultureGuide.beyondBooksTools')}</li>
-                    <li>{t('cultureGuide.beyondBooksInstruments')}</li>
-                    <li>{t('cultureGuide.beyondBooksSeeds')}</li>
+                  <ul className="space-y-2">
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.beyondBooksMuseum')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.beyondBooksTools')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.beyondBooksInstruments')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-secondary text-lg">✓</span>
+                      <span>{t('cultureGuide.beyondBooksSeeds')}</span>
+                    </li>
                   </ul>
                   <p className="text-primary font-medium mt-4">
                     {t('cultureGuide.beyondBooksTip')}
@@ -176,11 +212,23 @@ export function CultureGuide() {
                   <p>
                     <strong>{t('cultureGuide.digitalNoCard')}</strong>
                   </p>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li>{t('cultureGuide.digitalEbooks')}</li>
-                    <li>{t('cultureGuide.digitalAudiobooks')}</li>
-                    <li>{t('cultureGuide.digitalMagazines')}</li>
-                    <li>{t('cultureGuide.digitalMovies')}</li>
+                  <ul className="space-y-2">
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.digitalEbooks')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.digitalAudiobooks')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.digitalMagazines')}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary text-lg">✓</span>
+                      <span>{t('cultureGuide.digitalMovies')}</span>
+                    </li>
                   </ul>
                   <p className="text-primary font-medium mt-4">
                     {t('cultureGuide.digitalTip')}

@@ -149,15 +149,15 @@ export function LibraryServices() {
         <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t('services.tipTitle')}</h3>
         <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
           <li className="flex items-start gap-2">
-            <span className="text-primary mt-1">•</span>
+            <span className="text-sage text-lg">✓</span>
             <span>{t('services.tip1')}</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-primary mt-1">•</span>
+            <span className="text-sage text-lg">✓</span>
             <span>{t('services.tip2')}</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-primary mt-1">•</span>
+            <span className="text-sage text-lg">✓</span>
             <span>{t('services.tip3')}</span>
           </li>
         </ul>

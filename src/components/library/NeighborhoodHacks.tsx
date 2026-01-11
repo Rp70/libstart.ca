@@ -333,18 +333,39 @@ export function NeighborhoodHacks() {
           <div>
             <h4 className="font-semibold mb-2">Best Times to Visit:</h4>
             <ul className="space-y-1 text-muted-foreground">
-              <li>• Quietest: Weekday mornings (9-11 AM)</li>
-              <li>• Busiest: After school (3-5 PM) and Saturdays</li>
-              <li>• Programs: Check library website for schedule</li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary text-base">✓</span>
+                <span>Quietest: Weekday mornings (9-11 AM)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary text-base">✓</span>
+                <span>Busiest: After school (3-5 PM) and Saturdays</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary text-base">✓</span>
+                <span>Programs: Check library website for schedule</span>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold mb-2">What to Bring:</h4>
             <ul className="space-y-1 text-muted-foreground">
-              <li>• Library card (or ID to get one)</li>
-              <li>• Reusable water bottle</li>
-              <li>• Headphones for computer use</li>
-              <li>• Bag for carrying borrowed items</li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary text-base">✓</span>
+                <span>Library card (or ID to get one)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary text-base">✓</span>
+                <span>Reusable water bottle</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary text-base">✓</span>
+                <span>Headphones for computer use</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary text-base">✓</span>
+                <span>Bag for carrying borrowed items</span>
+              </li>
             </ul>
           </div>
         </div>

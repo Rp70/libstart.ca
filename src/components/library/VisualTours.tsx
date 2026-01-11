@@ -712,19 +712,19 @@ export function VisualTours() {
   const localTours = tours.filter(tour => tour.audienceType === 'local')
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10 md:space-y-12">
       <div>
-        <h2 className="text-3xl font-bold mb-3">{t('tours.title')}</h2>
-        <p className="text-muted-foreground text-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{t('tours.title')}</h2>
+        <p className="text-muted-foreground text-base sm:text-lg">
           {t('tours.subtitle')}
         </p>
       </div>
 
       {!selectedTour ? (
-        <div className="space-y-10">
+        <div className="space-y-10 sm:space-y-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 bg-primary rounded-full" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="h-1 w-6 sm:w-8 bg-primary rounded-full" />
               <h3 className="text-xl font-semibold text-primary">For Newcomers to Canada</h3>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
