@@ -13,7 +13,11 @@ import {
   Student,
   Armchair,
   Baby,
-  Laptop
+  Laptop,
+  Palette,
+  Lightbulb,
+  MagnifyingGlass,
+  Rocket
 } from '@phosphor-icons/react'
 import { useTranslation } from '@/hooks/use-translation'
 
@@ -412,6 +416,241 @@ const tours: Tour[] = [
         activity: 'Home Delivery Signup',
         description: 'He signs up for home delivery service for weeks when mobility is challenging.',
         service: 'Homebound delivery services'
+      }
+    ]
+  },
+  {
+    id: 'job-seeker',
+    title: 'The Job Seeker Journey',
+    description: 'How newcomers use library resources to find employment',
+    persona: 'Meet Ahmed - Recently arrived professional looking for work',
+    icon: MagnifyingGlass,
+    color: 'primary',
+    audienceType: 'newcomer',
+    steps: [
+      {
+        time: '9:00 AM',
+        activity: 'Career Assessment',
+        description: 'Ahmed meets with a career counselor who offers free 1-on-1 sessions at the library.',
+        service: 'Free career counseling services'
+      },
+      {
+        time: '10:00 AM',
+        activity: 'Resume Workshop',
+        description: 'He attends a workshop on creating Canadian-style resumes and cover letters.',
+        service: 'Resume & cover letter workshops'
+      },
+      {
+        time: '11:30 AM',
+        activity: 'Skills Certification',
+        description: 'Ahmed accesses free online courses and certifications through LinkedIn Learning.',
+        service: 'Free professional development platforms'
+      },
+      {
+        time: '1:00 PM',
+        activity: 'Job Board Access',
+        description: 'He uses library computers to search job boards and create profiles on employment websites.',
+        service: 'Free computer & internet access'
+      },
+      {
+        time: '2:30 PM',
+        activity: 'Interview Preparation',
+        description: 'Ahmed practices interview skills with a volunteer in a mock interview session.',
+        service: 'Mock interview practice programs'
+      },
+      {
+        time: '3:30 PM',
+        activity: 'Professional Documents',
+        description: 'He prints his resume, cover letters, and references for upcoming job interviews.',
+        service: 'Printing services for job seekers'
+      }
+    ]
+  },
+  {
+    id: 'entrepreneur-startup',
+    title: 'The Aspiring Entrepreneur',
+    description: 'How newcomers use library resources to start a business',
+    persona: 'Meet Fatima - Dreaming of starting her own catering business',
+    icon: Lightbulb,
+    color: 'accent',
+    audienceType: 'newcomer',
+    steps: [
+      {
+        time: '10:00 AM',
+        activity: 'Business Planning Workshop',
+        description: 'Fatima attends a free workshop on creating a business plan in Canada.',
+        service: 'Small business development programs'
+      },
+      {
+        time: '11:30 AM',
+        activity: 'Market Research',
+        description: 'She accesses business databases to research the local food service market.',
+        service: 'Free business research databases'
+      },
+      {
+        time: '1:00 PM',
+        activity: 'Entrepreneurship Mentorship',
+        description: 'Fatima meets with a business mentor through the library\'s partnership program.',
+        service: 'Business mentorship connections'
+      },
+      {
+        time: '2:00 PM',
+        activity: 'Legal Resources',
+        description: 'She borrows books on Canadian business law and food safety regulations.',
+        service: 'Business & legal resource collections'
+      },
+      {
+        time: '3:00 PM',
+        activity: 'Marketing Skills',
+        description: 'Fatima takes an online course on social media marketing for small businesses.',
+        service: 'Digital marketing courses'
+      },
+      {
+        time: '4:00 PM',
+        activity: 'Networking Event',
+        description: 'She connects with other entrepreneurs at the monthly small business networking event.',
+        service: 'Business networking events'
+      }
+    ]
+  },
+  {
+    id: 'creative-hobbyist',
+    title: 'The Creative Hobbyist',
+    description: 'How locals explore creative pursuits through library resources',
+    persona: 'Meet Jason - Mid-career professional exploring photography',
+    icon: Palette,
+    color: 'secondary',
+    audienceType: 'local',
+    steps: [
+      {
+        time: '10:00 AM',
+        activity: 'Equipment Checkout',
+        description: 'Jason borrows a professional DSLR camera and tripod from the library\'s tech lending collection.',
+        service: 'Camera & photography equipment lending'
+      },
+      {
+        time: '11:00 AM',
+        activity: 'Photography Workshop',
+        description: 'He attends a hands-on workshop on composition and lighting techniques.',
+        service: 'Creative arts workshops'
+      },
+      {
+        time: '1:00 PM',
+        activity: 'Online Courses',
+        description: 'Jason accesses Creativelive and LinkedIn Learning for advanced photo editing tutorials.',
+        service: 'Free creative software training'
+      },
+      {
+        time: '2:30 PM',
+        activity: 'Makerspace Printing',
+        description: 'He uses the large format printer in the makerspace to print his best photos for an exhibition.',
+        service: 'Makerspace printing services'
+      },
+      {
+        time: '3:30 PM',
+        activity: 'Art Books & Magazines',
+        description: 'Jason browses photography magazines and books on famous photographers for inspiration.',
+        service: 'Arts & hobbies collection'
+      },
+      {
+        time: '4:30 PM',
+        activity: 'Creative Community',
+        description: 'He joins the monthly photography club meeting to share work and get feedback.',
+        service: 'Creative hobby clubs'
+      }
+    ]
+  },
+  {
+    id: 'digital-creator',
+    title: 'The Digital Content Creator',
+    description: 'How young locals leverage library tech for content creation',
+    persona: 'Meet Taylor - 20-year-old aspiring YouTuber and podcaster',
+    icon: Rocket,
+    color: 'accent',
+    audienceType: 'local',
+    steps: [
+      {
+        time: '11:00 AM',
+        activity: 'Studio Booking',
+        description: 'Taylor books the library\'s podcast recording studio with professional microphones.',
+        service: 'Podcast & recording studio'
+      },
+      {
+        time: '12:00 PM',
+        activity: 'Content Creation',
+        description: 'Taylor records three podcast episodes with soundproofing and professional equipment.',
+        service: 'Professional audio equipment'
+      },
+      {
+        time: '2:00 PM',
+        activity: 'Video Editing Workshop',
+        description: 'Taylor attends a workshop on video editing using Adobe Premiere.',
+        service: 'Digital media workshops'
+      },
+      {
+        time: '3:30 PM',
+        activity: 'Equipment Borrowing',
+        description: 'Taylor checks out a GoPro and lighting kit for an upcoming outdoor video shoot.',
+        service: 'Video equipment lending'
+      },
+      {
+        time: '4:30 PM',
+        activity: 'Editing Suite',
+        description: 'Taylor uses the library\'s computers with premium editing software to edit content.',
+        service: 'High-performance editing computers'
+      },
+      {
+        time: '6:00 PM',
+        activity: 'Creator Meetup',
+        description: 'Taylor joins the monthly content creator meetup to network and collaborate.',
+        service: 'Digital creator community events'
+      }
+    ]
+  },
+  {
+    id: 'genealogy-researcher',
+    title: 'The Family History Detective',
+    description: 'How locals uncover their roots through library resources',
+    persona: 'Meet Patricia - Researching her Canadian and Indigenous heritage',
+    icon: Books,
+    color: 'sage',
+    audienceType: 'local',
+    steps: [
+      {
+        time: '10:00 AM',
+        activity: 'Genealogy Workshop',
+        description: 'Patricia attends a workshop on using online genealogy tools and databases.',
+        service: 'Genealogy research workshops'
+      },
+      {
+        time: '11:30 AM',
+        activity: 'Ancestry Database Access',
+        description: 'She accesses Ancestry.com and other premium genealogy sites for free at the library.',
+        service: 'Free Ancestry.com & genealogy databases'
+      },
+      {
+        time: '1:00 PM',
+        activity: 'Historical Archives',
+        description: 'Patricia examines local historical records, census data, and immigration documents.',
+        service: 'Historical archives & local records'
+      },
+      {
+        time: '2:30 PM',
+        activity: 'Indigenous Resources',
+        description: 'She explores the Indigenous history collection and connects with community resources.',
+        service: 'Indigenous heritage collections'
+      },
+      {
+        time: '3:30 PM',
+        activity: 'Microfilm Research',
+        description: 'Patricia reviews old newspaper articles on microfilm about her ancestors.',
+        service: 'Microfilm & historical newspaper access'
+      },
+      {
+        time: '4:30 PM',
+        activity: 'Research Consultation',
+        description: 'She meets with a librarian specializing in genealogy for research guidance.',
+        service: 'Specialized research consultations'
       }
     ]
   },

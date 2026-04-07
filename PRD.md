@@ -39,9 +39,9 @@ A welcoming digital companion for library users that demystifies library culture
 - Trigger: User selects a persona tour from the Tours section
 - Progression: View tour categories (newcomer tours first, then local tours) → Select tour → View sequential cards with time stamps and activities → See list of services used
 - Success criteria: Each tour shows 4-6 timestamped activities; newcomer tours include settlement journeys, students, and parents; local tours include seniors, teens, and lifelong learners
-- Personas covered:
-  - **Newcomers**: Remote Worker, Family Weekend, Settlement Journey, International Student, New Parent
-  - **Locals**: Lifelong Learner, Community Connector, Eco Explorer, Active Senior, High School Student
+- Personas covered (15 total):
+  - **Newcomers (7)**: Remote Worker, Family Weekend, Settlement Journey, International Student, New Parent, Job Seeker, Aspiring Entrepreneur
+  - **Locals (8)**: Lifelong Learner, Community Connector, Eco Explorer, Active Senior, High School Student, Creative Hobbyist, Digital Content Creator, Genealogy Researcher
 
 **Library Event Calendar**
 - Functionality: Filterable calendar of events across library branches, organized by audience category (children, teens, adults, seniors, newcomers, all-ages)
@@ -141,6 +141,20 @@ A welcoming digital companion for library users that demystifies library culture
 - Progression: Browse collection types → Read collection descriptions and highlights → Learn access requirements → See digital availability → Understand unique value → Request research assistance
 - Success criteria: Collections organized by type and library; includes appointment requirements; shows digital access options; explains why each matters to specific user groups; highlights materials for family history research
 
+**Library Services Discovery Quiz**
+- Functionality: Interactive 10-question quiz that tests knowledge about library services while educating users about features they might not know exist
+- Purpose: Gamifies learning about library services; surfaces hidden features in an engaging, memorable way; builds confidence about using libraries
+- Trigger: User navigates to "Quiz" section from main navigation
+- Progression: Answer questions one at a time → Get immediate feedback with explanations → Learn about surprising services → See completion score → Review all discovered services → Retake quiz or explore more
+- Success criteria: Questions cover both newcomer and local-focused services; immediate feedback after each question; explanations are educational and encouraging; final score shows percentage and personality result (Expert/Explorer/Learner/Beginner); list of all services discovered is provided
+
+**Library Visit Planner**
+- Functionality: Interactive tool where users select their visit goals and receive a personalized visit plan with estimated time, services needed, items to bring, and pro tips
+- Purpose: Reduces overwhelm by helping users plan productive library visits; ensures they bring necessary items; maximizes visit efficiency with insider tips
+- Trigger: User navigates to "Planner" section from main navigation
+- Progression: View goal categories (Work, Learn, Family, Tech, Community) → Select one or more goals → See running time estimate → Generate personalized plan → View services needed, items to bring, and pro tips → Print, download, or share plan
+- Success criteria: 12+ goals covering diverse use cases; realistic time estimates; practical "bring items" lists; actionable pro tips; plan can be printed, downloaded as PDF, or shared; running total shows cumulative time
+
 ## Edge Case Handling
 - **Empty Bingo State**: Show encouraging message with suggestions for first activities to try
 - **No Volunteer Photo**: Display friendly placeholder avatar with initials or library icon
@@ -151,6 +165,9 @@ A welcoming digital companion for library users that demystifies library culture
 - **Multiple Browser Languages**: Check navigator.languages array in order of preference to find best match
 - **RTL Layout Issues**: Properly reverse flex directions and text alignment for Arabic
 - **Font Loading Failures**: Fallback to system fonts that support multilingual characters
+- **Quiz No Answer Selected**: Require answer selection before showing explanation
+- **Visit Planner Zero Goals**: Show encouraging empty state with popular goal suggestions
+- **Library Directory Expanded**: Now includes 150+ libraries across all provinces and territories with comprehensive coverage
 
 ## Design Direction
 The design should evoke warmth, accessibility, and cultural bridge-building. It should feel like a friendly guide written by someone who understands the newcomer experience—not institutional or bureaucratic. Visual elements should celebrate multiculturalism while maintaining clarity and simplicity.
