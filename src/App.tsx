@@ -28,19 +28,26 @@ import { SpecialCollections } from '@/components/library/SpecialCollections'
 import { LibraryQuiz } from '@/components/library/LibraryQuiz'
 import { VisitPlanner } from '@/components/library/VisitPlanner'
 import { 
+  BookBookmark,
   BookOpen, 
-  Camera, 
-  CheckSquare, 
-  MapPin, 
-  ChatCircleDots, 
-  UserCircle,
-  ListMagnifyingGlass,
   CalendarBlank,
-  Wheelchair,
-  TrendUp,
-  Vault,
+  CalendarCheck,
+  Camera, 
+  CaretDown,
+  ChatCircleDots, 
+  CheckSquare, 
   GameController,
-  CalendarCheck
+  House,
+  Lightbulb,
+  List,
+  ListMagnifyingGlass,
+  MapPin, 
+  Quotes,
+  TrendUp,
+  UserCircle,
+  Users,
+  Vault,
+  Wheelchair
 } from '@phosphor-icons/react'
 
 function AppContent() {
@@ -316,6 +323,13 @@ function AppContent() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-16 gap-1.5 sm:gap-2 h-auto bg-muted/50 p-1.5 sm:p-2 mb-6 sm:mb-8 overflow-x-auto">
             <TabsTrigger 
+              value="home" 
+              className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
+            >
+              <House size={18} className="sm:w-5 sm:h-5" />
+              <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">{t('navigation.home')}</span>
+            </TabsTrigger>
+            <TabsTrigger 
               value="culture" 
               className="flex flex-col items-center gap-0.5 sm:gap-1 py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground min-h-[60px] sm:min-h-[70px]"
             >
@@ -428,6 +442,10 @@ function AppContent() {
               <span className="text-[10px] sm:text-xs md:text-sm leading-tight text-center">Planner</span>
             </TabsTrigger>
           </TabsList>
+
+            <TabsContent value="home" className="mt-0">
+              <Home setActiveTab={setActiveTab} />
+            </TabsContent>
 
             <TabsContent value="culture" className="mt-0">
               <CultureGuide />
