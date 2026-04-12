@@ -27,6 +27,7 @@ import { CareerPathways } from '@/components/library/CareerPathways'
 import { SpecialCollections } from '@/components/library/SpecialCollections'
 import { LibraryQuiz } from '@/components/library/LibraryQuiz'
 import { VisitPlanner } from '@/components/library/VisitPlanner'
+import { NeighborhoodHacks } from '@/components/library/NeighborhoodHacks'
 import { 
   BookBookmark,
   BookOpen, 
@@ -483,6 +484,22 @@ function AppContent() {
               <LibraryChampion />
             </TabsContent>
 
+            <TabsContent value="hiddenmenu" className="mt-0">
+              <NeighborhoodHacks />
+            </TabsContent>
+
+            <TabsContent value="testimonials" className="mt-0">
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">Testimonials coming soon!</p>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="bookclubs" className="mt-0">
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">Book clubs information coming soon!</p>
+              </div>
+            </TabsContent>
+
             <TabsContent value="accessibility" className="mt-0">
               <AccessibilityGuide />
             </TabsContent>
@@ -491,25 +508,17 @@ function AppContent() {
               <CareerPathways />
             </TabsContent>
 
-          <TabsContent value="accessibility" className="mt-0">
-            <AccessibilityGuide />
-          </TabsContent>
+            <TabsContent value="collections" className="mt-0">
+              <SpecialCollections />
+            </TabsContent>
 
-          <TabsContent value="careers" className="mt-0">
-            <CareerPathways />
-          </TabsContent>
+            <TabsContent value="quiz" className="mt-0">
+              <LibraryQuiz />
+            </TabsContent>
 
-          <TabsContent value="collections" className="mt-0">
-            <SpecialCollections />
-          </TabsContent>
-
-          <TabsContent value="quiz" className="mt-0">
-            <LibraryQuiz />
-          </TabsContent>
-
-          <TabsContent value="planner" className="mt-0">
-            <VisitPlanner />
-          </TabsContent>
+            <TabsContent value="planner" className="mt-0">
+              <VisitPlanner />
+            </TabsContent>
         </Tabs>
       </main>
 
