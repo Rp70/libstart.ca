@@ -202,11 +202,11 @@ export function LibraryChampion() {
           {t('libraryChampion.getStartedDescription')}
         </p>
         <p className="text-sm text-muted-foreground mb-4">
-          Navigate to "Library Champion tool" in the Connect menu to create your profile
+          Navigate to "Volunteer Tool" in the Connect menu to create your profile
         </p>
         <div className="flex items-center justify-center gap-2 text-primary">
           <UserCircle size={24} weight="duotone" />
-          <span className="font-semibold">Connect → Library Champion tool</span>
+          <span className="font-semibold">Connect → Volunteer Tool</span>
         </div>
       </Card>
     </div>
